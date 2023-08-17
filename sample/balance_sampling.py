@@ -17,7 +17,23 @@ def balance_sampling(data, factor_names, output_file=None, seed=None):
             else:
                 data_tobe_added = len(data) * ratio - len(samples[0][j-1])
                 exp, unexp = balance_data(exp, unexp, factor_names, data_tobe_added)
+            # if output_file:
+                # TODO: name output file
                 samples[0][j] = exp
+    else:
+        
+        samples = [[0] * 19] * num_seeds
+        for i in range(num_seeds):
+            for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
+                if j == 0:
+                    exp, unexp = train_test_split(data, test_size=0.95, random_state=i)
+                    samples[i][j] = exp
+                else:
+                    data_tobe_added = len(data) * ratio - len(samples[i][j-1])
+                    exp, unexp = balance_data(exp, unexp, factor_names, data_tobe_added)
+                    samples[i][j] = exp
+                # if output_file:
+                    # TODO: name output file
 
     return samples
 
