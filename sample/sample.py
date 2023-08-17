@@ -10,9 +10,9 @@ def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
     data, factor_names = preprocess(system, bench, alg, data)
     if output_dir:
         if alg:
-            output_file = f"{output_dir}/{method}_{system}-{alg}_{bench}"
+            output_file = f"{output_dir}/method@{method}_sys@{system}-{alg}_bench@{bench}"
         else:
-            output_file = f"{output_dir}/{method}_{system}_{bench}"
+            output_file = f"{output_dir}//method@{method}_sys@{system}_bench@{bench}"
     else:
         output_file = None
 
