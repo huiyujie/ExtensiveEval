@@ -28,8 +28,8 @@ def random_sampling(data, output_file=None, seed=None):
                 exp, unexp = train_test_split(data, test_size=(1 - ratio), random_state=i)
                 test_split(exp, unexp)
                 if output_file:
-                    exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_exp.csv", index=False)
-                    unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_unexp.csv", index=False)
+                    exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_exp.csv", index=False)
+                    unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_unexp.csv", index=False)
                 samples[i][j] = exp
 
     return samples

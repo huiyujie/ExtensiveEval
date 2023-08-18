@@ -3,6 +3,7 @@ import pandas as pd
 from balance_sampling import balance_sampling
 from preprocess import preprocess
 from random_sampling import random_sampling
+from dist_aware_sampling import dist_aware_sampling
 from stratified_sampling import stratified_sampling
 
 
@@ -12,7 +13,7 @@ def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
         if alg:
             output_file = f"{output_dir}/method@{method}_sys@{system}-{alg}_bench@{bench}"
         else:
-            output_file = f"{output_dir}//method@{method}_sys@{system}_bench@{bench}"
+            output_file = f"{output_dir}/method@{method}_sys@{system}_bench@{bench}"
     else:
         output_file = None
 
@@ -23,8 +24,7 @@ def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
     elif method == "balance":
         return balance_sampling(data, factor_names, output_file, seed=seed)
     elif method == "dist-aware":
-        pass
-        # dist_aware_sampling()
+        return dist_aware_sampling(data, output_file, seed=seed)
     else:
         raise ValueError("Unknown sampling method")
 

@@ -33,8 +33,8 @@ def stratified_sampling(data, factor_names, output_file=None, seed=None):
                                                   stratify=data[f])
                     test_split(exp, unexp)
                     if output_file:
-                        exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_term@{f}_exp.csv", index=False)
-                        unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_term@{f}_unexp.csv", index=False)
+                        exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_term@{f}_exp.csv", index=False)
+                        unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_term@{f}_unexp.csv", index=False)
                     samples[f][i][j] = exp
 
     return samples
