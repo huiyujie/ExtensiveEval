@@ -33,6 +33,7 @@ def output_sample_result(output_file,ratio,random_seed,df_in,sample_idxs):
 def sample_one_seed(df_in, output_file, random_seed):
     
     samples_list = []
+    unsamples_list = []
     
     df_in = df_in.loc[df_in['tput'] > 0]
     df_in.reset_index(inplace=True,drop=True)
@@ -68,6 +69,7 @@ def sample_one_seed(df_in, output_file, random_seed):
         
         exp,unexp = output_sample_result(output_file,sample_ratio,random_seed,df_in,parms.loc[parms['sampled']==True].index)
         samples_list.append(exp)
+        unsamples_list.append(unexp)
         
         if abs(sample_ratio - 0.95) < 1e-3:
             break
@@ -95,7 +97,7 @@ def sample_one_seed(df_in, output_file, random_seed):
         
         sample_ratio += 0.05
     
-    return samples_list
+    return samples_list, unsamples_list
     
     
 def dist_aware_sampling(data, output_file = None, seed = None):
@@ -103,10 +105,15 @@ def dist_aware_sampling(data, output_file = None, seed = None):
     num_seeds = 100
     
     if seed is not None:
-        return [sample_one_seed(data, output_file, seed)]
+        exp,unexp = sample_one_seed(data, output_file, seed)
+        return [exp], [unexp]
     else:
-        result_list = []
+        samples_list = []
+        unsamples_list = []
         for i in range(num_seeds):
-            result_list.append(sample_one_seed(data, output_file, i))
+            exp,unexp = sample_one_seed(data, output_file, i)
+            samples_list.append(exp)
+            unsamples_list.append(unexp)
+            
 
-        return result_list
+        return samples_list, unsamples_list
