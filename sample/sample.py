@@ -1,10 +1,10 @@
 import pandas as pd
 
-from sample.balance_sampling import balance_sampling
-from sample.preprocess import preprocess
-from sample.random_sampling import random_sampling
-from sample.stratified_sampling import stratified_sampling
-from sample.dist_aware_sampling import dist_aware_sampling
+from .balance_sampling import balance_sampling
+from .preprocess import preprocess
+from .random_sampling import random_sampling
+from .stratified_sampling import stratified_sampling
+from .dist_aware_sampling import dist_aware_sampling
 
 
 def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
@@ -30,5 +30,5 @@ def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
 
 
 if __name__ == "__main__":
-    data = pd.read_csv("../csv/tapir_ycsb.csv")
+    data = pd.read_csv("/ANOVA/ExtensiveEval/csv/tapir_ycsb.csv")
     samples = sample(data, "balance", "tapir", "ycsb", seed=0)
