@@ -1,10 +1,10 @@
 import pandas as pd
 
-from .balance_sampling import balance_sampling
-from .preprocess import preprocess
-from .random_sampling import random_sampling
-from .stratified_sampling import stratified_sampling
-from .dist_aware_sampling import dist_aware_sampling
+from balance_sampling import balance_sampling
+from preprocess import preprocess
+from random_sampling import random_sampling
+from stratified_sampling import stratified_sampling
+from dist_aware_sampling import dist_aware_sampling
 
 
 def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
