@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
+import pandas as pd
 
 from util import test_split
 
@@ -61,7 +62,9 @@ def balance_data(train, test, param_names, cnt):
             remove_df = tmp_df
         remove_df = remove_df.sample()
         test.drop(remove_df.index, inplace=True)
-        train = train.append(remove_df)
+        train = pd.concat([train, remove_df])
+        # df.append is deprecated in pandas 2.x
+        # train = train.append(remove_df)
         cnt = cnt - 1
         param_names = rotate(param_names, 1)
     test_split(train, test)
