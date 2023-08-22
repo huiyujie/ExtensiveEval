@@ -22,7 +22,7 @@ if __name__ == "__main__":
         factor_names = get_factor_names(system_conf)
 
         # Generate all samples
-        all_samples, all_unsamples = sample.sample(data, method, system=system, bench=bench, alg=alg, seed=0)
+        all_samples, all_unsamples = sample.sample(data, method, system=system, bench=bench, alg=alg)
 
         # ML prediction
         r2_results = np.empty((19, 100))
