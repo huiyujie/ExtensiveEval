@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
-
+import sys,os
+path_to_sample_dir = './sample'
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), path_to_sample_dir)))
 from ML.regressor import MLP_regression
-from sample.sample import sample
+import sample
 from util_func import ALL_SYS, get_raw_data, get_factor_names, save_r2_results, parse_arg
 
 if __name__ == "__main__":
@@ -20,7 +22,7 @@ if __name__ == "__main__":
         factor_names = get_factor_names(system_conf)
 
         # Generate all samples
-        all_samples, all_unsamples = sample(data, method, system=system, bench=bench, alg=alg)
+        all_samples, all_unsamples = sample.sample(data, method, system=system, bench=bench, alg=alg, seed=0)
 
         # ML prediction
         r2_results = np.empty((19, 100))
