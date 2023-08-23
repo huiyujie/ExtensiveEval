@@ -7,6 +7,19 @@ from ML.regressor import MLP_regression
 import sample
 from util_func import ALL_SYS, get_raw_data, get_factor_names, save_r2_results, parse_arg
 
+def run_regression(all_samples, all_unsamples, output_name, method):
+    # ML prediction
+    r2_results = np.empty((19, 100))
+    r2_results[:] = np.nan
+    for i, samples in enumerate(all_samples):
+        print(f"seed {i}")
+        for j, one_sample in enumerate(samples):
+            r2 = MLP_regression(one_sample, all_unsamples[i][j], factor_names)
+            r2_results[j][i] = r2
+
+    # Save results
+    save_r2_results(r2_results, f"./{method}", output_name)
+
 if __name__ == "__main__":
     args = parse_arg()
     print(args)
@@ -24,15 +37,11 @@ if __name__ == "__main__":
         # Generate all samples
         all_samples, all_unsamples = sample.sample(data, method, system=system, bench=bench, alg=alg)
 
-        # ML prediction
-        r2_results = np.empty((19, 100))
-        r2_results[:] = np.nan
-        for i, samples in enumerate(all_samples):
-            print(f"seed {i}")
-            for j, one_sample in enumerate(samples):
-                r2 = MLP_regression(one_sample, all_unsamples[i][j], factor_names)
-                r2_results[j][i] = r2
-
-        # Save results
-        output_name = f"{system}-{bench}-{alg}.csv" if alg else f"{system}-{bench}.csv"
-        save_r2_results(r2_results, f"./{method}", output_name)
+        # Run regression
+        if method == "stratified":
+            for term in factor_names:
+                output_name = f"{system}-{bench}-{alg}-{term}.csv" if alg else f"{system}-{bench}-{term}.csv"
+                run_regression(all_samples[term], all_unsamples[term], output_name, method)
+        else:
+            output_name = f"{system}-{bench}-{alg}.csv" if alg else f"{system}-{bench}.csv"
+            run_regression(all_samples, all_unsamples, output_name, method)
