@@ -9,8 +9,8 @@ def balance_sampling(data, factor_names, output_file=None, seed=None):
     print("balance sampling")
     num_seeds = 100
     if seed is not None:
-        samples = [[0] * 19] * 1
-        unsamples = [[0] * 19] * 1
+        samples = [[0] * 19 for _ in range(1)]
+        unsamples = [[0] * 19 for _ in range(1)]
         for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
             if j == 0:
                 exp, unexp = train_test_split(data, test_size=0.95, random_state=seed)
@@ -25,8 +25,8 @@ def balance_sampling(data, factor_names, output_file=None, seed=None):
                 exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_exp.csv", index=False)
                 unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_unexp.csv", index=False)
     else:
-        samples = [[0] * 19] * num_seeds
-        unsamples = [[0] * 19] * num_seeds
+        samples = [[0] * 19 for _ in range(num_seeds)]
+        unsamples = [[0] * 19 for _ in range(num_seeds)]
         for i in range(num_seeds):
             for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
                 if j == 0:

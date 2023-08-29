@@ -13,8 +13,8 @@ If seed provided:
 def random_sampling(data, output_file=None, seed=None):
     num_seeds = 100
     if seed is not None:
-        samples = [[0] * 19] * 1
-        unsamples = [[0] * 19] * 1
+        samples = [[0] * 19 for _ in range(1)]
+        unsamples = [[0] * 19 for _ in range(1)]
         for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
             exp, unexp = train_test_split(data, test_size=(1 - ratio), random_state=seed)
             test_split(exp, unexp)
@@ -24,8 +24,8 @@ def random_sampling(data, output_file=None, seed=None):
             samples[0][j] = exp
             unsamples[0][j] = unexp
     else:
-        samples = [[0] * 19] * num_seeds
-        unsamples = [[0] * 19] * num_seeds
+        samples = [[0] * 19 for _ in range(num_seeds)]
+        unsamples = [[0] * 19 for _ in range(num_seeds)]
         for i in range(num_seeds):
             for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
                 exp, unexp = train_test_split(data, test_size=(1 - ratio), random_state=i)
