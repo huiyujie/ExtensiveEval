@@ -12,8 +12,8 @@ def standarize(train, valid):
 def process_data(train, valid, para_names):
     x_train = train[para_names]
     x_valid = valid[para_names]
-    y_train = train.iloc[:, -1].to_numpy()
-    y_valid = valid.iloc[:, -1].to_numpy()
+    y_train = train["tput"].to_numpy()
+    y_valid = valid["tput"].to_numpy()
     x_train, x_valid = standarize(x_train, x_valid)
 
     return x_train, y_train, x_valid, y_valid
