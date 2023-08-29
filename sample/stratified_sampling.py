@@ -12,8 +12,8 @@ def stratified_sampling(data, factor_names, output_file=None, seed=None):
     print(factor_names)
     if seed is not None:
         for f in factor_names:
-            samples[f] = [[0] * 19] * 1
-            unsamples[f] = [[0] * 19] * 1
+            samples[f] = [[0] * 19 for _ in range(1)]
+            unsamples[f] = [[0] * 19 for _ in range(1)]
             for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
                 exp, unexp = train_test_split(data,
                                               test_size=(1 - ratio),
@@ -27,8 +27,8 @@ def stratified_sampling(data, factor_names, output_file=None, seed=None):
                 unsamples[f][0][j] = unexp
     else:
         for f in factor_names:
-            samples[f] = [[0] * 19] * num_seeds
-            unsamples[f] = [[0] * 19] * num_seeds
+            samples[f] = [[0] * 19 for _ in range(num_seeds)]
+            unsamples[f] = [[0] * 19 for _ in range(num_seeds)]
             for i in range(num_seeds):
                 for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
                     exp, unexp = train_test_split(data,
