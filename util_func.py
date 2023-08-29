@@ -88,6 +88,6 @@ def parse_arg():
     parser.add_argument("--method", type=str, choices=["random", "stratified", "balance", "dist-aware"],
                         help="sampling method: random | stratified | balance | dist-aware")
     parser.add_argument('--systems', nargs='+', type=int, help='index of systems to run')
-
+    parser.add_argument('--all', type=bool, default=False, help='run all systems')
 
     return parser.parse_args()
