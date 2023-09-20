@@ -66,6 +66,8 @@ def read_data(system, bench, alg, input_data):
         para_names = ["WH","#Distributed","nodes"]
     elif system == "mysql":
         para_names = ["WH","terminal","num_chunk","chunk_size"]
+    elif system == "postgresql":
+        para_names = ["WH","terminal","shared_buffer","min_wal_size","max_wal_size","effective_cache_size"]
 
     if alg:
         input_data = input_data[input_data['alg'] == alg]
@@ -97,4 +99,6 @@ def get_norm_numpy(system, df):
     elif system == "calvin2":
         return df["nodes"].to_numpy() * 12
     elif system == "mysql":
+        return df["terminal"].to_numpy()
+    elif system == "postgresql":
         return df["terminal"].to_numpy()
