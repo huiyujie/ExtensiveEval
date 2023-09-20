@@ -7,7 +7,7 @@ from ML.regressor import MLP_regression
 import sample
 from util_func import ALL_SYS, get_raw_data, get_factor_names, save_r2_results, parse_arg
 
-def run_regression(all_samples, all_unsamples, output_name, method):
+def run_regression(all_samples, all_unsamples, output_name, method, factor_names):
     # ML prediction
     r2_results = np.empty((19, 100))
     r2_results[:] = np.nan
@@ -41,7 +41,7 @@ if __name__ == "__main__":
         if method == "stratified":
             for term in factor_names:
                 output_name = f"{system}-{bench}-{alg}-{term}.csv" if alg else f"{system}-{bench}-{term}.csv"
-                run_regression(all_samples[term], all_unsamples[term], output_name, method)
+                run_regression(all_samples[term], all_unsamples[term], output_name, method, factor_names)
         else:
             output_name = f"{system}-{bench}-{alg}.csv" if alg else f"{system}-{bench}.csv"
-            run_regression(all_samples, all_unsamples, output_name, method)
+            run_regression(all_samples, all_unsamples, output_name, method, factor_names)
