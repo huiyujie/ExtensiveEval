@@ -1,8 +1,8 @@
 import pandas as pd
 
 def read_calvin_data():
-    original_data = pd.read_csv("../csv/calvin_tpcc.csv")
-    revised_data = pd.read_csv("../csv/aria_tpcc.csv")
+    original_data = pd.read_csv("./csv/calvin_tpcc.csv")
+    revised_data = pd.read_csv("./csv/aria_tpcc.csv")
 
     original_data = original_data[original_data["nnodes"] == 1]
     original_data = original_data[original_data["alg"] == "Calvin"]
