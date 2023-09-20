@@ -18,7 +18,7 @@ def run_regression(all_samples, all_unsamples, output_name, method, factor_names
             r2_results[j][i] = r2
 
     # Save results
-    save_r2_results(r2_results, f"./{method}", output_name)
+    save_r2_results(r2_results, f"./results/ML/{method}", output_name)
 
 if __name__ == "__main__":
     args = parse_arg()
