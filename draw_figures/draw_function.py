@@ -62,20 +62,20 @@ def draw_one_sys(comb, factor_names, system_type, save=False):
     labels = []
     filename = comb[0] + "-" + comb[1] + "-" + comb[2] if len(comb) == 3 else comb[0] + "-" + comb[1]
     #random
-    data = get_results(f"../random/{filename}.csv")
+    data = get_results(f"../results/ML/random/{filename}.csv")
     datas.append(data)
     labels.append("random")
     #balance
-    data = get_results(f"../balance/{filename}.csv")
+    data = get_results(f"../results/ML/balance/{filename}.csv")
     datas.append(data)
     labels.append("balance")
     #dist-aware
-    data = get_results(f"../dist-aware/{filename}.csv")
+    data = get_results(f"../results/ML/dist-aware/{filename}.csv")
     datas.append(data)
     labels.append("dist-aware")
     #stratified
     factor = pick_best_stratified(filename, factor_names)
-    data = get_results(f"../stratified/{filename}-{factor}.csv")
+    data = get_results(f"../results/ML/stratified/{filename}-{factor}.csv")
     datas.append(data)
     labels.append("stratified")
 
