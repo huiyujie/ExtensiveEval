@@ -18,6 +18,21 @@ ALL_SYS = [("mysql", "tpcc"),
                ("tapir", "ycsb"),
                ("silo", "ycsb")]
 
+GOOD_SYS = [("mysql", "tpcc"),
+            ("aria","tpcc","Aria"),
+            ("star","ycsb"),
+            ("cicada","ycsb","Cicada"),
+            ("herd","ycsb")]
+
+BAD_SYS = [("silo","tpcc","Silo"),
+           ("calvin","tpcc","Calvin"),
+           ("janus","tpcc","Janus"),
+           ("gam","tpcc"),
+           ("drtm","tpcc"),
+           ("star","tpcc"),
+           ("tapir","ycsb"),
+           ("silo","ycsb")]
+
 def get_raw_data(sys_conf):
     file_name = sys_conf[0]+"_"+sys_conf[1]
     data = pd.read_csv(f"csv/{file_name}.csv")
