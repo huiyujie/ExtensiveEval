@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 from draw_figures.helper import pick_best_stratified
-from draw_figures.read_results import get_results
+from draw_figures.read_results import get_results, get_anova_results
 
 WIDTH = 345
 linestyle_tuple = [
@@ -19,21 +19,13 @@ linestyle_tuple = [
      ('loosely dashdotdotted', (0, (3, 10, 1, 10, 1, 10))),
      ('densely dashdotdotted', (0, (3, 1, 1, 1, 1, 1)))]
 
-def draw_error_multiplelines(combs, read_dir, system_type, save_file, save=False):
-    markers = ['o' ,'v' ,'^' ,'<' ,'>', '1', '2', '3', '4']
-    datas = []
-    labels = []
-    for comb in combs:
-        filename = comb[0]+"-"+comb[1]+"-"+comb[2] if len(comb)==3 else comb[0]+"-"+comb[1]
-        path = f"{read_dir}/{filename}.csv"
-        data = get_results(path)
-        datas.append(data)
-        labels.append(filename)
+def draw_figure(datas, labels, system_type, save_dir, save_name, save=False):
+    markers = ['o', 'v', '^', '<', '>', '1', '2', '3', '4']
     dim = set_size(WIDTH)
     width_ratio = 1.0
     fig, axe = plt.subplots(1, 1, figsize=(dim[0] * width_ratio, dim[1]))
     colmap = cm.get_cmap("Set1")
-    colors =[colmap.colors[i] for i in range(9)]
+    colors = [colmap.colors[i] for i in range(9)]
     index = [f"{i:.2f}" for i in np.arange(0.05, 1, 0.05)]
     if system_type == "good":
         axe.set_ylim([0.8, 1.05])
@@ -49,15 +41,14 @@ def draw_error_multiplelines(combs, read_dir, system_type, save_file, save=False
     axe.set_xticklabels(index, rotation=30)
     axe.set_xlabel("Sampling Rate")
     axe.set_ylabel("P50 of R2 Scores +/- to P80 and P20")
-    axe.legend(loc='upper left', bbox_to_anchor=(0., 1.3, 0, .102), ncol=2, borderaxespad=0.)
-
+    axe.legend(loc='upper left', bbox_to_anchor=(0., 1.1, 0, .102), ncol=2, borderaxespad=0.)
 
     if save:
-        plt.savefig("figures/" + save_file + ".pdf", format='pdf', bbox_inches='tight')
+        print(f"save figure {save_name} to figures/{save_dir}/{save_name}.pdf")
+        plt.savefig(f"figures/{save_dir}/" + save_name + ".pdf", format='pdf', bbox_inches='tight')
 
 
 def draw_one_sys(comb, factor_names, system_type, save=False):
-    markers = ['o' ,'v' ,'^' ,'<' ,'>', '1', '2', '3', '4']
     datas = []
     labels = []
     filename = comb[0] + "-" + comb[1] + "-" + comb[2] if len(comb) == 3 else comb[0] + "-" + comb[1]
@@ -79,29 +70,16 @@ def draw_one_sys(comb, factor_names, system_type, save=False):
     datas.append(data)
     labels.append("stratified")
 
-    dim = set_size(WIDTH)
-    width_ratio = 1.0
-    fig, axe = plt.subplots(1, 1, figsize=(dim[0] * width_ratio, dim[1]))
-    colmap = cm.get_cmap("Set1")
-    colors =[colmap.colors[i] for i in range(9)]
-    index = [f"{i:.2f}" for i in np.arange(0.05, 1, 0.05)]
-    if system_type == "good":
-        axe.set_ylim([0.8, 1.05])
-    elif system_type == "bad":
-        axe.set_ylim([0, 1])
+    draw_figure(datas, labels, system_type, "./", filename, save)
 
-    for i, r in enumerate(datas):
-        error = []
-        error.append(r["p50"] - r["p20"])
-        error.append(r["p80"] - r["p50"])
-        axe.errorbar(index, r["p50"], error, color=colors[i], marker=markers[i],
-                     linestyle=linestyle_tuple[i][1], ms=1, mew=2, label=labels[i], linewidth=1.0)
-    axe.set_xticklabels(index, rotation=30)
-    axe.set_xlabel("Sampling Rate")
-    axe.set_ylabel("P50 of R2 Scores +/- to P80 and P20")
-    axe.legend(loc='upper left', bbox_to_anchor=(0., 1.1, 0, .102), ncol=2, borderaxespad=0.)
+def draw_combined_anova_ML(comb, system_type, sample_method, save=False):
+    datas = []
+    labels = []
+    filename = comb[0] + "-" + comb[1] + "-" + comb[2] if len(comb) == 3 else comb[0] + "-" + comb[1]
+    datas.append(get_results(f"../results/ML/{sample_method}/{filename}.csv"))
+    labels.append(f"ML + {sample_method}")
 
+    datas.append(get_anova_results(filename, sample_method))
+    labels.append(f"ANOVA + {sample_method}")
 
-    if save:
-        print(f"save figure {filename} to figures/{filename}.pdf")
-        plt.savefig("figures/" + filename + ".pdf", format='pdf', bbox_inches='tight')
+    draw_figure(datas, labels, system_type, "combined", filename, save)
