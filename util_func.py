@@ -16,7 +16,8 @@ ALL_SYS = [("mysql", "tpcc"),
                ("drtm", "tpcc"),
                ("star", "tpcc"),
                ("tapir", "ycsb"),
-               ("silo", "ycsb")]
+               ("silo", "ycsb"),
+               ("postgresql", "tpcc")]
 
 GOOD_SYS = [("mysql", "tpcc"),
             ("aria","tpcc","Aria"),
@@ -74,6 +75,8 @@ def get_factor_names(sys_conf):
         para_names = ["WH", "#Distributed", "nodes"]
     elif system == "mysql":
         para_names = ["WH", "terminal", "num_chunk", "chunk_size"]
+    elif system == "postgresql":
+        para_names = ["WH","terminal","shared_buffer","min_wal_size","max_wal_size","effective_cache_size"]
 
     return para_names
 
