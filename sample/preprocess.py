@@ -67,7 +67,7 @@ def read_data(system, bench, alg, input_data):
     elif system == "mysql":
         para_names = ["WH","terminal","num_chunk","chunk_size"]
     elif system == "postgresql":
-        para_names = ["WH","terminal","shared_buffer","min_wal_size","max_wal_size","effective_cache_size"]
+        para_names = ["terminal","shared_buffer","min_wal_size","max_wal_size","effective_cache_size"]
 
     if alg:
         input_data = input_data[input_data['alg'] == alg]
@@ -77,6 +77,8 @@ def read_data(system, bench, alg, input_data):
         input_data = input_data[input_data['trans'] == "new_order"]
     if system == "drtm":
         input_data = input_data.drop(columns=['tp_1', 'tp_2', 'tp_3'])
+    if system == "postgresql":
+        input_data = input_data.drop(columns=["WH"])
 
     return input_data, para_names
 
