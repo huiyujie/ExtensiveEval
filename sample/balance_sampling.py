@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
-from util import test_split
+from util import test_split, split_sampleset
 
 
 def balance_sampling(data, factor_names, output_file=None, seed=None):
@@ -14,16 +14,18 @@ def balance_sampling(data, factor_names, output_file=None, seed=None):
         for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
             if j == 0:
                 exp, unexp = train_test_split(data, test_size=0.95, random_state=seed)
-                samples[0][j] = exp
-                unsamples[0][j] = unexp
+                sample_exp, sample_unexp = split_sampleset(exp)
+                samples[0][j] = sample_exp
+                unsamples[0][j] = sample_unexp
             else:
-                data_tobe_added = len(data) * ratio - len(samples[0][j-1])
+                data_tobe_added = len(data) * ratio - len(exp)
                 exp, unexp = balance_data(exp, unexp, factor_names, data_tobe_added)
-                samples[0][j] = exp
-                unsamples[0][j] = unexp
+                sample_exp, sample_unexp = split_sampleset(exp)
+                samples[0][j] = sample_exp
+                unsamples[0][j] = sample_unexp
             if output_file:
-                exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_exp.csv", index=False)
-                unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_unexp.csv", index=False)
+                sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_exp.csv", index=False)
+                sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_unexp.csv", index=False)
     else:
         samples = [[0] * 19 for _ in range(num_seeds)]
         unsamples = [[0] * 19 for _ in range(num_seeds)]
@@ -31,16 +33,18 @@ def balance_sampling(data, factor_names, output_file=None, seed=None):
             for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
                 if j == 0:
                     exp, unexp = train_test_split(data, test_size=0.95, random_state=i)
-                    samples[i][j] = exp
-                    unsamples[i][j] = unexp
+                    sample_exp, sample_unexp = split_sampleset(exp)
+                    samples[i][j] = sample_exp
+                    unsamples[i][j] = sample_unexp
                 else:
-                    data_tobe_added = len(data) * ratio - len(samples[i][j-1])
+                    data_tobe_added = len(data) * ratio - len(exp)
                     exp, unexp = balance_data(exp, unexp, factor_names, data_tobe_added)
-                    samples[i][j] = exp
-                    unsamples[i][j] = unexp
+                    sample_exp, sample_unexp = split_sampleset(exp)
+                    samples[i][j] = sample_exp
+                    unsamples[i][j] = sample_unexp
                 if output_file:
-                    exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_exp.csv", index=False)
-                    unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_unexp.csv", index=False)
+                    sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_exp.csv", index=False)
+                    sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_unexp.csv", index=False)
 
     return samples, unsamples
 
