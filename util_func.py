@@ -76,7 +76,7 @@ def get_factor_names(sys_conf):
     elif system == "mysql":
         para_names = ["WH", "terminal", "num_chunk", "chunk_size"]
     elif system == "postgresql":
-        para_names = ["WH","terminal","shared_buffer","min_wal_size","max_wal_size","effective_cache_size"]
+        para_names = ["terminal","shared_buffer","min_wal_size","max_wal_size","effective_cache_size"]
 
     return para_names
 
