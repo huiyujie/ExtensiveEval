@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import scipy as sp
 import copy,os
+from util import  split_sampleset
 
 
 # ----------------------------find neighbors by distance--------------------------------------
@@ -20,14 +21,17 @@ def find_neighbor_var(unsample_idx,parms,neighbors_idx,clm_names):
 
 def output_sample_result(output_file,ratio,random_seed,df_in,sample_idxs):
     unexp_idxs = list(set(df_in.index) - set(sample_idxs))
-    exp = df_in.loc[sample_idxs]
-    unexp = df_in.loc[unexp_idxs]
+    exp = df_in.loc[sample_idxs].copy()
+    unexp = df_in.loc[unexp_idxs].copy()
+    
+    exp_train, exp_test = split_sampleset(exp)
+    
     if output_file:
         output_path_sample = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_exp.csv"
         output_path_unexp = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_unexp.csv"
-        exp.to_csv(output_path_sample,index=False)
-        unexp.loc[unexp_idxs].to_csv(output_path_unexp,index=False)
-    return exp,unexp
+        exp_train.to_csv(output_path_sample,index=False)
+        exp_test.to_csv(output_path_unexp,index=False)
+    return exp_train,exp_test
     
     
 def sample_one_seed(df_in, output_file, random_seed):
