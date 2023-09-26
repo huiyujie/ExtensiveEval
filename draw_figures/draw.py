@@ -6,7 +6,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 from draw_figures.config import config
-from draw_figures.draw_function import draw_one_sys, draw_combined_anova_ML
+from draw_figures.draw_function import draw_one_sys, draw_combined_anova_ML, draw_multiple_systes
 
 if __name__ == "__main__":
     mpl.rcParams.update(config)
@@ -20,7 +20,16 @@ if __name__ == "__main__":
     for sys_conf in util_func.BAD_SYS:
         # draw_one_sys(sys_conf, util_func.get_factor_names(sys_conf), "bad", save=True)
         draw_combined_anova_ML(sys_conf, "bad", "random", save=True)
-    # for method in ["random", "balance", "dist-aware"]:
-    #     draw_error_multiplelines(util_func.GOOD_SYS, f"../{method}", "good", f"{method}_good", save=True)
-    #     draw_error_multiplelines(util_func.BAD_SYS, f"../{method}", "bad", f"{method}_bad", save=True)
+
+    # draw_multiple_systes([("mysql", "tpcc"),
+    #         ("aria","tpcc","Aria"),
+    #         ("cicada","ycsb","Cicada"),
+    #         ("herd","ycsb"),
+    #         ("postgresql","tpcc")], "good", "random", save=True)
+    #
+    # draw_multiple_systes([
+    #        ("calvin","tpcc","Calvin"),
+    #        ("drtm","tpcc"),
+    #        ("star","tpcc"),
+    #        ("silo","ycsb")], "bad", "random", save=True)
 

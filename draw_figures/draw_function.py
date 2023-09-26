@@ -83,3 +83,13 @@ def draw_combined_anova_ML(comb, system_type, sample_method, save=False):
     labels.append(f"ANOVA + {sample_method}")
 
     draw_figure(datas, labels, system_type, "combined", filename, save)
+
+def draw_multiple_systes(combs, system_type, sample_method, save=False):
+    datas = []
+    labels = []
+    for comb in combs:
+        filename = comb[0] + "-" + comb[1] + "-" + comb[2] if len(comb) == 3 else comb[0] + "-" + comb[1]
+        datas.append(get_results(f"../results/ML/{sample_method}/{filename}.csv"))
+        labels.append(filename)
+
+    draw_figure(datas, labels, system_type, "./", save_name=system_type, save=save)
