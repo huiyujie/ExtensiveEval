@@ -23,7 +23,8 @@ GOOD_SYS = [("mysql", "tpcc"),
             ("aria","tpcc","Aria"),
             ("star","ycsb"),
             ("cicada","ycsb","Cicada"),
-            ("herd","ycsb")]
+            ("herd","ycsb"),
+            ("postgresql","tpcc")]
 
 BAD_SYS = [("silo","tpcc","Silo"),
            ("calvin","tpcc","Calvin"),
