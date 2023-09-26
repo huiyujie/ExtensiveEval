@@ -19,7 +19,7 @@ def get_anova_results(filename, sample_method):
         df.alg = df.apply(lambda x: x.alg.replace(f"_{x.stratified_term}",""), axis=1)
     df = df[df.alg.isin(['aria-Aria_tpcc', 'calvin-Calvin_tpcc', 'cicada-Cicada_ycsb',
         'drtm_tpcc', 'gam_tpcc', 'herd_ycsb', 'janus-Janus_tpcc', 'mysql_tpcc',
-        'silo-Silo_tpcc', 'silo_ycsb', 'star_tpcc', 'star_ycsb','tapir_ycsb'])]
+        'silo-Silo_tpcc', 'silo_ycsb', 'star_tpcc', 'star_ycsb','tapir_ycsb', 'postgresql_tpcc'])]
     rename_alg = {
         'aria-Aria_tpcc': "aria-tpcc-Aria",
         'calvin-Calvin_tpcc': "calvin-tpcc-Calvin",
@@ -33,7 +33,8 @@ def get_anova_results(filename, sample_method):
         'silo_ycsb': "silo-ycsb",
         'star_tpcc': "star-tpcc",
         'star_ycsb': "star-ycsb",
-        'tapir_ycsb': 'tapir-ycsb'}
+        'tapir_ycsb': 'tapir-ycsb',
+        'postgresql_tpcc': 'postgresql-tpcc',}
 
     df['alg'] = df['alg'].apply(lambda x: rename_alg[x])
     data = df[df.alg == filename]
