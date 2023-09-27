@@ -24,11 +24,13 @@ def output_sample_result(output_file,ratio,random_seed,df_in,sample_idxs):
     exp = df_in.loc[sample_idxs].copy()
     unexp = df_in.loc[unexp_idxs].copy()
     
+    exp_list = []
+    unexp_list = []
+    
     for r_split in range(10):
     
         exp_train, exp_test = split_sampleset(exp,r_split)
-        exp_list = []
-        unexp_list = []
+
         if output_file:
             output_path_sample = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_split@{r_split}_exp.csv"
             output_path_unexp = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_split@{r_split}_unexp.csv"

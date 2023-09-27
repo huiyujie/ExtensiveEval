@@ -20,7 +20,7 @@ def random_sampling(data, output_file=None, seed=None):
             exp, unexp = train_test_split(data, test_size=(1 - ratio), random_state=seed)
             test_split(exp, unexp)
             for r_split in range(10):
-                sample_exp, sample_unexp = split_sampleset(exp)
+                sample_exp, sample_unexp = split_sampleset(exp,r_split)
                 if output_file:
                     sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_exp.csv", index=False)
                     sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_unexp.csv", index=False)
@@ -34,7 +34,7 @@ def random_sampling(data, output_file=None, seed=None):
                 exp, unexp = train_test_split(data, test_size=(1 - ratio), random_state=i)
                 test_split(exp, unexp)
                 for r_split in range(10):
-                    sample_exp, sample_unexp = split_sampleset(exp)
+                    sample_exp, sample_unexp = split_sampleset(exp,r_split)
                     if output_file:
                         sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_split@{r_split}_exp.csv", index=False)
                         sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_split@{r_split}_unexp.csv", index=False)
