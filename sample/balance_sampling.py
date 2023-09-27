@@ -38,9 +38,9 @@ def balance_sampling(data, factor_names, output_file=None, seed=None):
                 for r_split in range(split):
                     sample_exp, sample_unexp = split_sampleset(exp, r_split)
                     if output_file:
-                        sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_exp.csv",
+                        sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_split@{r_split}_exp.csv",
                                           index=False)
-                        sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_unexp.csv",
+                        sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_split@{r_split}_unexp.csv",
                                             index=False)
                     samples[i][r_split][j] = sample_exp
                     unsamples[i][r_split][j] = sample_unexp
