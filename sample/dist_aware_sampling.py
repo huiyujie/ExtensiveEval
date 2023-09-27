@@ -24,20 +24,27 @@ def output_sample_result(output_file,ratio,random_seed,df_in,sample_idxs):
     exp = df_in.loc[sample_idxs].copy()
     unexp = df_in.loc[unexp_idxs].copy()
     
-    exp_train, exp_test = split_sampleset(exp)
+    for r_split in range(10):
     
-    if output_file:
-        output_path_sample = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_exp.csv"
-        output_path_unexp = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_unexp.csv"
-        exp_train.to_csv(output_path_sample,index=False)
-        exp_test.to_csv(output_path_unexp,index=False)
-    return exp_train,exp_test
+        exp_train, exp_test = split_sampleset(exp,r_split)
+        exp_list = []
+        unexp_list = []
+        if output_file:
+            output_path_sample = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_split@{r_split}_exp.csv"
+            output_path_unexp = f"{output_file}_sample@{ratio:.2f}_random@{random_seed}_split@{r_split}_unexp.csv"
+            exp_train.to_csv(output_path_sample,index=False)
+            exp_test.to_csv(output_path_unexp,index=False)
+
+        exp_list.append(exp_train)
+        unexp_list.append(exp_test)
+    
+    return exp_list,unexp_list
     
     
 def sample_one_seed(df_in, output_file, random_seed):
     
-    samples_list = []
-    unsamples_list = []
+    samples_list = [[0] * 19 for _ in range(10)]
+    unsamples_list = [[0] * 19 for _ in range(10)]
     
     df_in = df_in.loc[df_in['tput'] > 0]
     df_in.reset_index(inplace=True,drop=True)
@@ -72,8 +79,11 @@ def sample_one_seed(df_in, output_file, random_seed):
         parms.loc[newly_sampled,'sampled'] = True
         
         exp,unexp = output_sample_result(output_file,sample_ratio,random_seed,df_in,parms.loc[parms['sampled']==True].index)
-        samples_list.append(exp)
-        unsamples_list.append(unexp)
+        
+        for r_split in range(10):
+            samples_list[r_split][int(sample_ratio/0.05)-1] = exp[r_split]
+            unsamples_list[r_split][int(sample_ratio/0.05)-1] = unexp[r_split]
+            
         
         if abs(sample_ratio - 0.95) < 1e-3:
             break
@@ -106,18 +116,19 @@ def sample_one_seed(df_in, output_file, random_seed):
     
 def dist_aware_sampling(data, output_file = None, seed = None):
     
-    num_seeds = 100
+    # num_seeds = 100
+    num_seeds = 10
     
     if seed is not None:
         exp,unexp = sample_one_seed(data, output_file, seed)
-        return [exp], [unexp]
+        return exp, unexp
     else:
         samples_list = []
         unsamples_list = []
         for i in range(num_seeds):
             exp,unexp = sample_one_seed(data, output_file, i)
-            samples_list.append(exp)
-            unsamples_list.append(unexp)
+            samples_list.extend(exp)
+            unsamples_list.extend(unexp)
             
 
         return samples_list, unsamples_list
