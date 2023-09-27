@@ -118,19 +118,18 @@ def sample_one_seed(df_in, output_file, random_seed):
     
 def dist_aware_sampling(data, output_file = None, seed = None):
     
-    # num_seeds = 100
     num_seeds = 10
     
     if seed is not None:
         exp,unexp = sample_one_seed(data, output_file, seed)
-        return exp, unexp
+        return [exp], [unexp]
     else:
         samples_list = []
         unsamples_list = []
         for i in range(num_seeds):
             exp,unexp = sample_one_seed(data, output_file, i)
-            samples_list.extend(exp)
-            unsamples_list.extend(unexp)
+            samples_list.append(exp)
+            unsamples_list.append(unexp)
             
 
         return samples_list, unsamples_list

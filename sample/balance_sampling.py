@@ -7,44 +7,43 @@ from util import test_split, split_sampleset
 
 def balance_sampling(data, factor_names, output_file=None, seed=None):
     print("balance sampling")
-    num_seeds = 100
+    num_seeds = 10
+    split = 10
     if seed is not None:
-        samples = [[0] * 19 for _ in range(1)]
-        unsamples = [[0] * 19 for _ in range(1)]
+        samples = [[[0] * 19 for _ in range(split)] for _ in range(1)]
+        unsamples = [[[0] * 19 for _ in range(split)] for _ in range(1)]
         for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
             if j == 0:
                 exp, unexp = train_test_split(data, test_size=0.95, random_state=seed)
-                sample_exp, sample_unexp = split_sampleset(exp)
-                samples[0][j] = sample_exp
-                unsamples[0][j] = sample_unexp
             else:
                 data_tobe_added = len(data) * ratio - len(exp)
                 exp, unexp = balance_data(exp, unexp, factor_names, data_tobe_added)
-                sample_exp, sample_unexp = split_sampleset(exp)
-                samples[0][j] = sample_exp
-                unsamples[0][j] = sample_unexp
-            if output_file:
-                sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_exp.csv", index=False)
-                sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_unexp.csv", index=False)
+            for r_split in range(split):
+                sample_exp, sample_unexp = split_sampleset(exp, r_split)
+                if output_file:
+                    sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_exp.csv", index=False)
+                    sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_unexp.csv", index=False)
+                samples[0][r_split][j] = sample_exp
+                unsamples[0][r_split][j] = sample_unexp
     else:
-        samples = [[0] * 19 for _ in range(num_seeds)]
-        unsamples = [[0] * 19 for _ in range(num_seeds)]
+        samples = [[[0] * 19 for _ in range(split)] for _ in range(num_seeds)]
+        unsamples = [[[0] * 19 for _ in range(split)] for _ in range(num_seeds)]
         for i in range(num_seeds):
             for j, ratio in enumerate(np.linspace(0.05, 1, num=20)[:-1]):
                 if j == 0:
                     exp, unexp = train_test_split(data, test_size=0.95, random_state=i)
-                    sample_exp, sample_unexp = split_sampleset(exp)
-                    samples[i][j] = sample_exp
-                    unsamples[i][j] = sample_unexp
                 else:
                     data_tobe_added = len(data) * ratio - len(exp)
                     exp, unexp = balance_data(exp, unexp, factor_names, data_tobe_added)
-                    sample_exp, sample_unexp = split_sampleset(exp)
-                    samples[i][j] = sample_exp
-                    unsamples[i][j] = sample_unexp
-                if output_file:
-                    sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_exp.csv", index=False)
-                    sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{i}_unexp.csv", index=False)
+                for r_split in range(split):
+                    sample_exp, sample_unexp = split_sampleset(exp, r_split)
+                    if output_file:
+                        sample_exp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_exp.csv",
+                                          index=False)
+                        sample_unexp.to_csv(f"{output_file}_sample@{ratio:.2f}_random@{seed}_split@{r_split}_unexp.csv",
+                                            index=False)
+                    samples[i][r_split][j] = sample_exp
+                    unsamples[i][r_split][j] = sample_unexp
 
     return samples, unsamples
 
