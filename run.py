@@ -9,13 +9,19 @@ from util_func import ALL_SYS, get_raw_data, get_factor_names, save_r2_results, 
 
 def run_regression(all_samples, all_unsamples, output_name, method, factor_names):
     # ML prediction
-    r2_results = np.empty((19, 100))
-    r2_results[:] = np.nan
-    for i, samples in enumerate(all_samples):
-        print(f"seed {i}")
-        for j, one_sample in enumerate(samples):
-            r2 = MLP_regression(one_sample, all_unsamples[i][j], factor_names)
-            r2_results[j][i] = r2
+    sample_ratio = [f"{i:.2f}" for i in np.arange(0.05, 1, 0.05)]
+    r2_results = pd.DataFrame(columns=["random_seed","split_seed","sample_ratio","r2"])
+    for seed, samples in enumerate(all_samples):
+        print(f"seed {seed}")
+        for split, splitted_samples in enumerate(samples):
+            for ratio, one_sample in enumerate(splitted_samples):
+                r2 = MLP_regression(one_sample,
+                                    all_unsamples[seed][split][ratio],
+                                    factor_names)
+                r2_results = r2_results.append({"random_seed":seed,
+                                                "split_seed":split,
+                                                "sample_ratio":sample_ratio[ratio],
+                                                "r2":r2}, ignore_index=True)
 
     # Save results
     save_r2_results(r2_results, f"./results/ML/{method}", output_name)
