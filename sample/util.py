@@ -9,9 +9,9 @@ def test_split(df1, df2):
         print("!!!ERROR on split data")
         exit(-1)
 
-def split_sampleset(sample_data):
+def split_sampleset(sample_data,random_state):
     train, test = train_test_split(sample_data,
                                     test_size=0.2,
-                                    random_state=0,
+                                    random_state=random_state,
                                     stratify=None)
     return train, test
