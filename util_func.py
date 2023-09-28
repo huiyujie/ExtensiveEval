@@ -84,13 +84,13 @@ def get_factor_names(sys_conf):
 def save_r2_results(r2_results, output_dir, output_file):
     check_dir(output_dir)
     output = f"{output_dir}/{output_file}"
-    index = [f"{r:.2f}" for r in np.arange(0.05, 1, 0.05)]
-    df = pd.DataFrame(r2_results, columns=[str(i) for i in range(100)],
-                      index=index)
-    df = df.round(decimals=3)
-    df.reset_index(inplace=True)
-    df = df.rename(columns={'index': 'ratio'})
-    df.to_csv(output, index=False)
+    # index = [f"{r:.2f}" for r in np.arange(0.05, 1, 0.05)]
+    # df = pd.DataFrame(r2_results, columns=[str(i) for i in range(100)],
+    #                   index=index)
+    # df = df.round(decimals=3)
+    # df.reset_index(inplace=True)
+    # df = df.rename(columns={'index': 'ratio'})
+    r2_results.to_csv(output, index=False)
 
 def check_dir(dir_path):
     # Check if the directory exists
