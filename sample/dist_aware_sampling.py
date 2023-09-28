@@ -83,8 +83,8 @@ def sample_one_seed(df_in, output_file, random_seed):
         exp,unexp = output_sample_result(output_file,sample_ratio,random_seed,df_in,parms.loc[parms['sampled']==True].index)
         
         for r_split in range(10):
-            samples_list[r_split][int(sample_ratio/0.05)-1] = exp[r_split]
-            unsamples_list[r_split][int(sample_ratio/0.05)-1] = unexp[r_split]
+            samples_list[r_split][round(sample_ratio/0.05)-1] = exp[r_split]
+            unsamples_list[r_split][round(sample_ratio/0.05)-1] = unexp[r_split]
             
         
         if abs(sample_ratio - 0.95) < 1e-3:
