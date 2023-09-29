@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def get_results(filename):
+def get_results_old_format(filename):
     data = pd.read_csv(filename)
     data["nan_cnt"] = data.isna().sum(axis=1)
     data["p20"] = data.iloc[:, 1:].quantile(q=0.2, axis=1, interpolation="nearest")
@@ -10,6 +10,19 @@ def get_results(filename):
 
     data.loc[data["nan_cnt"] > 50, :] = np.nan
 
+    return data
+
+def get_results(filename):
+    data = pd.read_csv(filename)
+    data = data.pivot_table(index="sample_ratio",
+                            columns="random_seed",
+                            values="r2",
+                            aggfunc="min")
+    data = data.reset_index()
+    data = data.rename(columns={"sample_ratio": "ratio"})
+    data["p20"] = data.iloc[:, 1:].quantile(q=0.2, axis=1, interpolation="nearest")
+    data["p50"] = data.iloc[:, 1:].quantile(q=0.5, axis=1, interpolation="nearest")
+    data["p80"] = data.iloc[:, 1:].quantile(q=0.8, axis=1, interpolation="nearest")
     return data
 
 # refer to vlbd_figures.ipynb in miao-dev branch
@@ -38,7 +51,10 @@ def get_anova_results(filename, sample_method):
 
     df['alg'] = df['alg'].apply(lambda x: rename_alg[x])
     data = df[df.alg == filename]
-    pivot_df = data.pivot(index="sample_ratio", columns="random", values="r2_unsample")
+    pivot_df = data.pivot_table(index="sample_ratio",
+                                columns="random",
+                                values="r2_unsample",
+                                aggfunc="min")
     pivot_df = pivot_df.reset_index()
     pivot_df = pivot_df.rename(columns={"sample_ratio":"ratio"})
     pivot_df["p20"] = pivot_df.iloc[:, 1:].quantile(q=0.2, axis=1, interpolation="nearest")
