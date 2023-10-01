@@ -577,6 +577,8 @@ def ANOVA_coef(df,name,DIR_NAME,parms_to_exclude=['alg','tput'],sampled=False,un
     else:
         try:
             DIR_NAME_SINGLE = DIR_NAME + "_SINGLE"
+            if not os.path.exists(DIR_NAME_SINGLE):
+                os.makedirs(DIR_NAME_SINGLE)
             model,removed_terms,fail_to_remove,stop_at = remove_terms_single(parms,df)
             ANOVA_coef_helper(df,name,DIR_NAME_SINGLE,parms, model,removed_terms,fail_to_remove,sampled,unsampled_df)
         except ValueError as e:
@@ -585,6 +587,8 @@ def ANOVA_coef(df,name,DIR_NAME,parms_to_exclude=['alg','tput'],sampled=False,un
         
         try:
             DIR_NAME_COMBINE = DIR_NAME + "_COMBINE"
+            if not os.path.exists(DIR_NAME_COMBINE):
+                os.makedirs(DIR_NAME_COMBINE)
             model,removed_terms,fail_to_remove,stop_at = remove_terms_combine(parms,df)
             ANOVA_coef_helper(df,name,DIR_NAME_COMBINE,parms, model,removed_terms,fail_to_remove,sampled,unsampled_df)
         except ValueError as e:
