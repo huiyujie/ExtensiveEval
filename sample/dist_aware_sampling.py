@@ -118,7 +118,7 @@ def sample_one_seed(df_in, output_file, random_seed):
     
 def dist_aware_sampling(data, output_file = None, seed = None):
     
-    num_seeds = 10
+    num_seeds = 100
     
     if seed is not None:
         exp,unexp = sample_one_seed(data, output_file, seed)

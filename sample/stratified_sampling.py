@@ -6,7 +6,7 @@ from util import test_split, split_sampleset
 
 
 def stratified_sampling(data, factor_names, output_file=None, seed=None):
-    num_seeds = 10
+    num_seeds = 100
     split = 10
     samples = {}
     unsamples = {}
