@@ -233,8 +233,6 @@ def find_in_anova(df,x,key):
     
 def ANOVA_coef_helper(df,name,DIR_NAME,parms, model,removed_terms,fail_to_remove,sampled,unsampled_df):
     
-    if not os.path.exists(DIR_NAME):
-        os.makedirs(DIR_NAME)
     
     if SAVE_INTERIM_FILE:
         open(f"{DIR_NAME}/{name}.txt",'w').close()
@@ -1157,6 +1155,10 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock = None):
     
     result_dir_sampled = f"{sample_method}_full_result/sample@{info['sample']}_random@{info['random']}_split@{info['split']}"
     
+    with write_lock:
+        if not os.path.exists(result_dir_sampled):
+            os.makedirs(result_dir_sampled)
+    
     try:
         stat_for_single_alg((pd.read_csv(sample_csv_path),exp_name,result_dir_sampled,pd.read_csv(unsample_csv_path)))
     except ValueError as ex:
@@ -1297,11 +1299,11 @@ if __name__ == "__main__":
     mp.set_start_method('forkserver')
     
     run_all_baseline()
-    run_calvin_comparison()
     run_all_comparsion("random")
     run_all_comparsion("balance")
     run_all_comparsion("dist-aware")
     run_all_comparsion("stratified")
+    # run_calvin_comparison()
     
     
     
