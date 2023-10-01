@@ -732,7 +732,6 @@ def stat_for_single_alg(args_in):
         if not os.path.exists(DIR_NAME):
             os.makedirs(DIR_NAME)
         
-        open(f"{DIR_NAME}/{name}.txt",'w').close()
         
         if result_dir:
             ANOVA_coef(df,name,DIR_NAME,parms_to_exclude=parms_to_exclude,sampled=True,unsampled_df=unsampled_df)
@@ -965,8 +964,8 @@ def compare_trend(full_trend_csv,sample_trend_csv,exp_name,out_dir,empty_d2 = Fa
     f.close()
     
     if not SAVE_INTERIM_FILE:
-        os.remove(full_trend_csv)
         os.remove(sample_trend_csv)
+        os.remove(sample_r2)
     
     return f"{exp_name},{num_of_terms_changed/total_num_terms_in_full},{num_turning_points_changed/total_num_terms_in_full},{np.mean(diff_per_var_list)},{r2_full_val},{r2_sampled_val},{r2_unsampled_val}"
 
@@ -1051,7 +1050,6 @@ def calc_frechet(full_cof_csv,sample_cof_csv,name,out_dir,empty_d2 = False, stra
             frechet_list.append(fd)
     
     if not SAVE_INTERIM_FILE:
-        os.remove(full_cof_csv)
         os.remove(sample_cof_csv)
     
     return np.mean(frechet_list)
@@ -1190,6 +1188,7 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock = None):
     if not SAVE_INTERIM_FILE:
         os.remove(sample_csv_path)
         os.remove(unsample_csv_path)
+        os.remove(os.path.join(result_dir_sampled,f"{exp_name}_stopped_at"))
 
 
 def run_all_comparsion(sample_method):
@@ -1210,7 +1209,18 @@ def run_all_comparsion(sample_method):
     
     chunker = lambda seq, size: (seq[pos:pos + size] for pos in range(0, len(seq), size))
     
-    for work_list in chunker(csvs_path,32):
+    cpus_to_use = os.cpu_count()
+    total_jobs = len(csvs_path) // cpus_to_use + 1
+    done_jobs = 0
+    one_percent_jobs = total_jobs // 100
+    
+    for work_list in chunker(csvs_path,os.cpu_count()):
+        
+        if done_jobs % one_percent_jobs == 0:
+            percent_done = done_jobs // one_percent_jobs
+            print(f"{percent_done}% done")
+            print("Current time: %s" %time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+        
         processes = [mp.Process(target=run_one_comparison,args=(csv,sample_method, lock)) for csv in work_list]
         
         for process in processes:
@@ -1218,6 +1228,8 @@ def run_all_comparsion(sample_method):
         
         for process in processes:
             process.join()
+        
+        done_jobs += 1
     
     print("Done!")
     print("Current time: %s" %time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
@@ -1284,12 +1296,12 @@ if __name__ == "__main__":
     
     mp.set_start_method('forkserver')
     
-    # run_all_baseline()
-    # run_calvin_comparison()
+    run_all_baseline()
+    run_calvin_comparison()
     run_all_comparsion("random")
-    # run_all_comparsion("balance")
-    # run_all_comparsion("dist-aware")
-    # run_all_comparsion("stratified")
+    run_all_comparsion("balance")
+    run_all_comparsion("dist-aware")
+    run_all_comparsion("stratified")
     
     
     
