@@ -15,7 +15,7 @@ import time
 import multiprocessing as mp
 from sklearn.metrics import r2_score
 
-path_to_sample_dir = 'ExtensiveEval/sample'
+path_to_sample_dir = '../sample'
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), path_to_sample_dir)))
 import sample
 from preprocess import preprocess
@@ -42,6 +42,7 @@ warnings.filterwarnings("ignore")
 
 PLOT=False
 PLOT_turning=False
+SAVE_INTERIM_FILE=False
 # PLOT=True
 # PLOT_turning=True
 COMPARE_FILE="COMPARE.LOG"
@@ -235,9 +236,11 @@ def ANOVA_coef_helper(df,name,DIR_NAME,parms, model,removed_terms,fail_to_remove
     if not os.path.exists(DIR_NAME):
         os.makedirs(DIR_NAME)
     
-    open(f"{DIR_NAME}/{name}.txt",'w').close()
-    
-    f = open(f"{DIR_NAME}/{name}.txt",'a')
+    if SAVE_INTERIM_FILE:
+        open(f"{DIR_NAME}/{name}.txt",'w').close()
+        f = open(f"{DIR_NAME}/{name}.txt",'a')
+    else:
+        f = open(os.devnull,'w')
     
     print("ANOVA_analysis",file=f)
     
@@ -500,7 +503,8 @@ def ANOVA_coef_helper(df,name,DIR_NAME,parms, model,removed_terms,fail_to_remove
     
     print(cof_table.to_string(index=False),file=f)
     
-    df_removed_terms.to_csv(f"{DIR_NAME}/{name}___removed_terms.csv",index=False)
+    if SAVE_INTERIM_FILE:
+        df_removed_terms.to_csv(f"{DIR_NAME}/{name}___removed_terms.csv",index=False)
     
     if (len(trend_data_list) == 0):
         f.close()
@@ -741,33 +745,33 @@ def stat_for_single_alg(args_in):
         # traceback.print_exc()
         raise
         
-def compare_dropped_terms(full_csv,sample_csv,out_path):
-    try:
-        df1 = pd.read_csv(full_csv).set_index('term')
-        df2 = pd.read_csv(sample_csv).set_index('term')
-    except FileNotFoundError:
-        return
-    union = pd.concat([df1,df2],axis=0)
-    diff_df = union.drop(df1.index.intersection(df2.index))
-    if diff_df.shape[0] > 1:
-        diff_df.to_csv(out_path)
+# def compare_dropped_terms(full_csv,sample_csv,out_path):
+#     try:
+#         df1 = pd.read_csv(full_csv).set_index('term')
+#         df2 = pd.read_csv(sample_csv).set_index('term')
+#     except FileNotFoundError:
+#         return
+#     union = pd.concat([df1,df2],axis=0)
+#     diff_df = union.drop(df1.index.intersection(df2.index))
+#     if diff_df.shape[0] > 1:
+#         diff_df.to_csv(out_path)
 
 
-def compare_turning_diff(full_csv,sample_csv,out_path):
-    if os.path.exists(out_path):
-        os.remove(out_path)
+# def compare_turning_diff(full_csv,sample_csv,out_path):
+#     if os.path.exists(out_path):
+#         os.remove(out_path)
     
-    try:
-        df1 = pd.read_csv(full_csv).set_index(['term_raw','fixed_parm_name','fixed_parm_val'])
-        df2 = pd.read_csv(sample_csv).set_index(['term_raw','fixed_parm_name','fixed_parm_val'])
-    except (FileNotFoundError, pd.errors.EmptyDataError):
-        return
-    df1 = df1.loc[(~df1.turning.isna()) & (df1.turning_spear2 != -888),'delta_spear']
-    df2 = df2.loc[(~df2.turning.isna()) & (df2.turning_spear2 != -888),'delta_spear']
-    union = pd.concat([df1,df2],axis=0)
-    diff_df = union.drop(df1.index.intersection(df2.index))
-    if diff_df.shape[0] > 1:
-        diff_df.to_csv(out_path)
+#     try:
+#         df1 = pd.read_csv(full_csv).set_index(['term_raw','fixed_parm_name','fixed_parm_val'])
+#         df2 = pd.read_csv(sample_csv).set_index(['term_raw','fixed_parm_name','fixed_parm_val'])
+#     except (FileNotFoundError, pd.errors.EmptyDataError):
+#         return
+#     df1 = df1.loc[(~df1.turning.isna()) & (df1.turning_spear2 != -888),'delta_spear']
+#     df2 = df2.loc[(~df2.turning.isna()) & (df2.turning_spear2 != -888),'delta_spear']
+#     union = pd.concat([df1,df2],axis=0)
+#     diff_df = union.drop(df1.index.intersection(df2.index))
+#     if diff_df.shape[0] > 1:
+#         diff_df.to_csv(out_path)
 
 def compare_trend(full_trend_csv,sample_trend_csv,exp_name,out_dir,empty_d2 = False, stratified_term = False):
     if not stratified_term:
@@ -775,8 +779,11 @@ def compare_trend(full_trend_csv,sample_trend_csv,exp_name,out_dir,empty_d2 = Fa
     else:
         out_path = os.path.join(out_dir,f"{exp_name}_{stratified_term}_trend_compare.txt")
     
-    f = open(out_path,"w").close()
-    f = open(out_path,"a")        
+    if SAVE_INTERIM_FILE:
+        f = open(out_path,"w").close()
+        f = open(out_path,"a")
+    else:
+        f = open(os.devnull,'w')
     
     num_of_terms_changed = 0
     num_turning_points_changed = 0
@@ -942,19 +949,24 @@ def compare_trend(full_trend_csv,sample_trend_csv,exp_name,out_dir,empty_d2 = Fa
                 per_diff_overall_list.append(np.mean(per_diff_overall_group))
         
         
-    print("====================================================================================",file=f)
-    print(f"***{num_of_terms_changed} terms are no longer significant in sampled dataset",file=f)
-    print(f"***{num_turning_points_changed} turning points/knee points mismatch",file=f)
-    print(f"***Mean difference in terms of per_var_explained:{np.mean(diff_per_var_list):.4f}",file=f)
-    print(f"***R-squared in full dataset:{r2_full_val}",file=f)
-    print(f"***R-squared of per_var_explained in sampled dataset:{r2_sampled_val}",file=f)
-    
-    print(f"***Mean difference in terms of overall spearmen rank correlation: {np.mean(diff_overall_list):.4f} ",file=f)
-    print("====================================================================================",file=f)
+    if SAVE_INTERIM_FILE:
+        print("====================================================================================",file=f)
+        print(f"***{num_of_terms_changed} terms are no longer significant in sampled dataset",file=f)
+        print(f"***{num_turning_points_changed} turning points/knee points mismatch",file=f)
+        print(f"***Mean difference in terms of per_var_explained:{np.mean(diff_per_var_list):.4f}",file=f)
+        print(f"***R-squared in full dataset:{r2_full_val}",file=f)
+        print(f"***R-squared of per_var_explained in sampled dataset:{r2_sampled_val}",file=f)
+        
+        print(f"***Mean difference in terms of overall spearmen rank correlation: {np.mean(diff_overall_list):.4f} ",file=f)
+        print("====================================================================================",file=f)
     # print(f"***Mean %change in terms of overall spearmen rank correlation: {np.mean(per_diff_overall_list):.4f} ",file=f)
     
     
     f.close()
+    
+    if not SAVE_INTERIM_FILE:
+        os.remove(full_trend_csv)
+        os.remove(sample_trend_csv)
     
     return f"{exp_name},{num_of_terms_changed/total_num_terms_in_full},{num_turning_points_changed/total_num_terms_in_full},{np.mean(diff_per_var_list)},{r2_full_val},{r2_sampled_val},{r2_unsampled_val}"
 
@@ -973,7 +985,10 @@ def calc_frechet(full_cof_csv,sample_cof_csv,name,out_dir,empty_d2 = False, stra
     else:
         out_path = os.path.join(out_dir,f"{name}_{stratified_term}_trend_compare.txt")
     # f = open(out_path,"w").close()
-    f = open(out_path,"a")          
+    if SAVE_INTERIM_FILE:
+        f = open(out_path,"a")
+    else:
+        f = open(os.devnull,"w")
     
     
     df1 = pd.read_csv(full_cof_csv)
@@ -1034,7 +1049,11 @@ def calc_frechet(full_cof_csv,sample_cof_csv,name,out_dir,empty_d2 = False, stra
             
             print(f"Frechet distance = {fd}",file=f)
             frechet_list.append(fd)
-                          
+    
+    if not SAVE_INTERIM_FILE:
+        os.remove(full_cof_csv)
+        os.remove(sample_cof_csv)
+    
     return np.mean(frechet_list)
 
 def run_all_baseline():
@@ -1168,6 +1187,9 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock = None):
             else:
                 print(f"{info['sample']},{info['random']},{info['split']},{trend1},{trend2}",file=f)
 
+    if not SAVE_INTERIM_FILE:
+        os.remove(sample_csv_path)
+        os.remove(unsample_csv_path)
 
 
 def run_all_comparsion(sample_method):
