@@ -722,7 +722,7 @@ def stat_for_single_alg(args_in):
     df = df_in.copy()
     try:
         if not result_dir:
-                DIR_NAME = "ANOVA_result_full"
+                DIR_NAME = "/ANOVA/ANOVA_result_full"
                 # df.to_csv(f"csv_full_interm/{name}.csv",index=False)
         else:
                 DIR_NAME = result_dir
@@ -1153,7 +1153,7 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock = None):
     else:
         exp_name = exp_name_full
     
-    result_dir_sampled = f"{sample_method}_full_result/sample@{info['sample']}_random@{info['random']}_split@{info['split']}"
+    result_dir_sampled = f"/ANOVA/{sample_method}_full_result/sample@{info['sample']}_random@{info['random']}_split@{info['split']}"
     
     with write_lock:
         if not os.path.exists(result_dir_sampled):
@@ -1173,15 +1173,15 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock = None):
         stopped_at = ff.readlines()[0].strip()
     
     if stopped_at == "2":
-        result_dir_full = "ANOVA_result_full_COMBINE"
+        result_dir_full = "/ANOVA/ANOVA_result_full_COMBINE"
     else:
-        result_dir_full = "ANOVA_result_full_SINGLE"
+        result_dir_full = "/ANOVA/ANOVA_result_full_SINGLE"
         
     trend1 = compare_trend(os.path.join(result_dir_full,f"{exp_name_full}___trend.csv"),os.path.join(result_dir_sampled,f"{exp_name}___trend.csv"),exp_name,result_dir_sampled,empty_d2=empty_d2)
     trend2 = calc_frechet(os.path.join(result_dir_full,f"{exp_name_full}___cof.csv"),os.path.join(result_dir_sampled,f"{exp_name}___cof.csv"),exp_name,result_dir_sampled,empty_d2=empty_d2)
     
     with write_lock:
-        with open(f"RESULT_{sample_method}.csv","a") as f:
+        with open(f"/ANOVA/RESULT_{sample_method}.csv","a") as f:
             if sample_method == "stratified":
                 print(f"{info['term']},{info['sample']},{info['random']},{info['split']},{trend1},{trend2}",file=f)
             else:
@@ -1200,7 +1200,7 @@ def run_all_comparsion(sample_method):
     print(f"Done!")
     print("Current time: %s" %time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     print("Start comparing.........")
-    with open(f"RESULT_{sample_method}.csv","w") as f:
+    with open(f"/ANOVA/RESULT_{sample_method}.csv","w") as f:
         if sample_method == "stratified":
             print("stratified_term,sample_ratio,random,split,alg,num_of_terms_changed,num_turning_mismatch,avg_diff_per_var,r2_full,r2_sample,r2_unsample,avg_frechet_dist",file=f)
         else:
@@ -1274,7 +1274,7 @@ def run_calvin_comparison():
     
     
     sample_method = "calvin-comp"
-    with open(f"RESULT_{sample_method}.csv","w") as f:
+    with open(f"/ANOVA/RESULT_{sample_method}.csv","w") as f:
         print("sample_ratio,random,split,alg,num_of_terms_changed,num_turning_mismatch,avg_diff_per_var,r2_full,r2_sample,r2_unsample,avg_frechet_dist",file=f)
     
     lock = mp.Lock()
