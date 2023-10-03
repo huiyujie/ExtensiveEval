@@ -1,0 +1,102 @@
+ANOVA_analysis
+All terms are significant
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9967
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                    PR(>F)  per_var_explained
+Intercept     1.433198e-67           0.452224
+C(ReadRatio)  8.937031e-51           0.175982
+C(keys)       1.481391e-47           0.156449
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: ReadRatio, Percentage of variance explained:0.1760
+Overall trend: increasing with spearman coef = 1.00
+-------------------------------------------------
+
+Term: keys, Percentage of variance explained:0.1564
+Turning point: keys=32768.0
+This is a knee point on a decreasing curve
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                index          Coef.                   parms         PR>F  per_var_explained
+                   C(ReadRatio)[T.20]  105302.766204            C(ReadRatio) 8.937031e-51           0.175982
+                   C(ReadRatio)[T.60]  350602.655423            C(ReadRatio) 8.937031e-51           0.175982
+                  C(ReadRatio)[T.100]  989274.966104            C(ReadRatio) 8.937031e-51           0.175982
+                       C(keys)[T.512] -412828.670139                 C(keys) 1.481391e-47           0.156449
+                      C(keys)[T.2048] -611972.481151                 C(keys) 1.481391e-47           0.156449
+                      C(keys)[T.8192] -762481.373760                 C(keys) 1.481391e-47           0.156449
+                     C(keys)[T.32768] -881978.273313                 C(keys) 1.481391e-47           0.156449
+                    C(keys)[T.131072] -978953.953373                 C(keys) 1.481391e-47           0.156449
+    C(keys)[T.512]:C(ReadRatio)[T.20]  -20360.513889    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+   C(keys)[T.2048]:C(ReadRatio)[T.20]  -43029.037698    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+   C(keys)[T.8192]:C(ReadRatio)[T.20]  -25031.616071    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+  C(keys)[T.32768]:C(ReadRatio)[T.20]  -53869.866071    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+ C(keys)[T.131072]:C(ReadRatio)[T.20]  -70449.896825    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+    C(keys)[T.512]:C(ReadRatio)[T.60]  -43033.549603    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+   C(keys)[T.2048]:C(ReadRatio)[T.60]  -74258.138889    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+   C(keys)[T.8192]:C(ReadRatio)[T.60]  -78041.824405    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+  C(keys)[T.32768]:C(ReadRatio)[T.60] -143348.274802    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+ C(keys)[T.131072]:C(ReadRatio)[T.60] -176223.478175    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+   C(keys)[T.512]:C(ReadRatio)[T.100] -275066.922619    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+  C(keys)[T.2048]:C(ReadRatio)[T.100] -352676.898810    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+  C(keys)[T.8192]:C(ReadRatio)[T.100] -413104.731151    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+ C(keys)[T.32768]:C(ReadRatio)[T.100] -540459.432540    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+C(keys)[T.131072]:C(ReadRatio)[T.100] -601879.811508    C(keys):C(ReadRatio) 3.974666e-32           0.077185
+                      C(threads)[T.2] -107541.388889              C(threads) 8.380805e-32           0.054239
+                      C(threads)[T.4] -159428.298611              C(threads) 8.380805e-32           0.054239
+                      C(threads)[T.8] -311696.493056              C(threads) 8.380805e-32           0.054239
+                     C(threads)[T.16] -440586.605903              C(threads) 8.380805e-32           0.054239
+                     C(threads)[T.28] -555238.893849              C(threads) 8.380805e-32           0.054239
+   C(threads)[T.2]:C(ReadRatio)[T.20]    6705.722222 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+   C(threads)[T.4]:C(ReadRatio)[T.20]   19152.527778 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+   C(threads)[T.8]:C(ReadRatio)[T.20]   37070.652778 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+  C(threads)[T.16]:C(ReadRatio)[T.20]   78113.916667 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+  C(threads)[T.28]:C(ReadRatio)[T.20]  131197.309524 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+   C(threads)[T.2]:C(ReadRatio)[T.60]  -33164.833333 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+   C(threads)[T.4]:C(ReadRatio)[T.60]  -28882.333333 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+   C(threads)[T.8]:C(ReadRatio)[T.60]  -35243.722222 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+  C(threads)[T.16]:C(ReadRatio)[T.60]    3046.694444 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+  C(threads)[T.28]:C(ReadRatio)[T.60]   64243.202381 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+  C(threads)[T.2]:C(ReadRatio)[T.100]  -73598.666667 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+  C(threads)[T.4]:C(ReadRatio)[T.100] -107590.333333 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+  C(threads)[T.8]:C(ReadRatio)[T.100] -167071.791667 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+ C(threads)[T.16]:C(ReadRatio)[T.100] -222695.437500 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+ C(threads)[T.28]:C(ReadRatio)[T.100] -287748.031746 C(threads):C(ReadRatio) 1.725651e-22           0.038374
+       C(threads)[T.2]:C(keys)[T.512]  156606.000000      C(threads):C(keys) 4.311115e-19           0.037453
+       C(threads)[T.4]:C(keys)[T.512]  183907.666667      C(threads):C(keys) 4.311115e-19           0.037453
+       C(threads)[T.8]:C(keys)[T.512]  215224.333333      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.16]:C(keys)[T.512]  168888.187500      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.28]:C(keys)[T.512]   88834.988095      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.2]:C(keys)[T.2048]  111115.583333      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.4]:C(keys)[T.2048]  158218.708333      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.8]:C(keys)[T.2048]  268758.291667      C(threads):C(keys) 4.311115e-19           0.037453
+     C(threads)[T.16]:C(keys)[T.2048]  315829.125000      C(threads):C(keys) 4.311115e-19           0.037453
+     C(threads)[T.28]:C(keys)[T.2048]  378471.833333      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.2]:C(keys)[T.8192]   73272.166667      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.4]:C(keys)[T.8192]  107172.791667      C(threads):C(keys) 4.311115e-19           0.037453
+      C(threads)[T.8]:C(keys)[T.8192]  214093.000000      C(threads):C(keys) 4.311115e-19           0.037453
+     C(threads)[T.16]:C(keys)[T.8192]  277300.760417      C(threads):C(keys) 4.311115e-19           0.037453
+     C(threads)[T.28]:C(keys)[T.8192]  345009.994048      C(threads):C(keys) 4.311115e-19           0.037453
+     C(threads)[T.2]:C(keys)[T.32768]   51409.750000      C(threads):C(keys) 4.311115e-19           0.037453
+     C(threads)[T.4]:C(keys)[T.32768]   78453.500000      C(threads):C(keys) 4.311115e-19           0.037453
+     C(threads)[T.8]:C(keys)[T.32768]  186174.020833      C(threads):C(keys) 4.311115e-19           0.037453
+    C(threads)[T.16]:C(keys)[T.32768]  215582.458333      C(threads):C(keys) 4.311115e-19           0.037453
+    C(threads)[T.28]:C(keys)[T.32768]  216954.125000      C(threads):C(keys) 4.311115e-19           0.037453
+    C(threads)[T.2]:C(keys)[T.131072]   66943.500000      C(threads):C(keys) 4.311115e-19           0.037453
+    C(threads)[T.4]:C(keys)[T.131072]  100399.125000      C(threads):C(keys) 4.311115e-19           0.037453
+    C(threads)[T.8]:C(keys)[T.131072]  217020.062500      C(threads):C(keys) 4.311115e-19           0.037453
+   C(threads)[T.16]:C(keys)[T.131072]  256718.604167      C(threads):C(keys) 4.311115e-19           0.037453
+   C(threads)[T.28]:C(keys)[T.131072]  260157.636905      C(threads):C(keys) 4.311115e-19           0.037453

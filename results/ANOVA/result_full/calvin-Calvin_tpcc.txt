@@ -1,0 +1,58 @@
+ANOVA_analysis
+All terms are significant
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.8060
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                  PR(>F)  per_var_explained
+C(WH)      2.255701e-117           0.335404
+Intercept  1.622095e-101           0.241629
+C(nnodes)   3.881810e-84           0.195522
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: WH, Percentage of variance explained:0.3354
+Turning point: WH=32.0
+Trend: First increasing, Then decreasing
+
+-------------------------------------------------
+
+Term: nnodes, Percentage of variance explained:0.1955
+Turning point: nnodes=16.0
+This is a knee point on a decreasing curve
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+          index        Coef.     parms          PR>F  per_var_explained
+     C(WH)[T.2]  1934.105236     C(WH) 2.255701e-117           0.335404
+     C(WH)[T.4]  2836.777298     C(WH) 2.255701e-117           0.335404
+     C(WH)[T.8]  8296.916354     C(WH) 2.255701e-117           0.335404
+    C(WH)[T.16] 10229.000173     C(WH) 2.255701e-117           0.335404
+    C(WH)[T.32] 10458.184238     C(WH) 2.255701e-117           0.335404
+    C(WH)[T.64] 10299.985425     C(WH) 2.255701e-117           0.335404
+   C(WH)[T.128]  7808.563260     C(WH) 2.255701e-117           0.335404
+ C(nnodes)[T.2] -2639.060705 C(nnodes)  3.881810e-84           0.195522
+ C(nnodes)[T.4] -4427.634882 C(nnodes)  3.881810e-84           0.195522
+ C(nnodes)[T.8] -6372.648706 C(nnodes)  3.881810e-84           0.195522
+C(nnodes)[T.16] -8110.801249 C(nnodes)  3.881810e-84           0.195522
+C(nnodes)[T.32] -8956.729126 C(nnodes)  3.881810e-84           0.195522
+  C(dist)[T.10] -3622.036468   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.20] -3723.591257   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.30] -4124.258702   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.40] -4713.797598   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.50] -5615.990604   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.60] -5558.416449   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.70] -6238.947437   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.80] -6401.298104   C(dist)  7.066126e-38           0.078059
+  C(dist)[T.90] -6801.102117   C(dist)  7.066126e-38           0.078059
+ C(dist)[T.100] -7340.601608   C(dist)  7.066126e-38           0.078059

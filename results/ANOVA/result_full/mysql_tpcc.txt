@@ -1,0 +1,286 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(num_chunk):C(chunk_size)': 0.30264566375256574}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9982
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                   PR(>F)  per_var_explained
+C(WH):C(terminal)     0.0           0.486393
+C(terminal)           0.0           0.355933
+Intercept             0.0           0.138195
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: WH:terminal, Percentage of variance explained:0.4864
+Turning point: terminal=16.0,WH fixed at2.0
+Trend: First increasing, Then decreasing
+
+Turning point: terminal=16.0,WH fixed at4.0
+Trend: First increasing, Then decreasing
+
+Turning point: terminal=32.0,WH fixed at8.0
+Trend: First increasing, Then decreasing
+
+Turning point: terminal=32.0,WH fixed at16.0
+Trend: First increasing, Then decreasing
+
+Turning point: terminal=16.0,WH fixed at32.0
+Trend: First increasing, Then decreasing
+
+Turning point: terminal=32.0,WH fixed at64.0
+Trend: First increasing, Then decreasing
+
+Turning point: terminal=16.0,WH fixed at128.0
+Trend: First increasing, Then decreasing
+
+Turning point: terminal=16.0,WH fixed at256.0
+Trend: First increasing, Then decreasing
+
+**Overall, Coef. all have a turning point while WH is fixed
+
+Turning point: WH=128.0,terminal fixed at 2.0
+Trend: First increasing, Then decreasing
+
+Turning point: WH=4.0,terminal fixed at 4.0
+Trend: First decreasing, Then flat
+
+Turning point: WH=16.0,terminal fixed at 8.0
+Trend: First increasing, Then decreasing
+
+Turning point: WH=8.0,terminal fixed at 16.0
+Trend: First increasing, Then decreasing
+
+Turning point: WH=8.0,terminal fixed at 32.0
+Trend: First increasing, Then decreasing
+
+Turning point: WH=16.0,terminal fixed at 64.0
+Trend: First increasing, Then decreasing
+
+Turning point: WH=32.0,terminal fixed at 128.0
+Trend: First increasing, Then decreasing
+
+Turning point: WH=32.0,terminal fixed at 256.0
+Trend: First increasing, Then decreasing
+
+Turning point: WH=32.0,terminal fixed at 512.0
+Trend: First increasing, Then decreasing
+
+**Overall, Coef. all have a turning point while WH is fixed
+
+-------------------------------------------------
+
+Term: terminal, Percentage of variance explained:0.3559
+Turning point: terminal=256.0
+Trend: First decreasing, Then increasing
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                   index      Coef.                     parms         PR>F  per_var_explained
+             C(WH)[T.2]:C(terminal)[T.2]  -1.821405         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.4]:C(terminal)[T.2]  -2.115842         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.8]:C(terminal)[T.2]  -2.426107         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.16]:C(terminal)[T.2]  -0.435381         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.32]:C(terminal)[T.2]  -0.934234         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.64]:C(terminal)[T.2]  -0.570168         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.128]:C(terminal)[T.2]  -0.395971         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.256]:C(terminal)[T.2]  -1.403336         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.2]:C(terminal)[T.4]   3.966931         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.4]:C(terminal)[T.4]   1.324307         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.8]:C(terminal)[T.4]   1.952279         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.16]:C(terminal)[T.4]   2.872591         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.32]:C(terminal)[T.4]   2.745440         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.64]:C(terminal)[T.4]   2.722978         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.128]:C(terminal)[T.4]   2.604482         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.256]:C(terminal)[T.4]   1.681201         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.2]:C(terminal)[T.8]  22.805610         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.4]:C(terminal)[T.8]  28.019676         C(WH):C(terminal) 0.000000e+00           0.486393
+             C(WH)[T.8]:C(terminal)[T.8]  28.460969         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.16]:C(terminal)[T.8]  28.813016         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.32]:C(terminal)[T.8]  27.964654         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.64]:C(terminal)[T.8]  27.432866         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.128]:C(terminal)[T.8]  26.827178         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.256]:C(terminal)[T.8]  26.837551         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.2]:C(terminal)[T.16]  51.793203         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.4]:C(terminal)[T.16]  79.086280         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.8]:C(terminal)[T.16]  84.740054         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.16]:C(terminal)[T.16]  83.327345         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.32]:C(terminal)[T.16]  82.178211         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.64]:C(terminal)[T.16]  80.720157         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.128]:C(terminal)[T.16]  64.612945         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.256]:C(terminal)[T.16]  72.663157         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.2]:C(terminal)[T.32]  16.602764         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.4]:C(terminal)[T.32]  74.530246         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.8]:C(terminal)[T.32]  91.284874         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.16]:C(terminal)[T.32]  88.836562         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.32]:C(terminal)[T.32]  81.470546         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.64]:C(terminal)[T.32]  81.161004         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.128]:C(terminal)[T.32]  56.188928         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.256]:C(terminal)[T.32]  69.416058         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.2]:C(terminal)[T.64]   7.097958         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.4]:C(terminal)[T.64]  27.155533         C(WH):C(terminal) 0.000000e+00           0.486393
+            C(WH)[T.8]:C(terminal)[T.64]  59.059024         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.16]:C(terminal)[T.64]  61.399687         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.32]:C(terminal)[T.64]  58.512043         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.64]:C(terminal)[T.64]  55.685109         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.128]:C(terminal)[T.64]  36.345160         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.256]:C(terminal)[T.64]  46.396599         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.2]:C(terminal)[T.128]   3.176049         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.4]:C(terminal)[T.128]  11.826677         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.8]:C(terminal)[T.128]  27.137635         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.16]:C(terminal)[T.128]  39.876319         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.32]:C(terminal)[T.128]  41.964494         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.64]:C(terminal)[T.128]  40.296639         C(WH):C(terminal) 0.000000e+00           0.486393
+         C(WH)[T.128]:C(terminal)[T.128]  20.734868         C(WH):C(terminal) 0.000000e+00           0.486393
+         C(WH)[T.256]:C(terminal)[T.128]  29.072724         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.2]:C(terminal)[T.256]   1.488183         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.4]:C(terminal)[T.256]   5.322550         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.8]:C(terminal)[T.256]  13.360538         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.16]:C(terminal)[T.256]  19.149548         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.32]:C(terminal)[T.256]  24.249519         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.64]:C(terminal)[T.256]  23.318998         C(WH):C(terminal) 0.000000e+00           0.486393
+         C(WH)[T.128]:C(terminal)[T.256]  12.668664         C(WH):C(terminal) 0.000000e+00           0.486393
+         C(WH)[T.256]:C(terminal)[T.256]  14.428055         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.2]:C(terminal)[T.512]   0.646292         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.4]:C(terminal)[T.512]   2.319053         C(WH):C(terminal) 0.000000e+00           0.486393
+           C(WH)[T.8]:C(terminal)[T.512]   6.892625         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.16]:C(terminal)[T.512]  10.254559         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.32]:C(terminal)[T.512]  12.607993         C(WH):C(terminal) 0.000000e+00           0.486393
+          C(WH)[T.64]:C(terminal)[T.512]  12.812781         C(WH):C(terminal) 0.000000e+00           0.486393
+         C(WH)[T.128]:C(terminal)[T.512]   7.640632         C(WH):C(terminal) 0.000000e+00           0.486393
+         C(WH)[T.256]:C(terminal)[T.512]   8.413745         C(WH):C(terminal) 0.000000e+00           0.486393
+                        C(terminal)[T.2]   3.934064               C(terminal) 0.000000e+00           0.355933
+                        C(terminal)[T.4]  -0.057621               C(terminal) 0.000000e+00           0.355933
+                        C(terminal)[T.8] -17.420694               C(terminal) 0.000000e+00           0.355933
+                       C(terminal)[T.16] -60.165884               C(terminal) 0.000000e+00           0.355933
+                       C(terminal)[T.32] -75.313666               C(terminal) 0.000000e+00           0.355933
+                       C(terminal)[T.64] -81.806662               C(terminal) 0.000000e+00           0.355933
+                      C(terminal)[T.128] -84.608451               C(terminal) 0.000000e+00           0.355933
+                      C(terminal)[T.256] -84.716116               C(terminal) 0.000000e+00           0.355933
+                      C(terminal)[T.512] -83.894179               C(terminal) 0.000000e+00           0.355933
+                              C(WH)[T.2]   0.331184                     C(WH) 3.528835e-80           0.003143
+                              C(WH)[T.4]   0.538494                     C(WH) 3.528835e-80           0.003143
+                              C(WH)[T.8]  -1.466979                     C(WH) 3.528835e-80           0.003143
+                             C(WH)[T.16]  -4.271564                     C(WH) 3.528835e-80           0.003143
+                             C(WH)[T.32]  -5.593603                     C(WH) 3.528835e-80           0.003143
+                             C(WH)[T.64]  -8.566074                     C(WH) 3.528835e-80           0.003143
+                            C(WH)[T.128]  -6.789598                     C(WH) 3.528835e-80           0.003143
+                            C(WH)[T.256]  -9.277724                     C(WH) 3.528835e-80           0.003143
+            C(WH)[T.2]:C(num_chunk)[T.2]  -0.170225        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.4]:C(num_chunk)[T.2]   0.076637        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.8]:C(num_chunk)[T.2]   0.736863        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.16]:C(num_chunk)[T.2]   2.011378        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.32]:C(num_chunk)[T.2]   2.200055        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.64]:C(num_chunk)[T.2]   2.994884        C(WH):C(num_chunk) 1.747754e-64           0.002935
+          C(WH)[T.128]:C(num_chunk)[T.2]   1.457167        C(WH):C(num_chunk) 1.747754e-64           0.002935
+          C(WH)[T.256]:C(num_chunk)[T.2]   3.186647        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.2]:C(num_chunk)[T.4]  -0.073169        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.4]:C(num_chunk)[T.4]  -0.261310        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.8]:C(num_chunk)[T.4]   0.827236        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.16]:C(num_chunk)[T.4]   2.849275        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.32]:C(num_chunk)[T.4]   3.681777        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.64]:C(num_chunk)[T.4]   4.914311        C(WH):C(num_chunk) 1.747754e-64           0.002935
+          C(WH)[T.128]:C(num_chunk)[T.4]   2.823198        C(WH):C(num_chunk) 1.747754e-64           0.002935
+          C(WH)[T.256]:C(num_chunk)[T.4]   4.912632        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.2]:C(num_chunk)[T.8]  -0.099256        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.4]:C(num_chunk)[T.8]   0.245056        C(WH):C(num_chunk) 1.747754e-64           0.002935
+            C(WH)[T.8]:C(num_chunk)[T.8]   1.213414        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.16]:C(num_chunk)[T.8]   3.081605        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.32]:C(num_chunk)[T.8]   4.185402        C(WH):C(num_chunk) 1.747754e-64           0.002935
+           C(WH)[T.64]:C(num_chunk)[T.8]   5.727681        C(WH):C(num_chunk) 1.747754e-64           0.002935
+          C(WH)[T.128]:C(num_chunk)[T.8]   3.451414        C(WH):C(num_chunk) 1.747754e-64           0.002935
+          C(WH)[T.256]:C(num_chunk)[T.8]   6.004906        C(WH):C(num_chunk) 1.747754e-64           0.002935
+        C(WH)[T.2]:C(chunk_size)[T.2048]  -0.147000       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.4]:C(chunk_size)[T.2048]  -0.252307       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.8]:C(chunk_size)[T.2048]  -0.053678       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.16]:C(chunk_size)[T.2048]  -0.225193       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.32]:C(chunk_size)[T.2048]  -0.053033       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.64]:C(chunk_size)[T.2048]   0.989926       C(WH):C(chunk_size) 9.191162e-47           0.002168
+      C(WH)[T.128]:C(chunk_size)[T.2048]   0.934465       C(WH):C(chunk_size) 9.191162e-47           0.002168
+      C(WH)[T.256]:C(chunk_size)[T.2048]   0.628794       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.2]:C(chunk_size)[T.4096]   0.037853       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.4]:C(chunk_size)[T.4096]   0.037754       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.8]:C(chunk_size)[T.4096]   0.127979       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.16]:C(chunk_size)[T.4096]   0.142905       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.32]:C(chunk_size)[T.4096]   0.644971       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.64]:C(chunk_size)[T.4096]   1.999623       C(WH):C(chunk_size) 9.191162e-47           0.002168
+      C(WH)[T.128]:C(chunk_size)[T.4096]   2.159787       C(WH):C(chunk_size) 9.191162e-47           0.002168
+      C(WH)[T.256]:C(chunk_size)[T.4096]   1.686255       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.2]:C(chunk_size)[T.8192]  -0.333737       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.4]:C(chunk_size)[T.8192]  -0.176229       C(WH):C(chunk_size) 9.191162e-47           0.002168
+        C(WH)[T.8]:C(chunk_size)[T.8192]   0.055365       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.16]:C(chunk_size)[T.8192]   0.121048       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.32]:C(chunk_size)[T.8192]   0.478237       C(WH):C(chunk_size) 9.191162e-47           0.002168
+       C(WH)[T.64]:C(chunk_size)[T.8192]   2.402002       C(WH):C(chunk_size) 9.191162e-47           0.002168
+      C(WH)[T.128]:C(chunk_size)[T.8192]   1.966019       C(WH):C(chunk_size) 9.191162e-47           0.002168
+      C(WH)[T.256]:C(chunk_size)[T.8192]   5.910303       C(WH):C(chunk_size) 9.191162e-47           0.002168
+      C(terminal)[T.2]:C(num_chunk)[T.2]   0.100339  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.4]:C(num_chunk)[T.2]  -0.366233  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.8]:C(num_chunk)[T.2]  -0.448445  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.16]:C(num_chunk)[T.2]   0.396357  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.32]:C(num_chunk)[T.2]   2.181618  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.64]:C(num_chunk)[T.2]   2.268852  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.128]:C(num_chunk)[T.2]   2.001272  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.256]:C(num_chunk)[T.2]   1.247197  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.512]:C(num_chunk)[T.2]   0.064013  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.2]:C(num_chunk)[T.4]  -0.296150  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.4]:C(num_chunk)[T.4]  -0.096035  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.8]:C(num_chunk)[T.4]  -0.065199  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.16]:C(num_chunk)[T.4]   1.028881  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.32]:C(num_chunk)[T.4]   4.186305  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.64]:C(num_chunk)[T.4]   3.585311  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.128]:C(num_chunk)[T.4]   2.945154  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.256]:C(num_chunk)[T.4]   2.023899  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.512]:C(num_chunk)[T.4]   0.395103  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.2]:C(num_chunk)[T.8]   0.391414  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.4]:C(num_chunk)[T.8]   0.508195  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+      C(terminal)[T.8]:C(num_chunk)[T.8]   0.400097  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.16]:C(num_chunk)[T.8]   1.416616  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.32]:C(num_chunk)[T.8]   4.369714  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+     C(terminal)[T.64]:C(num_chunk)[T.8]   4.552990  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.128]:C(num_chunk)[T.8]   4.176906  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.256]:C(num_chunk)[T.8]   2.912329  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+    C(terminal)[T.512]:C(num_chunk)[T.8]   1.153847  C(terminal):C(num_chunk) 6.803238e-37           0.001816
+  C(terminal)[T.2]:C(chunk_size)[T.2048]   0.256217 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.4]:C(chunk_size)[T.2048]   0.059243 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.8]:C(chunk_size)[T.2048]   0.001311 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.16]:C(chunk_size)[T.2048]   0.649816 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.32]:C(chunk_size)[T.2048]  -0.035905 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.64]:C(chunk_size)[T.2048]   0.708862 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.128]:C(chunk_size)[T.2048]   0.695038 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.256]:C(chunk_size)[T.2048]   0.354969 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.512]:C(chunk_size)[T.2048]   0.135812 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.2]:C(chunk_size)[T.4096]   0.635082 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.4]:C(chunk_size)[T.4096]   0.308332 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.8]:C(chunk_size)[T.4096]   0.496874 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.16]:C(chunk_size)[T.4096]   0.808497 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.32]:C(chunk_size)[T.4096]   0.647329 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.64]:C(chunk_size)[T.4096]   0.890399 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.128]:C(chunk_size)[T.4096]   1.835418 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.256]:C(chunk_size)[T.4096]   1.078950 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.512]:C(chunk_size)[T.4096]   0.646241 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.2]:C(chunk_size)[T.8192]   0.673268 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.4]:C(chunk_size)[T.8192]   0.543879 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+  C(terminal)[T.8]:C(chunk_size)[T.8192]  -0.460317 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.16]:C(chunk_size)[T.8192]   2.217117 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.32]:C(chunk_size)[T.8192]   2.237264 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+ C(terminal)[T.64]:C(chunk_size)[T.8192]   2.511145 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.128]:C(chunk_size)[T.8192]   2.926233 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.256]:C(chunk_size)[T.8192]   1.981851 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+C(terminal)[T.512]:C(chunk_size)[T.8192]   1.167102 C(terminal):C(chunk_size) 1.453732e-10           0.000712
+                       C(num_chunk)[T.2]  -0.747731              C(num_chunk) 1.486913e-05           0.000172
+                       C(num_chunk)[T.4]  -1.377232              C(num_chunk) 1.486913e-05           0.000172
+                       C(num_chunk)[T.8]  -2.480773              C(num_chunk) 1.486913e-05           0.000172
+                   C(chunk_size)[T.2048]  -0.160486             C(chunk_size) 3.918990e-03           0.000091
+                   C(chunk_size)[T.4096]  -1.009591             C(chunk_size) 3.918990e-03           0.000091
+                   C(chunk_size)[T.8192]  -1.636213             C(chunk_size) 3.918990e-03           0.000091

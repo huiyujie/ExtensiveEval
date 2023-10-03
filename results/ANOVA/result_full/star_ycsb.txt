@@ -1,0 +1,192 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(partition_num):C(zipf)': 0.9568055817374114, 'C(partition_num)': 0.11807173868260383}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9642
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                PR(>F)  per_var_explained
+C(rw)              0.0           0.443858
+C(rw):C(cross)     0.0           0.360490
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: rw, Percentage of variance explained:0.4439
+Overall trend: increasing with spearman coef = 1.00
+-------------------------------------------------
+
+Term: rw:cross, Percentage of variance explained:0.3605
+When fixing rw@20.0, Overall trend: decreasing with spearman coef = -0.90
+
+When fixing rw@60.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing rw@100.0, Overall trend: decreasing with spearman coef = -1.00
+
+**Overall, Coef. decrease with cross while rw is fixed
+
+When fixing cross@20.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing cross@40.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing cross@60.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing cross@80.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing cross@100.0, Overall trend: decreasing with spearman coef = -1.00
+
+**Overall, Coef. decrease with rw while cross is fixed
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                  index          Coef.                       parms          PR>F  per_var_explained
+                            C(rw)[T.20]    4489.838674                       C(rw)  0.000000e+00           0.443858
+                            C(rw)[T.60]   22146.317256                       C(rw)  0.000000e+00           0.443858
+                           C(rw)[T.100]  206161.260455                       C(rw)  0.000000e+00           0.443858
+             C(rw)[T.20]:C(cross)[T.20]    -814.828434              C(rw):C(cross)  0.000000e+00           0.360490
+             C(rw)[T.60]:C(cross)[T.20]   -3703.703471              C(rw):C(cross)  0.000000e+00           0.360490
+            C(rw)[T.100]:C(cross)[T.20]  -86228.061079              C(rw):C(cross)  0.000000e+00           0.360490
+             C(rw)[T.20]:C(cross)[T.40]   -1003.650479              C(rw):C(cross)  0.000000e+00           0.360490
+             C(rw)[T.60]:C(cross)[T.40]   -5246.369971              C(rw):C(cross)  0.000000e+00           0.360490
+            C(rw)[T.100]:C(cross)[T.40] -107604.048282              C(rw):C(cross)  0.000000e+00           0.360490
+             C(rw)[T.20]:C(cross)[T.60]    -992.474493              C(rw):C(cross)  0.000000e+00           0.360490
+             C(rw)[T.60]:C(cross)[T.60]   -5873.256136              C(rw):C(cross)  0.000000e+00           0.360490
+            C(rw)[T.100]:C(cross)[T.60] -118683.717432              C(rw):C(cross)  0.000000e+00           0.360490
+             C(rw)[T.20]:C(cross)[T.80]   -1023.337856              C(rw):C(cross)  0.000000e+00           0.360490
+             C(rw)[T.60]:C(cross)[T.80]   -6593.022626              C(rw):C(cross)  0.000000e+00           0.360490
+            C(rw)[T.100]:C(cross)[T.80] -125413.679336              C(rw):C(cross)  0.000000e+00           0.360490
+            C(rw)[T.20]:C(cross)[T.100]   -1283.247084              C(rw):C(cross)  0.000000e+00           0.360490
+            C(rw)[T.60]:C(cross)[T.100]   -7537.435077              C(rw):C(cross)  0.000000e+00           0.360490
+           C(rw)[T.100]:C(cross)[T.100] -130053.512244              C(rw):C(cross)  0.000000e+00           0.360490
+            C(rw)[T.20]:C(servers)[T.4]   -1020.588002            C(rw):C(servers) 6.516083e-291           0.039111
+            C(rw)[T.60]:C(servers)[T.4]   -5382.714396            C(rw):C(servers) 6.516083e-291           0.039111
+           C(rw)[T.100]:C(servers)[T.4]  -23673.545062            C(rw):C(servers) 6.516083e-291           0.039111
+            C(rw)[T.20]:C(servers)[T.8]   -1821.490322            C(rw):C(servers) 6.516083e-291           0.039111
+            C(rw)[T.60]:C(servers)[T.8]   -9277.194632            C(rw):C(servers) 6.516083e-291           0.039111
+           C(rw)[T.100]:C(servers)[T.8]  -38434.151233            C(rw):C(servers) 6.516083e-291           0.039111
+            C(threads)[T.8]:C(rw)[T.20]     -18.532888            C(threads):C(rw) 3.916379e-208           0.025937
+           C(threads)[T.16]:C(rw)[T.20]   -1059.949330            C(threads):C(rw) 3.916379e-208           0.025937
+            C(threads)[T.8]:C(rw)[T.60]    -894.878250            C(threads):C(rw) 3.916379e-208           0.025937
+           C(threads)[T.16]:C(rw)[T.60]   -5439.759219            C(threads):C(rw) 3.916379e-208           0.025937
+           C(threads)[T.8]:C(rw)[T.100]  -12100.637237            C(threads):C(rw) 3.916379e-208           0.025937
+          C(threads)[T.16]:C(rw)[T.100]  -33404.758552            C(threads):C(rw) 3.916379e-208           0.025937
+         C(threads)[T.8]:C(cross)[T.20]    9857.925443         C(threads):C(cross) 1.917574e-133           0.016116
+        C(threads)[T.16]:C(cross)[T.20]   22422.629223         C(threads):C(cross) 1.917574e-133           0.016116
+         C(threads)[T.8]:C(cross)[T.40]   11325.247067         C(threads):C(cross) 1.917574e-133           0.016116
+        C(threads)[T.16]:C(cross)[T.40]   26574.360290         C(threads):C(cross) 1.917574e-133           0.016116
+         C(threads)[T.8]:C(cross)[T.60]   12157.143215         C(threads):C(cross) 1.917574e-133           0.016116
+        C(threads)[T.16]:C(cross)[T.60]   28922.429861         C(threads):C(cross) 1.917574e-133           0.016116
+         C(threads)[T.8]:C(cross)[T.80]   12697.093635         C(threads):C(cross) 1.917574e-133           0.016116
+        C(threads)[T.16]:C(cross)[T.80]   30165.056373         C(threads):C(cross) 1.917574e-133           0.016116
+        C(threads)[T.8]:C(cross)[T.100]   13147.642301         C(threads):C(cross) 1.917574e-133           0.016116
+       C(threads)[T.16]:C(cross)[T.100]   31357.702850         C(threads):C(cross) 1.917574e-133           0.016116
+   C(partition_num)[T.32]:C(threads)[2]    2105.352612 C(partition_num):C(threads) 1.403468e-124           0.014850
+  C(partition_num)[T.128]:C(threads)[2]     -15.541564 C(partition_num):C(threads) 1.403468e-124           0.014850
+  C(partition_num)[T.256]:C(threads)[2]   -1544.984328 C(partition_num):C(threads) 1.403468e-124           0.014850
+   C(partition_num)[T.32]:C(threads)[8]    3443.118266 C(partition_num):C(threads) 1.403468e-124           0.014850
+  C(partition_num)[T.128]:C(threads)[8]    4109.904110 C(partition_num):C(threads) 1.403468e-124           0.014850
+  C(partition_num)[T.256]:C(threads)[8]    4659.560117 C(partition_num):C(threads) 1.403468e-124           0.014850
+  C(partition_num)[T.32]:C(threads)[16]  -11842.114941 C(partition_num):C(threads) 1.403468e-124           0.014850
+ C(partition_num)[T.128]:C(threads)[16]   -7707.665924 C(partition_num):C(threads) 1.403468e-124           0.014850
+ C(partition_num)[T.256]:C(threads)[16]   -6020.200238 C(partition_num):C(threads) 1.403468e-124           0.014850
+                        C(threads)[T.8]  -16967.514911                  C(threads)  9.978016e-77           0.008164
+                       C(threads)[T.16]  -25569.981103                  C(threads)  9.978016e-77           0.008164
+             C(zipf)[T.0.4]:C(rw)[T.20]     -94.114980               C(zipf):C(rw)  1.368746e-75           0.008817
+             C(zipf)[T.0.8]:C(rw)[T.20]     -24.964221               C(zipf):C(rw)  1.368746e-75           0.008817
+            C(zipf)[T.0.99]:C(rw)[T.20]     128.269094               C(zipf):C(rw)  1.368746e-75           0.008817
+             C(zipf)[T.0.4]:C(rw)[T.60]    -873.982270               C(zipf):C(rw)  1.368746e-75           0.008817
+             C(zipf)[T.0.8]:C(rw)[T.60]    -401.907465               C(zipf):C(rw)  1.368746e-75           0.008817
+            C(zipf)[T.0.99]:C(rw)[T.60]     444.741264               C(zipf):C(rw)  1.368746e-75           0.008817
+            C(zipf)[T.0.4]:C(rw)[T.100]  -15330.523016               C(zipf):C(rw)  1.368746e-75           0.008817
+            C(zipf)[T.0.8]:C(rw)[T.100]   -9517.343418               C(zipf):C(rw)  1.368746e-75           0.008817
+           C(zipf)[T.0.99]:C(rw)[T.100]    1856.512147               C(zipf):C(rw)  1.368746e-75           0.008817
+     C(partition_num)[T.32]:C(rw)[T.20]    -352.230030      C(partition_num):C(rw)  2.514732e-47           0.005549
+    C(partition_num)[T.128]:C(rw)[T.20]    -791.706829      C(partition_num):C(rw)  2.514732e-47           0.005549
+    C(partition_num)[T.256]:C(rw)[T.20]   -1041.968157      C(partition_num):C(rw)  2.514732e-47           0.005549
+     C(partition_num)[T.32]:C(rw)[T.60]   -1130.625358      C(partition_num):C(rw)  2.514732e-47           0.005549
+    C(partition_num)[T.128]:C(rw)[T.60]   -2016.514357      C(partition_num):C(rw)  2.514732e-47           0.005549
+    C(partition_num)[T.256]:C(rw)[T.60]   -3280.305491      C(partition_num):C(rw)  2.514732e-47           0.005549
+    C(partition_num)[T.32]:C(rw)[T.100]   -6350.003270      C(partition_num):C(rw)  2.514732e-47           0.005549
+   C(partition_num)[T.128]:C(rw)[T.100]  -13317.046470      C(partition_num):C(rw)  2.514732e-47           0.005549
+   C(partition_num)[T.256]:C(rw)[T.100]  -17966.397181      C(partition_num):C(rw)  2.514732e-47           0.005549
+                         C(cross)[T.20]   -3036.266788                    C(cross)  3.035779e-21           0.002351
+                         C(cross)[T.40]   -7085.757846                    C(cross)  3.035779e-21           0.002351
+                         C(cross)[T.60]  -10861.018753                    C(cross)  3.035779e-21           0.002351
+                         C(cross)[T.80]  -13982.047823                    C(cross)  3.035779e-21           0.002351
+                        C(cross)[T.100]  -16642.504458                    C(cross)  3.035779e-21           0.002351
+                        C(servers)[T.4]   -7304.500430                  C(servers)  2.003556e-19           0.001906
+                        C(servers)[T.8]  -15453.718801                  C(servers)  2.003556e-19           0.001906
+ C(partition_num)[T.32]:C(servers)[T.4]     631.848683 C(partition_num):C(servers)  8.315081e-19           0.002161
+C(partition_num)[T.128]:C(servers)[T.4]    4697.622392 C(partition_num):C(servers)  8.315081e-19           0.002161
+C(partition_num)[T.256]:C(servers)[T.4]    6047.086390 C(partition_num):C(servers)  8.315081e-19           0.002161
+ C(partition_num)[T.32]:C(servers)[T.8]    1260.987254 C(partition_num):C(servers)  8.315081e-19           0.002161
+C(partition_num)[T.128]:C(servers)[T.8]    9243.694246 C(partition_num):C(servers)  8.315081e-19           0.002161
+C(partition_num)[T.256]:C(servers)[T.8]   11638.470909 C(partition_num):C(servers)  8.315081e-19           0.002161
+                         C(zipf)[T.0.4]  -10117.587212                     C(zipf)  2.300912e-16           0.001677
+                         C(zipf)[T.0.8]   -5323.992737                     C(zipf)  2.300912e-16           0.001677
+                        C(zipf)[T.0.99]    1231.198420                     C(zipf)  2.300912e-16           0.001677
+          C(zipf)[T.0.4]:C(cross)[T.20]    6535.480085            C(zipf):C(cross)  7.820210e-13           0.002001
+          C(zipf)[T.0.8]:C(cross)[T.20]    3998.630053            C(zipf):C(cross)  7.820210e-13           0.002001
+         C(zipf)[T.0.99]:C(cross)[T.20]     951.629634            C(zipf):C(cross)  7.820210e-13           0.002001
+          C(zipf)[T.0.4]:C(cross)[T.40]    7783.796910            C(zipf):C(cross)  7.820210e-13           0.002001
+          C(zipf)[T.0.8]:C(cross)[T.40]    4420.856017            C(zipf):C(cross)  7.820210e-13           0.002001
+         C(zipf)[T.0.99]:C(cross)[T.40]     150.077541            C(zipf):C(cross)  7.820210e-13           0.002001
+          C(zipf)[T.0.4]:C(cross)[T.60]    8600.923900            C(zipf):C(cross)  7.820210e-13           0.002001
+          C(zipf)[T.0.8]:C(cross)[T.60]    4798.484756            C(zipf):C(cross)  7.820210e-13           0.002001
+         C(zipf)[T.0.99]:C(cross)[T.60]    -277.253332            C(zipf):C(cross)  7.820210e-13           0.002001
+          C(zipf)[T.0.4]:C(cross)[T.80]    9071.161026            C(zipf):C(cross)  7.820210e-13           0.002001
+          C(zipf)[T.0.8]:C(cross)[T.80]    4959.744234            C(zipf):C(cross)  7.820210e-13           0.002001
+         C(zipf)[T.0.99]:C(cross)[T.80]    -571.481155            C(zipf):C(cross)  7.820210e-13           0.002001
+         C(zipf)[T.0.4]:C(cross)[T.100]    9378.347287            C(zipf):C(cross)  7.820210e-13           0.002001
+         C(zipf)[T.0.8]:C(cross)[T.100]    5117.651723            C(zipf):C(cross)  7.820210e-13           0.002001
+        C(zipf)[T.0.99]:C(cross)[T.100]    -754.621308            C(zipf):C(cross)  7.820210e-13           0.002001
+         C(servers)[T.4]:C(cross)[T.20]   -4351.541678         C(servers):C(cross)  9.318512e-13           0.001735
+         C(servers)[T.8]:C(cross)[T.20]   -8402.805978         C(servers):C(cross)  9.318512e-13           0.001735
+         C(servers)[T.4]:C(cross)[T.40]   -4831.099571         C(servers):C(cross)  9.318512e-13           0.001735
+         C(servers)[T.8]:C(cross)[T.40]   -6644.737223         C(servers):C(cross)  9.318512e-13           0.001735
+         C(servers)[T.4]:C(cross)[T.60]   -3769.027698         C(servers):C(cross)  9.318512e-13           0.001735
+         C(servers)[T.8]:C(cross)[T.60]   -3970.151546         C(servers):C(cross)  9.318512e-13           0.001735
+         C(servers)[T.4]:C(cross)[T.80]   -2808.802060         C(servers):C(cross)  9.318512e-13           0.001735
+         C(servers)[T.8]:C(cross)[T.80]   -1908.361131         C(servers):C(cross)  9.318512e-13           0.001735
+        C(servers)[T.4]:C(cross)[T.100]   -1594.999338         C(servers):C(cross)  9.318512e-13           0.001735
+        C(servers)[T.8]:C(cross)[T.100]      60.314489         C(servers):C(cross)  9.318512e-13           0.001735
+        C(threads)[T.8]:C(servers)[T.4]     554.927785       C(threads):C(servers)  1.020174e-12           0.001369
+       C(threads)[T.16]:C(servers)[T.4]    5075.741583       C(threads):C(servers)  1.020174e-12           0.001369
+        C(threads)[T.8]:C(servers)[T.8]    1369.920001       C(threads):C(servers)  1.020174e-12           0.001369
+       C(threads)[T.16]:C(servers)[T.8]    8041.596432       C(threads):C(servers)  1.020174e-12           0.001369
+  C(partition_num)[T.32]:C(cross)[T.20]   -3370.218545   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.128]:C(cross)[T.20]   -8934.807671   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.256]:C(cross)[T.20]  -12123.822951   C(partition_num):C(cross)  2.336261e-11           0.001822
+  C(partition_num)[T.32]:C(cross)[T.40]   -2883.096861   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.128]:C(cross)[T.40]   -8079.227658   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.256]:C(cross)[T.40]  -10878.073354   C(partition_num):C(cross)  2.336261e-11           0.001822
+  C(partition_num)[T.32]:C(cross)[T.60]   -2659.048315   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.128]:C(cross)[T.60]   -7688.943012   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.256]:C(cross)[T.60]  -10295.725502   C(partition_num):C(cross)  2.336261e-11           0.001822
+  C(partition_num)[T.32]:C(cross)[T.80]   -2209.472273   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.128]:C(cross)[T.80]   -6835.681493   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.256]:C(cross)[T.80]   -9048.145120   C(partition_num):C(cross)  2.336261e-11           0.001822
+ C(partition_num)[T.32]:C(cross)[T.100]   -1847.855452   C(partition_num):C(cross)  2.336261e-11           0.001822
+C(partition_num)[T.128]:C(cross)[T.100]   -6121.562852   C(partition_num):C(cross)  2.336261e-11           0.001822
+C(partition_num)[T.256]:C(cross)[T.100]   -8141.142926   C(partition_num):C(cross)  2.336261e-11           0.001822
+         C(zipf)[T.0.4]:C(servers)[T.4]    1964.509247          C(zipf):C(servers)  2.610736e-03           0.000440
+         C(zipf)[T.0.8]:C(servers)[T.4]     943.034713          C(zipf):C(servers)  2.610736e-03           0.000440
+        C(zipf)[T.0.99]:C(servers)[T.4]    -756.393368          C(zipf):C(servers)  2.610736e-03           0.000440
+         C(zipf)[T.0.4]:C(servers)[T.8]    3100.144713          C(zipf):C(servers)  2.610736e-03           0.000440
+         C(zipf)[T.0.8]:C(servers)[T.8]    1557.185042          C(zipf):C(servers)  2.610736e-03           0.000440
+        C(zipf)[T.0.99]:C(servers)[T.8]   -1105.126709          C(zipf):C(servers)  2.610736e-03           0.000440
+         C(threads)[T.8]:C(zipf)[T.0.4]    1846.493809          C(threads):C(zipf)  3.893782e-03           0.000418
+        C(threads)[T.16]:C(zipf)[T.0.4]    3304.178195          C(threads):C(zipf)  3.893782e-03           0.000418
+         C(threads)[T.8]:C(zipf)[T.0.8]    1269.850612          C(threads):C(zipf)  3.893782e-03           0.000418
+        C(threads)[T.16]:C(zipf)[T.0.8]    1591.254875          C(threads):C(zipf)  3.893782e-03           0.000418
+        C(threads)[T.8]:C(zipf)[T.0.99]     726.382806          C(threads):C(zipf)  3.893782e-03           0.000418
+       C(threads)[T.16]:C(zipf)[T.0.99]    -796.758408          C(threads):C(zipf)  3.893782e-03           0.000418
