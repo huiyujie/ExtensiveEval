@@ -1,0 +1,48 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(Distributed)': 0.9999999999874416}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.7514
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                   PR(>F)  per_var_explained
+C(WH)       2.876136e-113           0.387818
+Intercept   1.479415e-105           0.303942
+C(threads)   1.324004e-58           0.135225
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: WH, Percentage of variance explained:0.3878
+Turning point: WH=128.0
+Trend: First increasing, Then decreasing
+
+-------------------------------------------------
+
+Term: threads, Percentage of variance explained:0.1352
+Overall trend: decreasing with spearman coef = -1.00
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+           index       Coef.      parms          PR>F  per_var_explained
+      C(WH)[T.2]  281.791888      C(WH) 2.876136e-113           0.387818
+      C(WH)[T.4]  601.593277      C(WH) 2.876136e-113           0.387818
+      C(WH)[T.8]  921.204893      C(WH) 2.876136e-113           0.387818
+     C(WH)[T.16] 1214.556092      C(WH) 2.876136e-113           0.387818
+     C(WH)[T.32] 1470.826926      C(WH) 2.876136e-113           0.387818
+     C(WH)[T.64] 1675.744792      C(WH) 2.876136e-113           0.387818
+    C(WH)[T.128] 1833.023611      C(WH) 2.876136e-113           0.387818
+    C(WH)[T.256] 1947.792708      C(WH) 2.876136e-113           0.387818
+    C(WH)[T.512] 2029.749242      C(WH) 2.876136e-113           0.387818
+   C(WH)[T.1024] 2084.763889      C(WH) 2.876136e-113           0.387818
+ C(threads)[T.4]  185.748485 C(threads)  1.324004e-58           0.135225
+ C(threads)[T.8] -434.708058 C(threads)  1.324004e-58           0.135225
+C(threads)[T.12] -882.707461 C(threads)  1.324004e-58           0.135225

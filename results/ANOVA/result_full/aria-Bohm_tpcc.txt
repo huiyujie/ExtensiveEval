@@ -1,0 +1,41 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(Distributed)': 0.9999970606159414}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9288
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                   PR(>F)  per_var_explained
+Intercept    0.000000e+00           0.763643
+C(threads)  1.202764e-280           0.173400
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: threads, Percentage of variance explained:0.1734
+Overall trend: decreasing with spearman coef = -1.00
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+           index        Coef.      parms          PR>F  per_var_explained
+ C(threads)[T.2]  -411.065152 C(threads) 1.202764e-280           0.173400
+ C(threads)[T.4]  -800.150985 C(threads) 1.202764e-280           0.173400
+ C(threads)[T.8] -1240.419167 C(threads) 1.202764e-280           0.173400
+C(threads)[T.12] -1547.973131 C(threads) 1.202764e-280           0.173400
+      C(WH)[T.2]   385.295126      C(WH) 2.305125e-147           0.046136
+      C(WH)[T.4]   616.548763      C(WH) 2.305125e-147           0.046136
+      C(WH)[T.8]   755.686010      C(WH) 2.305125e-147           0.046136
+     C(WH)[T.16]   811.959798      C(WH) 2.305125e-147           0.046136
+     C(WH)[T.32]   859.029924      C(WH) 2.305125e-147           0.046136
+     C(WH)[T.64]   892.072778      C(WH) 2.305125e-147           0.046136
+    C(WH)[T.128]   914.009015      C(WH) 2.305125e-147           0.046136
+    C(WH)[T.256]   923.853838      C(WH) 2.305125e-147           0.046136
+    C(WH)[T.512]   930.306414      C(WH) 2.305125e-147           0.046136

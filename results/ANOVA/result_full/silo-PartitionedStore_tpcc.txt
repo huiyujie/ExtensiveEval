@@ -1,0 +1,352 @@
+ANOVA_analysis
+All terms are significant
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9682
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                                PR(>F)  per_var_explained
+C(threads):C(warehouse)  2.722471e-114           0.349314
+Intercept                 7.263678e-81           0.132755
+C(threads)                1.596655e-76           0.132707
+C(warehouse):C(remote)    2.657976e-36           0.122381
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: threads:warehouse, Percentage of variance explained:0.3493
+Turning point: warehouse=128.0,threads fixed at2.0
+Trend: First increasing, Then decreasing
+
+Turning point: warehouse=128.0,threads fixed at4.0
+Trend: First increasing, Then decreasing
+
+Turning point: warehouse=128.0,threads fixed at8.0
+Trend: First increasing, Then decreasing
+
+Turning point: warehouse=128.0,threads fixed at16.0
+Trend: First increasing, Then decreasing
+
+Turning point: warehouse=64.0,threads fixed at28.0
+Trend: First increasing, Then decreasing
+
+**Overall, Coef. increase with warehouse while threads is fixed
+
+**Overall, Coef. all have a turning point while threads is fixed
+
+Turning point: threads=4.0,warehouse fixed at 2.0
+This is a knee point on a decreasing curve
+
+Turning point: threads=8.0,warehouse fixed at 4.0
+This is a knee point on a decreasing curve
+
+Turning point: threads=16.0,warehouse fixed at 8.0
+This is a knee point on a decreasing curve
+
+When fixing warehouse@16.0, Overall trend: decreasing with spearman coef = -1.00
+
+Turning point: threads=4.0,warehouse fixed at 32.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=4.0,warehouse fixed at 64.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=8.0,warehouse fixed at 128.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=8.0,warehouse fixed at 256.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=8.0,warehouse fixed at 512.0
+Trend: First increasing, Then decreasing
+
+-------------------------------------------------
+
+Term: threads, Percentage of variance explained:0.1327
+Turning point: threads=8.0
+This is a knee point on a decreasing curve
+
+-------------------------------------------------
+
+Term: warehouse:remote, Percentage of variance explained:0.1224
+Turning point: remote=60.0,warehouse fixed at2.0
+Trend: First decreasing, Then increasing
+
+Turning point: remote=90.0,warehouse fixed at4.0
+Trend: First decreasing, Then increasing
+
+Turning point: remote=90.0,warehouse fixed at8.0
+Trend: First decreasing, Then increasing
+
+Turning point: remote=40.0,warehouse fixed at16.0
+This is a knee point on a decreasing curve
+
+Turning point: remote=40.0,warehouse fixed at32.0
+This is a knee point on a decreasing curve
+
+Turning point: remote=40.0,warehouse fixed at64.0
+This is a knee point on a decreasing curve
+
+Turning point: remote=40.0,warehouse fixed at128.0
+This is a knee point on a decreasing curve
+
+Turning point: remote=50.0,warehouse fixed at256.0
+This is a knee point on a decreasing curve
+
+Turning point: remote=50.0,warehouse fixed at512.0
+This is a knee point on a decreasing curve
+
+**Overall, Coef. all have a turning point while warehouse is fixed
+
+Turning point: warehouse=16.0,remote fixed at 10.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=16.0,remote fixed at 20.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=16.0,remote fixed at 30.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=16.0,remote fixed at 40.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=16.0,remote fixed at 50.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=32.0,remote fixed at 60.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=32.0,remote fixed at 70.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=32.0,remote fixed at 80.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=32.0,remote fixed at 90.0
+Trend: First decreasing, Then increasing
+
+Turning point: warehouse=64.0,remote fixed at 100.0
+Trend: First decreasing, Then increasing
+
+**Overall, Coef. all have a turning point while warehouse is fixed
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                 index         Coef.                   parms          PR>F  per_var_explained
+     C(threads)[T.2]:C(warehouse)[T.2]  19824.808949 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.4]:C(warehouse)[T.2]  13218.245472 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.8]:C(warehouse)[T.2]  11891.084473 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.16]:C(warehouse)[T.2]  11314.781050 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.28]:C(warehouse)[T.2]  11169.866541 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.2]:C(warehouse)[T.4]  26567.587358 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.4]:C(warehouse)[T.4]  23877.238548 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.8]:C(warehouse)[T.4]  20045.979048 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.16]:C(warehouse)[T.4]  17994.441451 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.28]:C(warehouse)[T.4]  17396.402458 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.2]:C(warehouse)[T.8]  35343.688210 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.4]:C(warehouse)[T.8]  30989.166637 C(threads):C(warehouse) 2.722471e-114           0.349314
+     C(threads)[T.8]:C(warehouse)[T.8]  30846.802868 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.16]:C(warehouse)[T.8]  25834.108887 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.28]:C(warehouse)[T.8]  24123.588335 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.2]:C(warehouse)[T.16]  41610.610795 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.4]:C(warehouse)[T.16]  40533.349876 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.8]:C(warehouse)[T.16]  37122.937189 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.16]:C(warehouse)[T.16]  35434.744118 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.28]:C(warehouse)[T.16]  31540.951800 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.2]:C(warehouse)[T.32]  46458.465376 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.4]:C(warehouse)[T.32]  50426.833008 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.8]:C(warehouse)[T.32]  45409.923162 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.16]:C(warehouse)[T.32]  41953.003063 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.28]:C(warehouse)[T.32]  40522.042791 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.2]:C(warehouse)[T.64]  44012.100497 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.4]:C(warehouse)[T.64]  52227.574219 C(threads):C(warehouse) 2.722471e-114           0.349314
+    C(threads)[T.8]:C(warehouse)[T.64]  52219.225497 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.16]:C(warehouse)[T.64]  49123.499711 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.28]:C(warehouse)[T.64]  47002.089882 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.2]:C(warehouse)[T.128]  49833.788352 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.4]:C(warehouse)[T.128]  60603.505682 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.8]:C(warehouse)[T.128]  61220.509943 C(threads):C(warehouse) 2.722471e-114           0.349314
+  C(threads)[T.16]:C(warehouse)[T.128]  57627.244163 C(threads):C(warehouse) 2.722471e-114           0.349314
+  C(threads)[T.28]:C(warehouse)[T.128]  54270.295670 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.2]:C(warehouse)[T.256]  54451.648438 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.4]:C(warehouse)[T.256]  68625.770597 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.8]:C(warehouse)[T.256]  70570.968217 C(threads):C(warehouse) 2.722471e-114           0.349314
+  C(threads)[T.16]:C(warehouse)[T.256]  66638.006947 C(threads):C(warehouse) 2.722471e-114           0.349314
+  C(threads)[T.28]:C(warehouse)[T.256]  62705.714451 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.2]:C(warehouse)[T.512]  56345.550071 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.4]:C(warehouse)[T.512]  73903.988281 C(threads):C(warehouse) 2.722471e-114           0.349314
+   C(threads)[T.8]:C(warehouse)[T.512]  78556.521129 C(threads):C(warehouse) 2.722471e-114           0.349314
+  C(threads)[T.16]:C(warehouse)[T.512]  75583.460427 C(threads):C(warehouse) 2.722471e-114           0.349314
+  C(threads)[T.28]:C(warehouse)[T.512]  71653.579863 C(threads):C(warehouse) 2.722471e-114           0.349314
+                       C(threads)[T.2] -38151.968164              C(threads)  1.596655e-76           0.132707
+                       C(threads)[T.4] -48534.029927              C(threads)  1.596655e-76           0.132707
+                       C(threads)[T.8] -60878.827672              C(threads)  1.596655e-76           0.132707
+                      C(threads)[T.16] -67444.160720              C(threads)  1.596655e-76           0.132707
+                      C(threads)[T.28] -72314.438028              C(threads)  1.596655e-76           0.132707
+                     C(warehouse)[T.2]   5095.899309            C(warehouse)  7.608346e-41           0.064004
+                     C(warehouse)[T.4]  10917.624069            C(warehouse)  7.608346e-41           0.064004
+                     C(warehouse)[T.8]  13491.370066            C(warehouse)  7.608346e-41           0.064004
+                    C(warehouse)[T.16]  12506.571842            C(warehouse)  7.608346e-41           0.064004
+                    C(warehouse)[T.32]   7448.473058            C(warehouse)  7.608346e-41           0.064004
+                    C(warehouse)[T.64]   -572.737838            C(warehouse)  7.608346e-41           0.064004
+                   C(warehouse)[T.128] -11299.327344            C(warehouse)  7.608346e-41           0.064004
+                   C(warehouse)[T.256] -23305.524107            C(warehouse)  7.608346e-41           0.064004
+                   C(warehouse)[T.512] -33158.075269            C(warehouse)  7.608346e-41           0.064004
+   C(warehouse)[T.2]:C(remote)[T.10.0] -16358.495594  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.10.0] -24586.910150  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.10.0] -28903.357620  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.10.0] -29186.157971  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.10.0] -25408.033226  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.10.0] -17418.020903  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.10.0] -10795.176874  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.10.0]  -5553.882045  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.10.0]  -4625.643020  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.20.0] -17229.702346  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.20.0] -28597.977772  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.20.0] -35476.397705  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.20.0] -37453.566639  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.20.0] -34785.030878  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.20.0] -27153.291632  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.20.0] -19074.298700  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.20.0] -11740.225598  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.20.0]  -8283.375802  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.30.0] -17810.670771  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.30.0] -30059.195812  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.30.0] -38306.743734  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.30.0] -41586.201463  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.30.0] -39741.567604  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.30.0] -33804.895113  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.30.0] -25670.908226  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.30.0] -17283.321173  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.30.0] -12287.967564  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.40.0] -17955.347871  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.40.0] -30705.756319  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.40.0] -39736.833258  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.40.0] -43754.548026  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.40.0] -42944.171904  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.40.0] -38288.904826  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.40.0] -30618.375436  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.40.0] -21532.966210  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.40.0] -15871.957188  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.50.0] -18081.164644  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.50.0] -30866.039062  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.50.0] -40624.082671  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.50.0] -45332.529506  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.50.0] -44996.371687  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.50.0] -41404.891578  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.50.0] -33768.975656  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.50.0] -25190.086891  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.50.0] -18914.524019  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.60.0] -18152.639683  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.60.0] -31266.235834  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.60.0] -40892.513811  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.60.0] -46100.819255  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.60.0] -46188.238618  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.60.0] -43748.011184  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.60.0] -36597.643810  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.60.0] -28068.210775  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.60.0] -21523.896694  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.70.0] -17933.576335  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.70.0] -31047.736572  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.70.0] -40961.317929  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.70.0] -46442.375070  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.70.0] -47033.726260  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.70.0] -45464.124977  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.70.0] -38582.266950  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.70.0] -30410.525414  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.70.0] -23807.404692  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.80.0] -17376.472110  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.80.0] -30873.536540  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.80.0] -40786.255139  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.80.0] -46768.324969  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.80.0] -47670.972453  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.80.0] -46670.223598  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.80.0] -40143.931303  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.80.0] -32151.475109  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.80.0] -25426.271240  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.2]:C(remote)[T.90.0] -17615.534366  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.4]:C(remote)[T.90.0] -31133.268008  C(warehouse):C(remote)  2.657976e-36           0.122381
+   C(warehouse)[T.8]:C(remote)[T.90.0] -41410.916155  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.16]:C(remote)[T.90.0] -47324.778233  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.32]:C(remote)[T.90.0] -48515.299479  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.64]:C(remote)[T.90.0] -48069.841076  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.128]:C(remote)[T.90.0] -42160.544910  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.256]:C(remote)[T.90.0] -34079.217157  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.512]:C(remote)[T.90.0] -27827.141729  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.2]:C(remote)[T.100.0] -17253.898054  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.4]:C(remote)[T.100.0] -30960.630563  C(warehouse):C(remote)  2.657976e-36           0.122381
+  C(warehouse)[T.8]:C(remote)[T.100.0] -41277.094116  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.16]:C(remote)[T.100.0] -47343.594604  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.32]:C(remote)[T.100.0] -48637.107933  C(warehouse):C(remote)  2.657976e-36           0.122381
+ C(warehouse)[T.64]:C(remote)[T.100.0] -48669.284366  C(warehouse):C(remote)  2.657976e-36           0.122381
+C(warehouse)[T.128]:C(remote)[T.100.0] -43144.125000  C(warehouse):C(remote)  2.657976e-36           0.122381
+C(warehouse)[T.256]:C(remote)[T.100.0] -35636.562733  C(warehouse):C(remote)  2.657976e-36           0.122381
+C(warehouse)[T.512]:C(remote)[T.100.0] -29130.497907  C(warehouse):C(remote)  2.657976e-36           0.122381
+     C(threads)[T.2]:C(remote)[T.10.0] -11630.956445    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.10.0] -18256.904199    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.10.0] -19797.867578    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.10.0] -20214.086060    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.10.0] -19849.397656    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.20.0] -15446.315234    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.20.0] -24338.119336    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.20.0] -26070.361865    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.20.0] -26780.924072    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.20.0] -25136.869922    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.30.0] -17860.648828    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.30.0] -28331.089063    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.30.0] -30136.191162    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.30.0] -30118.568262    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.30.0] -28137.813323    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.40.0] -19716.505469    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.40.0] -31184.142090    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.40.0] -33024.570801    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.40.0] -32479.569629    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.40.0] -29825.222670    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.50.0] -20964.759961    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.50.0] -33472.329297    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.50.0] -34640.628613    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.50.0] -33521.500195    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.50.0] -30539.285910    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.60.0] -22166.552148    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.60.0] -35062.623047    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.60.0] -36300.090381    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.60.0] -34478.011157    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.60.0] -31155.350823    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.70.0] -23191.519922    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.70.0] -36672.204883    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.70.0] -37787.308057    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.70.0] -35489.770361    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.70.0] -31736.607171    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.80.0] -23592.135352    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.80.0] -37455.104590    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.80.0] -38101.812500    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.80.0] -35603.683203    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.80.0] -31456.036600    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.2]:C(remote)[T.90.0] -24717.477734    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.4]:C(remote)[T.90.0] -38769.338770    C(threads):C(remote)  5.371186e-27           0.071536
+     C(threads)[T.8]:C(remote)[T.90.0] -39214.169775    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.16]:C(remote)[T.90.0] -36387.885962    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.28]:C(remote)[T.90.0] -32173.168122    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.2]:C(remote)[T.100.0] -25182.725195    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.4]:C(remote)[T.100.0] -39548.303809    C(threads):C(remote)  5.371186e-27           0.071536
+    C(threads)[T.8]:C(remote)[T.100.0] -39963.806982    C(threads):C(remote)  5.371186e-27           0.071536
+   C(threads)[T.16]:C(remote)[T.100.0] -36694.071313    C(threads):C(remote)  5.371186e-27           0.071536
+   C(threads)[T.28]:C(remote)[T.100.0] -32338.871596    C(threads):C(remote)  5.371186e-27           0.071536
+                     C(remote)[T.10.0]  14939.513443               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.20.0]  19726.925379               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.30.0]  22635.406521               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.40.0]  24623.449385               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.50.0]  25788.645868               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.60.0]  26785.592060               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.70.0]  27659.041357               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.80.0]  27550.132184               C(remote)  8.221445e-13           0.020312
+                     C(remote)[T.90.0]  28957.166221               C(remote)  8.221445e-13           0.020312
+                    C(remote)[T.100.0]  29255.286950               C(remote)  8.221445e-13           0.020312
