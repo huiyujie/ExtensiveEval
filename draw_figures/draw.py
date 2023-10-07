@@ -23,10 +23,9 @@ if __name__ == "__main__":
 
     # draw_multiple_systes([("mysql", "tpcc"),
     #         ("aria","tpcc","Aria"),
-    #         ("cicada","ycsb","Cicada"),
-    #         ("herd","ycsb"),
-    #         ("postgresql","tpcc")], "good", "random", save=True)
-    #
+    #         ("star","ycsb"),
+    #         ("herd","ycsb")], "good", "random", save=True)
+
     # draw_multiple_systes([
     #        ("calvin","tpcc","Calvin"),
     #        ("drtm","tpcc"),

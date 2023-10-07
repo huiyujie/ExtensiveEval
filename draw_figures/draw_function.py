@@ -27,10 +27,7 @@ def draw_figure(datas, labels, system_type, save_dir, save_name, save=False):
     colmap = cm.get_cmap("Set1")
     colors = [colmap.colors[i] for i in range(9)]
     index = [f"{i:.2f}" for i in np.arange(0.05, 1, 0.05)]
-    if system_type == "good":
-        axe.set_ylim([0.8, 1.05])
-    elif system_type == "bad":
-        axe.set_ylim([0, 1])
+    axe.set_ylim([0, 1.2])
 
     for i, r in enumerate(datas):
         error = []
@@ -89,7 +86,7 @@ def draw_multiple_systes(combs, system_type, sample_method, save=False):
     labels = []
     for comb in combs:
         filename = comb[0] + "-" + comb[1] + "-" + comb[2] if len(comb) == 3 else comb[0] + "-" + comb[1]
-        datas.append(get_results(f"../results/ML/{sample_method}/{filename}.csv"))
+        datas.append(get_anova_results(filename, sample_method))
         labels.append(filename)
 
     draw_figure(datas, labels, system_type, "./", save_name=system_type, save=save)
