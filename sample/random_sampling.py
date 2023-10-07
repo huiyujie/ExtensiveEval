@@ -11,7 +11,7 @@ If seed provided:
  Return samples[1][split][19]
 '''
 def random_sampling(data, output_file=None, seed=None):
-    num_seeds = 10
+    num_seeds = 100
     split = 10
     if seed is not None:
         samples = [[[0] * 19 for _ in range(split)] for _ in range(1)]

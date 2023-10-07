@@ -7,7 +7,7 @@ from util import test_split, split_sampleset
 
 def balance_sampling(data, factor_names, output_file=None, seed=None):
     print("balance sampling")
-    num_seeds = 10
+    num_seeds = 100
     split = 10
     if seed is not None:
         samples = [[[0] * 19 for _ in range(split)] for _ in range(1)]
