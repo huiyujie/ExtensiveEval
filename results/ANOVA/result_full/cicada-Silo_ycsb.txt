@@ -1,0 +1,184 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(record_size):C(zipf_theta)': 0.7426724888077506}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.8536
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                                    PR(>F)  per_var_explained
+C(read_ratio):C(zipf_theta)  8.086905e-280           0.116419
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: read_ratio:zipf_theta, Percentage of variance explained:0.1164
+Turning point: zipf_theta=0.8,read_ratio fixed at0.2
+Trend: First increasing, Then decreasing
+
+When fixing read_ratio@0.6, Overall trend: increasing with spearman coef = 1.00
+
+When fixing read_ratio@1.0, Overall trend: increasing with spearman coef = 1.00
+
+When fixing zipf_theta@0.4, Overall trend: increasing with spearman coef = 1.00
+
+When fixing zipf_theta@0.8, Overall trend: increasing with spearman coef = 1.00
+
+When fixing zipf_theta@0.99, Overall trend: increasing with spearman coef = 1.00
+
+**Overall, Coef. increase with read_ratio while zipf_theta is fixed
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                                 index         Coef.                           parms          PR>F  per_var_explained
+             C(read_ratio)[T.0.2]:C(zipf_theta)[T.0.4]  3.843545e+03     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+             C(read_ratio)[T.0.6]:C(zipf_theta)[T.0.4]  1.875310e+04     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+             C(read_ratio)[T.1.0]:C(zipf_theta)[T.0.4]  4.414352e+04     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+             C(read_ratio)[T.0.2]:C(zipf_theta)[T.0.8]  3.506228e+04     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+             C(read_ratio)[T.0.6]:C(zipf_theta)[T.0.8]  1.444749e+05     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+             C(read_ratio)[T.1.0]:C(zipf_theta)[T.0.8]  6.174832e+05     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+            C(read_ratio)[T.0.2]:C(zipf_theta)[T.0.99]  2.054330e+04     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+            C(read_ratio)[T.0.6]:C(zipf_theta)[T.0.99]  2.398193e+05     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+            C(read_ratio)[T.1.0]:C(zipf_theta)[T.0.99]  1.802479e+06     C(read_ratio):C(zipf_theta) 8.086905e-280           0.116419
+                  C(threads)[T.4]:C(zipf_theta)[T.0.4] -4.565092e+03        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                 C(threads)[T.16]:C(zipf_theta)[T.0.4] -1.958872e+04        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                 C(threads)[T.28]:C(zipf_theta)[T.0.4] -2.569989e+04        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                  C(threads)[T.4]:C(zipf_theta)[T.0.8] -2.458956e+05        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                 C(threads)[T.16]:C(zipf_theta)[T.0.8] -4.854723e+05        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                 C(threads)[T.28]:C(zipf_theta)[T.0.8] -6.223455e+05        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                 C(threads)[T.4]:C(zipf_theta)[T.0.99] -9.570040e+05        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                C(threads)[T.16]:C(zipf_theta)[T.0.99] -1.520387e+06        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+                C(threads)[T.28]:C(zipf_theta)[T.0.99] -1.766178e+06        C(threads):C(zipf_theta) 6.579993e-240           0.097481
+         C(req_per_query)[T.10.0]:C(read_ratio)[T.0.2]  1.994369e+04  C(req_per_query):C(read_ratio) 8.516956e-240           0.095923
+        C(req_per_query)[T.100.0]:C(read_ratio)[T.0.2]  1.051161e+05  C(req_per_query):C(read_ratio) 8.516956e-240           0.095923
+         C(req_per_query)[T.10.0]:C(read_ratio)[T.0.6]  1.232526e+05  C(req_per_query):C(read_ratio) 8.516956e-240           0.095923
+        C(req_per_query)[T.100.0]:C(read_ratio)[T.0.6]  4.734528e+05  C(req_per_query):C(read_ratio) 8.516956e-240           0.095923
+         C(req_per_query)[T.10.0]:C(read_ratio)[T.1.0]  7.186442e+05  C(req_per_query):C(read_ratio) 8.516956e-240           0.095923
+        C(req_per_query)[T.100.0]:C(read_ratio)[T.1.0]  1.683408e+06  C(req_per_query):C(read_ratio) 8.516956e-240           0.095923
+       C(total_count)[T.512000.0]:C(read_ratio)[T.0.2] -3.356937e+04    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+      C(total_count)[T.2048000.0]:C(read_ratio)[T.0.2] -1.978213e+04    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+      C(total_count)[T.8192000.0]:C(read_ratio)[T.0.2] -4.140249e+04    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+     C(total_count)[T.32768000.0]:C(read_ratio)[T.0.2] -4.624743e+04    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+       C(total_count)[T.512000.0]:C(read_ratio)[T.0.6] -1.642388e+05    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+      C(total_count)[T.2048000.0]:C(read_ratio)[T.0.6] -2.089083e+05    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+      C(total_count)[T.8192000.0]:C(read_ratio)[T.0.6] -2.459022e+05    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+     C(total_count)[T.32768000.0]:C(read_ratio)[T.0.6] -2.476236e+05    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+       C(total_count)[T.512000.0]:C(read_ratio)[T.1.0] -9.608519e+05    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+      C(total_count)[T.2048000.0]:C(read_ratio)[T.1.0] -1.246229e+06    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+      C(total_count)[T.8192000.0]:C(read_ratio)[T.1.0] -1.414222e+06    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+     C(total_count)[T.32768000.0]:C(read_ratio)[T.1.0] -1.513089e+06    C(total_count):C(read_ratio) 7.127577e-159           0.063033
+                              C(req_per_query)[T.10.0]  1.758631e+06                C(req_per_query) 1.497037e-109           0.039050
+                             C(req_per_query)[T.100.0]  1.127326e+06                C(req_per_query) 1.497037e-109           0.039050
+                                C(record_size)[T.32.0] -5.133822e+05                  C(record_size)  4.835555e-95           0.033979
+                               C(record_size)[T.128.0] -7.101521e+05                  C(record_size)  4.835555e-95           0.033979
+                              C(record_size)[T.1000.0] -1.633506e+06                  C(record_size)  4.835555e-95           0.033979
+     C(record_size)[T.32.0]:C(total_count)[T.512000.0]  8.728251e+04   C(record_size):C(total_count)  6.658906e-87           0.034042
+    C(record_size)[T.128.0]:C(total_count)[T.512000.0]  2.396948e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+   C(record_size)[T.1000.0]:C(total_count)[T.512000.0]  7.935015e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+    C(record_size)[T.32.0]:C(total_count)[T.2048000.0]  1.853447e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+   C(record_size)[T.128.0]:C(total_count)[T.2048000.0]  3.700953e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+  C(record_size)[T.1000.0]:C(total_count)[T.2048000.0]  1.059670e+06   C(record_size):C(total_count)  6.658906e-87           0.034042
+    C(record_size)[T.32.0]:C(total_count)[T.8192000.0]  2.122705e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+   C(record_size)[T.128.0]:C(total_count)[T.8192000.0]  3.997068e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+  C(record_size)[T.1000.0]:C(total_count)[T.8192000.0]  1.128619e+06   C(record_size):C(total_count)  6.658906e-87           0.034042
+   C(record_size)[T.32.0]:C(total_count)[T.32768000.0]  1.894306e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+  C(record_size)[T.128.0]:C(total_count)[T.32768000.0]  4.068932e+05   C(record_size):C(total_count)  6.658906e-87           0.034042
+ C(record_size)[T.1000.0]:C(total_count)[T.32768000.0]  1.162355e+06   C(record_size):C(total_count)  6.658906e-87           0.034042
+              C(threads)[T.4]:C(req_per_query)[T.10.0] -4.910582e+05     C(threads):C(req_per_query)  7.717076e-78           0.028655
+             C(threads)[T.16]:C(req_per_query)[T.10.0] -6.822966e+05     C(threads):C(req_per_query)  7.717076e-78           0.028655
+             C(threads)[T.28]:C(req_per_query)[T.10.0] -6.560380e+05     C(threads):C(req_per_query)  7.717076e-78           0.028655
+             C(threads)[T.4]:C(req_per_query)[T.100.0] -6.706164e+05     C(threads):C(req_per_query)  7.717076e-78           0.028655
+            C(threads)[T.16]:C(req_per_query)[T.100.0] -8.961318e+05     C(threads):C(req_per_query)  7.717076e-78           0.028655
+            C(threads)[T.28]:C(req_per_query)[T.100.0] -7.858412e+05     C(threads):C(req_per_query)  7.717076e-78           0.028655
+   C(req_per_query)[T.10.0]:C(total_count)[T.512000.0] -6.296999e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+  C(req_per_query)[T.100.0]:C(total_count)[T.512000.0] -5.257972e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+  C(req_per_query)[T.10.0]:C(total_count)[T.2048000.0] -8.016919e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+ C(req_per_query)[T.100.0]:C(total_count)[T.2048000.0] -6.719145e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+  C(req_per_query)[T.10.0]:C(total_count)[T.8192000.0] -8.574537e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+ C(req_per_query)[T.100.0]:C(total_count)[T.8192000.0] -7.201461e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+ C(req_per_query)[T.10.0]:C(total_count)[T.32768000.0] -8.790853e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+C(req_per_query)[T.100.0]:C(total_count)[T.32768000.0] -7.452489e+05 C(req_per_query):C(total_count)  1.386653e-69           0.026221
+            C(threads)[T.4]:C(total_count)[T.512000.0]  3.435643e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+           C(threads)[T.16]:C(total_count)[T.512000.0]  5.556177e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+           C(threads)[T.28]:C(total_count)[T.512000.0]  6.049392e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+           C(threads)[T.4]:C(total_count)[T.2048000.0]  4.457428e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+          C(threads)[T.16]:C(total_count)[T.2048000.0]  7.253794e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+          C(threads)[T.28]:C(total_count)[T.2048000.0]  7.723937e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+           C(threads)[T.4]:C(total_count)[T.8192000.0]  5.309970e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+          C(threads)[T.16]:C(total_count)[T.8192000.0]  8.436980e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+          C(threads)[T.28]:C(total_count)[T.8192000.0]  9.105987e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+          C(threads)[T.4]:C(total_count)[T.32768000.0]  5.651407e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+         C(threads)[T.16]:C(total_count)[T.32768000.0]  9.333932e+05       C(threads):C(total_count)  4.780090e-64           0.025313
+         C(threads)[T.28]:C(total_count)[T.32768000.0]  1.014209e+06       C(threads):C(total_count)  4.780090e-64           0.025313
+                  C(threads)[T.4]:C(read_ratio)[T.0.2] -5.770236e+04        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                 C(threads)[T.16]:C(read_ratio)[T.0.2] -5.791714e+04        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                 C(threads)[T.28]:C(read_ratio)[T.0.2] -2.198174e+04        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                  C(threads)[T.4]:C(read_ratio)[T.0.6] -1.196908e+05        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                 C(threads)[T.16]:C(read_ratio)[T.0.6] -1.258247e+05        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                 C(threads)[T.28]:C(read_ratio)[T.0.6] -1.174257e+05        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                  C(threads)[T.4]:C(read_ratio)[T.1.0]  3.212832e+05        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                 C(threads)[T.16]:C(read_ratio)[T.1.0]  5.808364e+05        C(threads):C(read_ratio)  7.967804e-54           0.020657
+                 C(threads)[T.28]:C(read_ratio)[T.1.0]  7.044334e+05        C(threads):C(read_ratio)  7.967804e-54           0.020657
+       C(record_size)[T.32.0]:C(req_per_query)[T.10.0]  1.095833e+04 C(record_size):C(req_per_query)  6.932198e-51           0.018700
+      C(record_size)[T.128.0]:C(req_per_query)[T.10.0] -2.087055e+05 C(record_size):C(req_per_query)  6.932198e-51           0.018700
+     C(record_size)[T.1000.0]:C(req_per_query)[T.10.0] -6.386255e+05 C(record_size):C(req_per_query)  6.932198e-51           0.018700
+      C(record_size)[T.32.0]:C(req_per_query)[T.100.0]  2.023351e+05 C(record_size):C(req_per_query)  6.932198e-51           0.018700
+     C(record_size)[T.128.0]:C(req_per_query)[T.100.0] -7.885132e+04 C(record_size):C(req_per_query)  6.932198e-51           0.018700
+    C(record_size)[T.1000.0]:C(req_per_query)[T.100.0] -4.562873e+05 C(record_size):C(req_per_query)  6.932198e-51           0.018700
+                            C(total_count)[T.512000.0] -8.495384e+05                  C(total_count)  1.111942e-46           0.016545
+                           C(total_count)[T.2048000.0] -1.070342e+06                  C(total_count)  1.111942e-46           0.016545
+                           C(total_count)[T.8192000.0] -1.155191e+06                  C(total_count)  1.111942e-46           0.016545
+                          C(total_count)[T.32768000.0] -1.207024e+06                  C(total_count)  1.111942e-46           0.016545
+           C(record_size)[T.32.0]:C(read_ratio)[T.0.2]  1.052853e+02    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+          C(record_size)[T.128.0]:C(read_ratio)[T.0.2] -4.519632e+04    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+         C(record_size)[T.1000.0]:C(read_ratio)[T.0.2] -6.468104e+04    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+           C(record_size)[T.32.0]:C(read_ratio)[T.0.6] -3.773036e+04    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+          C(record_size)[T.128.0]:C(read_ratio)[T.0.6] -1.003064e+05    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+         C(record_size)[T.1000.0]:C(read_ratio)[T.0.6] -2.208471e+05    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+           C(record_size)[T.32.0]:C(read_ratio)[T.1.0]  8.275961e+04    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+          C(record_size)[T.128.0]:C(read_ratio)[T.1.0] -1.382445e+05    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+         C(record_size)[T.1000.0]:C(read_ratio)[T.1.0] -6.569682e+05    C(record_size):C(read_ratio)  2.433302e-42           0.016428
+                                       C(threads)[T.4] -4.743911e+05                      C(threads)  1.159441e-41           0.014416
+                                      C(threads)[T.16] -8.679745e+05                      C(threads)  1.159441e-41           0.014416
+                                      C(threads)[T.28] -1.134436e+06                      C(threads)  1.159441e-41           0.014416
+         C(req_per_query)[T.10.0]:C(zipf_theta)[T.0.4]  3.567912e+04  C(req_per_query):C(zipf_theta)  5.992702e-31           0.011509
+        C(req_per_query)[T.100.0]:C(zipf_theta)[T.0.4] -8.742500e+03  C(req_per_query):C(zipf_theta)  5.992702e-31           0.011509
+         C(req_per_query)[T.10.0]:C(zipf_theta)[T.0.8] -2.463597e+03  C(req_per_query):C(zipf_theta)  5.992702e-31           0.011509
+        C(req_per_query)[T.100.0]:C(zipf_theta)[T.0.8] -4.138877e+05  C(req_per_query):C(zipf_theta)  5.992702e-31           0.011509
+        C(req_per_query)[T.10.0]:C(zipf_theta)[T.0.99] -1.045847e+05  C(req_per_query):C(zipf_theta)  5.992702e-31           0.011509
+       C(req_per_query)[T.100.0]:C(zipf_theta)[T.0.99]  4.991396e+04  C(req_per_query):C(zipf_theta)  5.992702e-31           0.011509
+                C(threads)[T.4]:C(record_size)[T.32.0]  7.450338e+04       C(threads):C(record_size)  1.009354e-22           0.009259
+               C(threads)[T.16]:C(record_size)[T.32.0]  1.104357e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+               C(threads)[T.28]:C(record_size)[T.32.0]  1.678420e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+               C(threads)[T.4]:C(record_size)[T.128.0]  1.531302e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+              C(threads)[T.16]:C(record_size)[T.128.0]  2.457578e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+              C(threads)[T.28]:C(record_size)[T.128.0]  3.186360e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+              C(threads)[T.4]:C(record_size)[T.1000.0]  3.608475e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+             C(threads)[T.16]:C(record_size)[T.1000.0]  5.199299e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+             C(threads)[T.28]:C(record_size)[T.1000.0]  6.017315e+05       C(threads):C(record_size)  1.009354e-22           0.009259
+       C(total_count)[T.512000.0]:C(zipf_theta)[T.0.4]  5.820085e+04    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+      C(total_count)[T.2048000.0]:C(zipf_theta)[T.0.4]  8.305531e+03    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+      C(total_count)[T.8192000.0]:C(zipf_theta)[T.0.4]  1.459260e+03    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+     C(total_count)[T.32768000.0]:C(zipf_theta)[T.0.4] -1.504728e+04    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+       C(total_count)[T.512000.0]:C(zipf_theta)[T.0.8]  3.924102e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+      C(total_count)[T.2048000.0]:C(zipf_theta)[T.0.8]  3.553767e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+      C(total_count)[T.8192000.0]:C(zipf_theta)[T.0.8]  2.941716e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+     C(total_count)[T.32768000.0]:C(zipf_theta)[T.0.8]  2.609574e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+      C(total_count)[T.512000.0]:C(zipf_theta)[T.0.99]  4.869493e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+     C(total_count)[T.2048000.0]:C(zipf_theta)[T.0.99]  4.262291e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+     C(total_count)[T.8192000.0]:C(zipf_theta)[T.0.99]  3.688023e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+    C(total_count)[T.32768000.0]:C(zipf_theta)[T.0.99]  2.926216e+05    C(total_count):C(zipf_theta)  1.143514e-15           0.007230
+                                  C(zipf_theta)[T.0.4] -5.949871e+03                   C(zipf_theta)  7.915386e-11           0.003655
+                                  C(zipf_theta)[T.0.8]  5.923144e+04                   C(zipf_theta)  7.915386e-11           0.003655
+                                 C(zipf_theta)[T.0.99]  4.580751e+05                   C(zipf_theta)  7.915386e-11           0.003655
+                                  C(read_ratio)[T.0.2]  1.179034e+05                   C(read_ratio)  2.586038e-08           0.002785
+                                  C(read_ratio)[T.0.6]  3.773236e+05                   C(read_ratio)  2.586038e-08           0.002785
+                                  C(read_ratio)[T.1.0]  4.621090e+05                   C(read_ratio)  2.586038e-08           0.002785

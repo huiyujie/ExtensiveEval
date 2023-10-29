@@ -1,0 +1,51 @@
+ANOVA_analysis
+All terms are significant
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9638
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                  PR(>F)  per_var_explained
+C(WH)      7.458467e-236           0.826114
+Intercept  1.579643e-113           0.113187
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: WH, Percentage of variance explained:0.8261
+Turning point: WH=256.0
+Trend: First increasing, Then decreasing
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                index       Coef.          parms          PR>F  per_var_explained
+           C(WH)[T.2]  300.468350          C(WH) 7.458467e-236           0.826114
+           C(WH)[T.4]  547.194024          C(WH) 7.458467e-236           0.826114
+           C(WH)[T.8]  767.993687          C(WH) 7.458467e-236           0.826114
+          C(WH)[T.16]  963.200715          C(WH) 7.458467e-236           0.826114
+          C(WH)[T.32] 1162.571423          C(WH) 7.458467e-236           0.826114
+          C(WH)[T.64] 1403.163847          C(WH) 7.458467e-236           0.826114
+         C(WH)[T.128] 1753.937163          C(WH) 7.458467e-236           0.826114
+         C(WH)[T.256] 2193.171380          C(WH) 7.458467e-236           0.826114
+         C(WH)[T.512] 2626.412458          C(WH) 7.458467e-236           0.826114
+        C(WH)[T.1024] 2953.655135          C(WH) 7.458467e-236           0.826114
+      C(threads)[T.8]  -44.733919     C(threads)  1.337692e-26           0.013468
+     C(threads)[T.12] -266.574725     C(threads)  1.337692e-26           0.013468
+ C(Distributed)[T.10]  -99.856987 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.20] -161.900631 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.30] -213.189731 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.40] -251.651010 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.50] -283.634512 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.60] -316.321212 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.70] -340.713342 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.80] -366.999790 C(Distributed)  1.188826e-23           0.015142
+ C(Distributed)[T.90] -389.451641 C(Distributed)  1.188826e-23           0.015142
+C(Distributed)[T.100] -416.444444 C(Distributed)  1.188826e-23           0.015142

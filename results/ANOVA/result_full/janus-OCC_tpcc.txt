@@ -1,0 +1,270 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(threads):C(replica)': 0.9988683169775605, 'C(clients):C(threads)': 0.9967321384892435, 'C(threads)': 0.9999894777674591}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.8244
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                             PR(>F)  per_var_explained
+C(clients):C(shards)  3.001762e-231           0.320993
+C(clients)            2.043066e-166           0.157153
+Intercept             1.625950e-127           0.101944
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: clients:shards, Percentage of variance explained:0.3210
+Turning point: shards=64.0,clients fixed at10.0
+This is a knee point on a decreasing curve
+
+Turning point: shards=64.0,clients fixed at20.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=64.0,clients fixed at40.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=64.0,clients fixed at80.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=8.0,clients fixed at100.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=8.0,clients fixed at200.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=32.0,clients fixed at500.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=64.0,clients fixed at1000.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=64.0,clients fixed at2000.0
+Trend: First increasing, Then decreasing
+
+Turning point: shards=64.0,clients fixed at4000.0
+Trend: First increasing, Then decreasing
+
+**Overall, Coef. all have a turning point while clients is fixed
+
+Turning point: clients=200.0,shards fixed at 2.0
+Trend: First increasing, Then decreasing
+
+Turning point: clients=200.0,shards fixed at 4.0
+Trend: First increasing, Then decreasing
+
+Turning point: clients=500.0,shards fixed at 8.0
+Trend: First increasing, Then decreasing
+
+Turning point: clients=500.0,shards fixed at 16.0
+Trend: First increasing, Then decreasing
+
+Turning point: clients=1000.0,shards fixed at 32.0
+Trend: First increasing, Then decreasing
+
+Turning point: clients=2000.0,shards fixed at 64.0
+Trend: First increasing, Then decreasing
+
+Turning point: clients=2000.0,shards fixed at 128.0
+Trend: First increasing, Then decreasing
+
+**Overall, Coef. increase with clients while shards is fixed
+
+**Overall, Coef. all have a turning point while clients is fixed
+
+-------------------------------------------------
+
+Term: clients, Percentage of variance explained:0.1572
+Overall trend: decreasing with spearman coef = -0.88
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                              index         Coef.                 parms          PR>F  per_var_explained
+    C(clients)[T.10]:C(shards)[T.2]  2.372565e+00  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.20]:C(shards)[T.2]  1.105927e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.40]:C(shards)[T.2]  2.282902e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.80]:C(shards)[T.2]  3.191036e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.100]:C(shards)[T.2]  5.281516e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.200]:C(shards)[T.2]  5.621299e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.500]:C(shards)[T.2]  5.188920e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.1000]:C(shards)[T.2]  4.928646e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.2000]:C(shards)[T.2]  4.480241e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.4000]:C(shards)[T.2]  4.327523e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.10]:C(shards)[T.4] -4.331480e+00  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.20]:C(shards)[T.4]  1.368480e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.40]:C(shards)[T.4]  3.331245e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.80]:C(shards)[T.4]  4.930939e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.100]:C(shards)[T.4]  8.553594e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.200]:C(shards)[T.4]  9.988996e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.500]:C(shards)[T.4]  9.084396e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.1000]:C(shards)[T.4]  8.304402e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.2000]:C(shards)[T.4]  7.573413e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.4000]:C(shards)[T.4]  7.044831e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.10]:C(shards)[T.8] -1.252476e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.20]:C(shards)[T.8]  1.315031e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.40]:C(shards)[T.8]  3.832596e+01  C(clients):C(shards) 3.001762e-231           0.320993
+    C(clients)[T.80]:C(shards)[T.8]  5.842279e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.100]:C(shards)[T.8]  8.944366e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.200]:C(shards)[T.8]  1.247292e+02  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.500]:C(shards)[T.8]  1.293289e+02  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.1000]:C(shards)[T.8]  1.120307e+02  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.2000]:C(shards)[T.8]  9.898768e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.4000]:C(shards)[T.8]  9.057821e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.10]:C(shards)[T.16] -2.106391e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.20]:C(shards)[T.16]  1.118922e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.40]:C(shards)[T.16]  4.198145e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.80]:C(shards)[T.16]  6.588433e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.100]:C(shards)[T.16]  8.152629e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.200]:C(shards)[T.16]  1.169818e+02  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.500]:C(shards)[T.16]  1.631820e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.1000]:C(shards)[T.16]  1.481884e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.2000]:C(shards)[T.16]  1.254792e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.4000]:C(shards)[T.16]  1.115985e+02  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.10]:C(shards)[T.32] -2.720392e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.20]:C(shards)[T.32]  1.389612e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.40]:C(shards)[T.32]  5.176259e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.80]:C(shards)[T.32]  8.093629e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.100]:C(shards)[T.32]  7.788458e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.200]:C(shards)[T.32]  1.023860e+02  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.500]:C(shards)[T.32]  1.668631e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.1000]:C(shards)[T.32]  2.058065e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.2000]:C(shards)[T.32]  1.779325e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.4000]:C(shards)[T.32]  1.500597e+02  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.10]:C(shards)[T.64] -3.800769e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.20]:C(shards)[T.64]  1.818802e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.40]:C(shards)[T.64]  6.705588e+01  C(clients):C(shards) 3.001762e-231           0.320993
+   C(clients)[T.80]:C(shards)[T.64]  1.038313e+02  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.100]:C(shards)[T.64]  7.914775e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.200]:C(shards)[T.64]  9.383953e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.500]:C(shards)[T.64]  1.460474e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.1000]:C(shards)[T.64]  2.173108e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.2000]:C(shards)[T.64]  2.546798e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.4000]:C(shards)[T.64]  2.251931e+02  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.10]:C(shards)[T.128] -3.989309e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.20]:C(shards)[T.128]  1.774489e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.40]:C(shards)[T.128]  6.752400e+01  C(clients):C(shards) 3.001762e-231           0.320993
+  C(clients)[T.80]:C(shards)[T.128]  1.049155e+02  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.100]:C(shards)[T.128]  7.413344e+01  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.200]:C(shards)[T.128]  8.187690e+01  C(clients):C(shards) 3.001762e-231           0.320993
+ C(clients)[T.500]:C(shards)[T.128]  1.133127e+02  C(clients):C(shards) 3.001762e-231           0.320993
+C(clients)[T.1000]:C(shards)[T.128]  1.606681e+02  C(clients):C(shards) 3.001762e-231           0.320993
+C(clients)[T.2000]:C(shards)[T.128]  2.038983e+02  C(clients):C(shards) 3.001762e-231           0.320993
+C(clients)[T.4000]:C(shards)[T.128]  1.991732e+02  C(clients):C(shards) 3.001762e-231           0.320993
+                   C(clients)[T.10]  4.161144e+01            C(clients) 2.043066e-166           0.157153
+                   C(clients)[T.20] -1.733528e+01            C(clients) 2.043066e-166           0.157153
+                   C(clients)[T.40] -6.820556e+01            C(clients) 2.043066e-166           0.157153
+                   C(clients)[T.80] -1.062418e+02            C(clients) 2.043066e-166           0.157153
+                  C(clients)[T.100] -6.963440e+01            C(clients) 2.043066e-166           0.157153
+                  C(clients)[T.200] -7.087394e+01            C(clients) 2.043066e-166           0.157153
+                  C(clients)[T.500] -8.268797e+01            C(clients) 2.043066e-166           0.157153
+                 C(clients)[T.1000] -1.042692e+02            C(clients) 2.043066e-166           0.157153
+                 C(clients)[T.2000] -1.220785e+02            C(clients) 2.043066e-166           0.157153
+                 C(clients)[T.4000] -1.331514e+02            C(clients) 2.043066e-166           0.157153
+                    C(replica)[T.3] -8.036501e+01            C(replica)  2.715336e-78           0.058123
+                    C(replica)[T.5] -1.004774e+02            C(replica)  2.715336e-78           0.058123
+                    C(replica)[T.7] -1.116013e+02            C(replica)  2.715336e-78           0.058123
+                     C(shards)[T.2] -5.391020e+01             C(shards)  4.827369e-72           0.056026
+                     C(shards)[T.4] -8.293720e+01             C(shards)  4.827369e-72           0.056026
+                     C(shards)[T.8] -9.671107e+01             C(shards)  4.827369e-72           0.056026
+                    C(shards)[T.16] -1.086833e+02             C(shards)  4.827369e-72           0.056026
+                    C(shards)[T.32] -1.112598e+02             C(shards)  4.827369e-72           0.056026
+                    C(shards)[T.64] -1.288406e+02             C(shards)  4.827369e-72           0.056026
+                   C(shards)[T.128] -1.086365e+02             C(shards)  4.827369e-72           0.056026
+   C(clients)[T.10]:C(replica)[T.3] -1.877131e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.20]:C(replica)[T.3]  1.099236e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.40]:C(replica)[T.3]  3.217640e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.80]:C(replica)[T.3]  4.704077e+01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.100]:C(replica)[T.3]  1.196056e+01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.200]:C(replica)[T.3]  3.735026e-01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.500]:C(replica)[T.3] -3.683539e+00 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.1000]:C(replica)[T.3]  1.209482e+01 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.2000]:C(replica)[T.3]  3.191238e+01 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.4000]:C(replica)[T.3]  4.497074e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.10]:C(replica)[T.5] -2.934183e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.20]:C(replica)[T.5]  7.804351e+00 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.40]:C(replica)[T.5]  3.634676e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.80]:C(replica)[T.5]  5.682290e+01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.100]:C(replica)[T.5]  1.220626e+01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.200]:C(replica)[T.5] -7.085933e-01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.500]:C(replica)[T.5] -3.774273e-02 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.1000]:C(replica)[T.5]  2.211382e+01 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.2000]:C(replica)[T.5]  4.547649e+01 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.4000]:C(replica)[T.5]  6.003850e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.10]:C(replica)[T.7] -3.426363e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.20]:C(replica)[T.7]  7.044276e+00 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.40]:C(replica)[T.7]  3.986849e+01 C(clients):C(replica)  4.992217e-66           0.064108
+   C(clients)[T.80]:C(replica)[T.7]  6.337491e+01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.100]:C(replica)[T.7]  1.467861e+01 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.200]:C(replica)[T.7]  2.714257e+00 C(clients):C(replica)  4.992217e-66           0.064108
+  C(clients)[T.500]:C(replica)[T.7]  8.535423e+00 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.1000]:C(replica)[T.7]  3.355932e+01 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.2000]:C(replica)[T.7]  5.639628e+01 C(clients):C(replica)  4.992217e-66           0.064108
+ C(clients)[T.4000]:C(replica)[T.7]  7.077631e+01 C(clients):C(replica)  4.992217e-66           0.064108
+       C(shards)[1]:C(threads)[T.2] -5.481592e-01  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[2]:C(threads)[T.2] -2.545711e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[4]:C(threads)[T.2] -2.227720e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[8]:C(threads)[T.2] -3.351465e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[16]:C(threads)[T.2] -3.637704e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[32]:C(threads)[T.2] -1.985118e+01  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[64]:C(threads)[T.2]  3.331807e-14  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[128]:C(threads)[T.2] -1.386551e-14  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[1]:C(threads)[T.3] -4.131130e-01  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[2]:C(threads)[T.3] -1.983941e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[4]:C(threads)[T.3] -2.032008e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[8]:C(threads)[T.3] -4.042468e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[16]:C(threads)[T.3] -6.270233e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[32]:C(threads)[T.3] -2.026029e+01  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[64]:C(threads)[T.3] -3.195673e+01  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[128]:C(threads)[T.3]  7.300973e-15  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[1]:C(threads)[T.4] -1.719002e-01  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[2]:C(threads)[T.4] -1.835026e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[4]:C(threads)[T.4] -3.677626e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[8]:C(threads)[T.4] -4.773933e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[16]:C(threads)[T.4] -4.594042e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[32]:C(threads)[T.4] -2.498145e+01  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[64]:C(threads)[T.4] -3.209060e+01  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[128]:C(threads)[T.4] -4.522698e-14  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[1]:C(threads)[T.8] -6.470507e-01  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[2]:C(threads)[T.8] -2.414366e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[4]:C(threads)[T.8] -4.023842e+00  C(shards):C(threads)  2.888133e-55           0.063249
+       C(shards)[8]:C(threads)[T.8] -6.263347e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[16]:C(threads)[T.8] -6.344485e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[32]:C(threads)[T.8] -2.145571e+01  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[64]:C(threads)[T.8] -3.086295e+01  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[128]:C(threads)[T.8] -5.459773e+01  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[1]:C(threads)[T.16] -4.504089e-01  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[2]:C(threads)[T.16] -2.759596e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[4]:C(threads)[T.16] -4.573719e+00  C(shards):C(threads)  2.888133e-55           0.063249
+      C(shards)[8]:C(threads)[T.16] -6.144999e+00  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[16]:C(threads)[T.16] -8.576007e+00  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[32]:C(threads)[T.16] -2.471115e+01  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[64]:C(threads)[T.16] -3.393031e+01  C(shards):C(threads)  2.888133e-55           0.063249
+    C(shards)[128]:C(threads)[T.16] -5.403876e+01  C(shards):C(threads)  2.888133e-55           0.063249
+     C(shards)[T.2]:C(replica)[T.3]  1.529388e+01  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.4]:C(replica)[T.3]  2.096751e+01  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.8]:C(replica)[T.3]  2.166227e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.16]:C(replica)[T.3]  2.507883e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.32]:C(replica)[T.3]  2.578428e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.64]:C(replica)[T.3] -2.674264e-16  C(shards):C(replica)  2.414368e-10           0.015827
+   C(shards)[T.128]:C(replica)[T.3]  6.670606e-18  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.2]:C(replica)[T.5]  1.862277e+01  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.4]:C(replica)[T.5]  2.619651e+01  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.8]:C(replica)[T.5]  2.844447e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.16]:C(replica)[T.5]  3.027500e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.32]:C(replica)[T.5]  3.436532e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.64]:C(replica)[T.5]  0.000000e+00  C(shards):C(replica)  2.414368e-10           0.015827
+   C(shards)[T.128]:C(replica)[T.5]  0.000000e+00  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.2]:C(replica)[T.7]  2.007005e+01  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.4]:C(replica)[T.7]  2.857790e+01  C(shards):C(replica)  2.414368e-10           0.015827
+     C(shards)[T.8]:C(replica)[T.7]  3.110750e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.16]:C(replica)[T.7]  3.509214e+01  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.32]:C(replica)[T.7]  0.000000e+00  C(shards):C(replica)  2.414368e-10           0.015827
+    C(shards)[T.64]:C(replica)[T.7]  0.000000e+00  C(shards):C(replica)  2.414368e-10           0.015827
+   C(shards)[T.128]:C(replica)[T.7]  0.000000e+00  C(shards):C(replica)  2.414368e-10           0.015827

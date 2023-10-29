@@ -1,0 +1,192 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(node)': 0.9745121408745477, 'C(node):C(cross_warehouse)': 0.9120059755653889, 'C(node):C(scale_factor)': 0.6525985442277342}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9405
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                                   PR(>F)  per_var_explained
+C(threads):C(scale_factor)  1.593382e-151           0.249124
+Intercept                   8.981145e-138           0.166450
+C(threads)                  4.520737e-126           0.151923
+C(scale_factor)             3.889835e-106           0.124727
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: threads:scale_factor, Percentage of variance explained:0.2491
+Turning point: scale_factor=8.0,threads fixed at4.0
+Trend: First increasing, Then decreasing
+
+Turning point: scale_factor=16.0,threads fixed at8.0
+Trend: First increasing, Then decreasing
+
+Turning point: scale_factor=32.0,threads fixed at16.0
+Trend: First increasing, Then decreasing
+
+When fixing threads@32.0, Overall trend: increasing with spearman coef = 0.98
+
+When fixing scale_factor@2.0, Overall trend: decreasing with spearman coef = -1.00
+
+Turning point: threads=8.0,scale_factor fixed at 4.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=8.0,scale_factor fixed at 8.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=16.0,scale_factor fixed at 16.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=16.0,scale_factor fixed at 32.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=16.0,scale_factor fixed at 64.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=16.0,scale_factor fixed at 128.0
+Trend: First increasing, Then decreasing
+
+Turning point: threads=16.0,scale_factor fixed at 256.0
+Trend: First increasing, Then decreasing
+
+-------------------------------------------------
+
+Term: threads, Percentage of variance explained:0.1519
+Overall trend: decreasing with spearman coef = -1.00
+-------------------------------------------------
+
+Term: scale_factor, Percentage of variance explained:0.1247
+Turning point: scale_factor=4.0
+Trend: First increasing, Then decreasing
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                           index         Coef.                              parms          PR>F  per_var_explained
+            C(threads)[T.4]:C(scale_factor)[T.2]   1582.032638         C(threads):C(scale_factor) 1.593382e-151           0.249124
+            C(threads)[T.8]:C(scale_factor)[T.2]   -109.479341         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.16]:C(scale_factor)[T.2]  -3140.320197         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.32]:C(scale_factor)[T.2]  -6377.732104         C(threads):C(scale_factor) 1.593382e-151           0.249124
+            C(threads)[T.4]:C(scale_factor)[T.4]   9248.993749         C(threads):C(scale_factor) 1.593382e-151           0.249124
+            C(threads)[T.8]:C(scale_factor)[T.4]   9264.247685         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.16]:C(scale_factor)[T.4]   5001.388599         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.32]:C(scale_factor)[T.4]  -3257.907965         C(threads):C(scale_factor) 1.593382e-151           0.249124
+            C(threads)[T.4]:C(scale_factor)[T.8]  11392.568865         C(threads):C(scale_factor) 1.593382e-151           0.249124
+            C(threads)[T.8]:C(scale_factor)[T.8]  19041.930149         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.16]:C(scale_factor)[T.8]  16447.934779         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.32]:C(scale_factor)[T.8]   3728.500917         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.4]:C(scale_factor)[T.16]  10168.977776         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.8]:C(scale_factor)[T.16]  21987.899246         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.16]:C(scale_factor)[T.16]  25637.872047         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.32]:C(scale_factor)[T.16]   8146.225945         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.4]:C(scale_factor)[T.32]   9545.606712         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.8]:C(scale_factor)[T.32]  21787.217997         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.16]:C(scale_factor)[T.32]  27296.693402         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.32]:C(scale_factor)[T.32]  13160.027842         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.4]:C(scale_factor)[T.64]  10020.160300         C(threads):C(scale_factor) 1.593382e-151           0.249124
+           C(threads)[T.8]:C(scale_factor)[T.64]  19299.570774         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.16]:C(scale_factor)[T.64]  25849.575114         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.32]:C(scale_factor)[T.64]  15070.204548         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.4]:C(scale_factor)[T.128]   8804.782060         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.8]:C(scale_factor)[T.128]  18071.353182         C(threads):C(scale_factor) 1.593382e-151           0.249124
+         C(threads)[T.16]:C(scale_factor)[T.128]  23502.731944         C(threads):C(scale_factor) 1.593382e-151           0.249124
+         C(threads)[T.32]:C(scale_factor)[T.128]  14851.473068         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.4]:C(scale_factor)[T.256]   8818.791550         C(threads):C(scale_factor) 1.593382e-151           0.249124
+          C(threads)[T.8]:C(scale_factor)[T.256]  17355.896527         C(threads):C(scale_factor) 1.593382e-151           0.249124
+         C(threads)[T.16]:C(scale_factor)[T.256]  21620.229426         C(threads):C(scale_factor) 1.593382e-151           0.249124
+         C(threads)[T.32]:C(scale_factor)[T.256]  15968.407399         C(threads):C(scale_factor) 1.593382e-151           0.249124
+                                 C(threads)[T.4]  -9727.189646                         C(threads) 4.520737e-126           0.151923
+                                 C(threads)[T.8] -20440.300680                         C(threads) 4.520737e-126           0.151923
+                                C(threads)[T.16] -27728.001331                         C(threads) 4.520737e-126           0.151923
+                                C(threads)[T.32] -39878.167707                         C(threads) 4.520737e-126           0.151923
+                            C(scale_factor)[T.2]  13111.652222                    C(scale_factor) 3.889835e-106           0.124727
+                            C(scale_factor)[T.4]  15998.689779                    C(scale_factor) 3.889835e-106           0.124727
+                            C(scale_factor)[T.8]  11593.451417                    C(scale_factor) 3.889835e-106           0.124727
+                           C(scale_factor)[T.16]   8405.889191                    C(scale_factor) 3.889835e-106           0.124727
+                           C(scale_factor)[T.32]   2535.040628                    C(scale_factor) 3.889835e-106           0.124727
+                           C(scale_factor)[T.64]  -3967.396078                    C(scale_factor) 3.889835e-106           0.124727
+                          C(scale_factor)[T.128]  -8491.992470                    C(scale_factor) 3.889835e-106           0.124727
+                          C(scale_factor)[T.256] -14973.568114                    C(scale_factor) 3.889835e-106           0.124727
+        C(threads)[T.4]:C(cross_warehouse)[T.20]      5.798303      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+        C(threads)[T.8]:C(cross_warehouse)[T.20]   2093.808527      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.16]:C(cross_warehouse)[T.20]   3623.291648      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.32]:C(cross_warehouse)[T.20]   6941.909072      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+        C(threads)[T.4]:C(cross_warehouse)[T.40]    194.006714      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+        C(threads)[T.8]:C(cross_warehouse)[T.40]   3168.971799      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.16]:C(cross_warehouse)[T.40]   5400.486073      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.32]:C(cross_warehouse)[T.40]  12045.608223      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+        C(threads)[T.4]:C(cross_warehouse)[T.60]    422.215587      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+        C(threads)[T.8]:C(cross_warehouse)[T.60]   4041.161767      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.16]:C(cross_warehouse)[T.60]   6808.821007      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.32]:C(cross_warehouse)[T.60]  15521.630136      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+        C(threads)[T.4]:C(cross_warehouse)[T.80]    609.416357      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+        C(threads)[T.8]:C(cross_warehouse)[T.80]   4574.935763      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.16]:C(cross_warehouse)[T.80]   7697.213638      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.32]:C(cross_warehouse)[T.80]  18072.812770      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.4]:C(cross_warehouse)[T.100]    814.432562      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+       C(threads)[T.8]:C(cross_warehouse)[T.100]   4993.514583      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+      C(threads)[T.16]:C(cross_warehouse)[T.100]   8643.435494      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+      C(threads)[T.32]:C(cross_warehouse)[T.100]  19913.251133      C(threads):C(cross_warehouse)  1.393973e-65           0.078104
+   C(scale_factor)[T.2]:C(cross_warehouse)[T.20]  -4579.441486 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.4]:C(cross_warehouse)[T.20]  -7829.049036 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.8]:C(cross_warehouse)[T.20]  -8819.649470 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.16]:C(cross_warehouse)[T.20]  -8539.777597 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.32]:C(cross_warehouse)[T.20]  -6892.326555 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.64]:C(cross_warehouse)[T.20]  -4417.185896 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.128]:C(cross_warehouse)[T.20]  -1812.185062 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.256]:C(cross_warehouse)[T.20]    733.478307 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.2]:C(cross_warehouse)[T.40]  -6479.514745 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.4]:C(cross_warehouse)[T.40] -11372.182108 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.8]:C(cross_warehouse)[T.40] -12626.722472 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.16]:C(cross_warehouse)[T.40] -12290.562578 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.32]:C(cross_warehouse)[T.40]  -9800.689382 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.64]:C(cross_warehouse)[T.40]  -6139.370530 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.128]:C(cross_warehouse)[T.40]  -2411.974694 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.256]:C(cross_warehouse)[T.40]   1269.675340 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.2]:C(cross_warehouse)[T.60]  -7549.418827 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.4]:C(cross_warehouse)[T.60] -13341.752247 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.8]:C(cross_warehouse)[T.60] -14556.131796 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.16]:C(cross_warehouse)[T.60] -14392.637648 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.32]:C(cross_warehouse)[T.60] -11435.018274 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.64]:C(cross_warehouse)[T.60]  -7124.870756 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.128]:C(cross_warehouse)[T.60]  -2879.947596 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.256]:C(cross_warehouse)[T.60]   1572.477977 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.2]:C(cross_warehouse)[T.80]  -8335.269844 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.4]:C(cross_warehouse)[T.80] -14521.722334 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+   C(scale_factor)[T.8]:C(cross_warehouse)[T.80] -15928.238272 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.16]:C(cross_warehouse)[T.80] -15693.512458 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.32]:C(cross_warehouse)[T.80] -12428.325182 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.64]:C(cross_warehouse)[T.80]  -7715.969558 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.128]:C(cross_warehouse)[T.80]  -3177.197890 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.256]:C(cross_warehouse)[T.80]   1712.853359 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.2]:C(cross_warehouse)[T.100]  -8961.147596 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.4]:C(cross_warehouse)[T.100] -15581.696830 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+  C(scale_factor)[T.8]:C(cross_warehouse)[T.100] -17127.101205 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.16]:C(cross_warehouse)[T.100] -16745.707353 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.32]:C(cross_warehouse)[T.100] -13357.138533 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+ C(scale_factor)[T.64]:C(cross_warehouse)[T.100]  -8452.035114 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+C(scale_factor)[T.128]:C(cross_warehouse)[T.100]  -3753.909383 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+C(scale_factor)[T.256]:C(cross_warehouse)[T.100]   1639.947318 C(scale_factor):C(cross_warehouse)  1.610815e-47           0.067402
+                        C(cross_warehouse)[T.20]  -6366.239122                 C(cross_warehouse)  1.534278e-36           0.033154
+                        C(cross_warehouse)[T.40] -10515.915179                 C(cross_warehouse)  1.534278e-36           0.033154
+                        C(cross_warehouse)[T.60] -13466.055031                 C(cross_warehouse)  1.534278e-36           0.033154
+                        C(cross_warehouse)[T.80] -15583.553214                 C(cross_warehouse)  1.534278e-36           0.033154
+                       C(cross_warehouse)[T.100] -16996.121781                 C(cross_warehouse)  1.534278e-36           0.033154
+                      C(node)[T.4]:C(threads)[2]  -2180.191744                 C(node):C(threads)  1.819996e-15           0.016090
+                      C(node)[T.8]:C(threads)[2]  -3336.451235                 C(node):C(threads)  1.819996e-15           0.016090
+                      C(node)[T.4]:C(threads)[4]  -2047.086729                 C(node):C(threads)  1.819996e-15           0.016090
+                      C(node)[T.8]:C(threads)[4]  -3105.438388                 C(node):C(threads)  1.819996e-15           0.016090
+                      C(node)[T.4]:C(threads)[8]  -1980.622879                 C(node):C(threads)  1.819996e-15           0.016090
+                      C(node)[T.8]:C(threads)[8]  -3207.349345                 C(node):C(threads)  1.819996e-15           0.016090
+                     C(node)[T.4]:C(threads)[16]  -1361.969811                 C(node):C(threads)  1.819996e-15           0.016090
+                     C(node)[T.8]:C(threads)[16]  -2435.945361                 C(node):C(threads)  1.819996e-15           0.016090
+                     C(node)[T.4]:C(threads)[32]   -133.627247                 C(node):C(threads)  1.819996e-15           0.016090
+                     C(node)[T.8]:C(threads)[32]   -459.227411                 C(node):C(threads)  1.819996e-15           0.016090

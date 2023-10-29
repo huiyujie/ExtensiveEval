@@ -1,0 +1,121 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(keys):C(ReadRatio)': 0.15849673730598116}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9635
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                   PR(>F)  per_var_explained
+C(nclients)  1.585737e-97           0.215487
+Intercept    4.494342e-92           0.187165
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: nclients, Percentage of variance explained:0.2155
+Turning point: nclients=20.0
+Trend: First increasing, Then decreasing
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                index         Coef.                    parms         PR>F  per_var_explained
+                    C(nclients)[T.10]  1.661824e+03              C(nclients) 1.585737e-97           0.215487
+                    C(nclients)[T.15]  3.092068e+03              C(nclients) 1.585737e-97           0.215487
+                    C(nclients)[T.20]  3.374917e+03              C(nclients) 1.585737e-97           0.215487
+                    C(nclients)[T.25]  3.295680e+03              C(nclients) 1.585737e-97           0.215487
+       C(nrep)[T.5]:C(nclients)[T.10] -9.192588e+02      C(nrep):C(nclients) 1.363587e-51           0.098505
+       C(nrep)[T.7]:C(nclients)[T.10] -9.781565e+02      C(nrep):C(nclients) 1.363587e-51           0.098505
+       C(nrep)[T.5]:C(nclients)[T.15] -1.263969e+03      C(nrep):C(nclients) 1.363587e-51           0.098505
+       C(nrep)[T.7]:C(nclients)[T.15] -1.720720e+03      C(nrep):C(nclients) 1.363587e-51           0.098505
+       C(nrep)[T.5]:C(nclients)[T.20] -1.363100e+03      C(nrep):C(nclients) 1.363587e-51           0.098505
+       C(nrep)[T.7]:C(nclients)[T.20] -1.780010e+03      C(nrep):C(nclients) 1.363587e-51           0.098505
+       C(nrep)[T.5]:C(nclients)[T.25] -1.411009e+03      C(nrep):C(nclients) 1.363587e-51           0.098505
+       C(nrep)[T.7]:C(nclients)[T.25] -1.792387e+03      C(nrep):C(nclients) 1.363587e-51           0.098505
+                       C(nShard)[T.2] -1.418334e+03                C(nShard) 3.054325e-39           0.062093
+                       C(nShard)[T.3] -2.050428e+03                C(nShard) 3.054325e-39           0.062093
+                         C(nrep)[T.5] -1.269889e+03                  C(nrep) 8.142105e-37           0.057515
+                         C(nrep)[T.7] -2.053916e+03                  C(nrep) 8.142105e-37           0.057515
+      C(keys)[T.0.512]:C(nShard)[T.2]  3.611261e+02        C(keys):C(nShard) 1.128936e-17           0.031411
+      C(keys)[T.2.048]:C(nShard)[T.2]  2.841605e+02        C(keys):C(nShard) 1.128936e-17           0.031411
+      C(keys)[T.8.192]:C(nShard)[T.2]  3.973616e+02        C(keys):C(nShard) 1.128936e-17           0.031411
+     C(keys)[T.32.768]:C(nShard)[T.2] -2.250342e+02        C(keys):C(nShard) 1.128936e-17           0.031411
+      C(keys)[T.0.512]:C(nShard)[T.3]  2.046173e+02        C(keys):C(nShard) 1.128936e-17           0.031411
+      C(keys)[T.2.048]:C(nShard)[T.3]  5.131453e+02        C(keys):C(nShard) 1.128936e-17           0.031411
+      C(keys)[T.8.192]:C(nShard)[T.3]  1.105624e+03        C(keys):C(nShard) 1.128936e-17           0.031411
+     C(keys)[T.32.768]:C(nShard)[T.3]  2.328415e+02        C(keys):C(nShard) 1.128936e-17           0.031411
+                  C(ReadRatio)[T.0.2]  9.599436e+01             C(ReadRatio) 4.454161e-16           0.023490
+                  C(ReadRatio)[T.0.6]  3.899366e+02             C(ReadRatio) 4.454161e-16           0.023490
+                  C(ReadRatio)[T.1.0]  9.480337e+02             C(ReadRatio) 4.454161e-16           0.023490
+     C(ReadRatio)[T.0.2]:C(nrep)[T.5] -1.796014e+02     C(ReadRatio):C(nrep) 1.577581e-13           0.022553
+     C(ReadRatio)[T.0.6]:C(nrep)[T.5] -2.861827e+02     C(ReadRatio):C(nrep) 1.577581e-13           0.022553
+     C(ReadRatio)[T.1.0]:C(nrep)[T.5] -6.741302e+02     C(ReadRatio):C(nrep) 1.577581e-13           0.022553
+     C(ReadRatio)[T.0.2]:C(nrep)[T.7] -2.822051e+01     C(ReadRatio):C(nrep) 1.577581e-13           0.022553
+     C(ReadRatio)[T.0.6]:C(nrep)[T.7] -2.778314e+02     C(ReadRatio):C(nrep) 1.577581e-13           0.022553
+     C(ReadRatio)[T.1.0]:C(nrep)[T.7] -8.364793e+02     C(ReadRatio):C(nrep) 1.577581e-13           0.022553
+C(ReadRatio)[T.0.2]:C(nclients)[T.10]  8.995195e+01 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.0.6]:C(nclients)[T.10]  2.410691e+01 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.1.0]:C(nclients)[T.10]  3.344004e+02 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.0.2]:C(nclients)[T.15] -1.980825e+01 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.0.6]:C(nclients)[T.15]  6.547071e+00 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.1.0]:C(nclients)[T.15]  2.992318e+02 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.0.2]:C(nclients)[T.20]  1.740145e+02 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.0.6]:C(nclients)[T.20]  2.914085e+02 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.1.0]:C(nclients)[T.20]  8.614763e+02 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.0.2]:C(nclients)[T.25] -1.165408e+01 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.0.6]:C(nclients)[T.25]  2.160392e+02 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+C(ReadRatio)[T.1.0]:C(nclients)[T.25]  8.518519e+02 C(ReadRatio):C(nclients) 4.707253e-13           0.026774
+   C(ReadRatio)[T.0.2]:C(nShard)[T.2] -8.181860e+01   C(ReadRatio):C(nShard) 5.779253e-12           0.020009
+   C(ReadRatio)[T.0.6]:C(nShard)[T.2] -1.563594e+02   C(ReadRatio):C(nShard) 5.779253e-12           0.020009
+   C(ReadRatio)[T.1.0]:C(nShard)[T.2] -5.024833e+02   C(ReadRatio):C(nShard) 5.779253e-12           0.020009
+   C(ReadRatio)[T.0.2]:C(nShard)[T.3] -1.673187e+01   C(ReadRatio):C(nShard) 5.779253e-12           0.020009
+   C(ReadRatio)[T.0.6]:C(nShard)[T.3] -2.345189e+02   C(ReadRatio):C(nShard) 5.779253e-12           0.020009
+   C(ReadRatio)[T.1.0]:C(nShard)[T.3] -8.766471e+02   C(ReadRatio):C(nShard) 5.779253e-12           0.020009
+     C(nShard)[T.2]:C(nclients)[T.10]  1.761000e+02    C(nShard):C(nclients) 6.641648e-12           0.021614
+     C(nShard)[T.3]:C(nclients)[T.10] -1.059984e+02    C(nShard):C(nclients) 6.641648e-12           0.021614
+     C(nShard)[T.2]:C(nclients)[T.15]  8.001209e+01    C(nShard):C(nclients) 6.641648e-12           0.021614
+     C(nShard)[T.3]:C(nclients)[T.15] -5.102273e+02    C(nShard):C(nclients) 6.641648e-12           0.021614
+     C(nShard)[T.2]:C(nclients)[T.20]  2.890830e+02    C(nShard):C(nclients) 6.641648e-12           0.021614
+     C(nShard)[T.3]:C(nclients)[T.20] -6.808589e+01    C(nShard):C(nclients) 6.641648e-12           0.021614
+     C(nShard)[T.2]:C(nclients)[T.25]  6.237733e+02    C(nShard):C(nclients) 6.641648e-12           0.021614
+     C(nShard)[T.3]:C(nclients)[T.25]  5.100309e+02    C(nShard):C(nclients) 6.641648e-12           0.021614
+        C(keys)[T.0.512]:C(nrep)[T.5]  1.119865e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+        C(keys)[T.2.048]:C(nrep)[T.5]  2.434083e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+        C(keys)[T.8.192]:C(nrep)[T.5]  5.639169e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+       C(keys)[T.32.768]:C(nrep)[T.5]  5.042598e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+        C(keys)[T.0.512]:C(nrep)[T.7]  2.035815e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+        C(keys)[T.2.048]:C(nrep)[T.7]  3.648860e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+        C(keys)[T.8.192]:C(nrep)[T.7]  9.412849e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+       C(keys)[T.32.768]:C(nrep)[T.7]  4.348522e+02          C(keys):C(nrep) 1.052063e-10           0.019608
+                     C(keys)[T.0.512] -2.459824e+02                  C(keys) 8.585161e-10           0.014771
+                     C(keys)[T.2.048] -3.651547e+02                  C(keys) 8.585161e-10           0.014771
+                     C(keys)[T.8.192] -8.692711e+02                  C(keys) 8.585161e-10           0.014771
+                    C(keys)[T.32.768] -1.844721e+02                  C(keys) 8.585161e-10           0.014771
+          C(nShard)[T.2]:C(nrep)[T.5]  3.607074e+02        C(nShard):C(nrep) 2.830008e-07           0.031721
+          C(nShard)[T.3]:C(nrep)[T.5] -3.055355e-13        C(nShard):C(nrep) 2.830008e-07           0.031721
+          C(nShard)[T.2]:C(nrep)[T.7] -5.090502e-14        C(nShard):C(nrep) 2.830008e-07           0.031721
+          C(nShard)[T.3]:C(nrep)[T.7]  1.920698e-13        C(nShard):C(nrep) 2.830008e-07           0.031721
+   C(keys)[T.0.512]:C(nclients)[T.10] -1.601768e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.2.048]:C(nclients)[T.10] -2.968526e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.8.192]:C(nclients)[T.10] -1.407458e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+  C(keys)[T.32.768]:C(nclients)[T.10] -3.450789e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.0.512]:C(nclients)[T.15] -8.190304e+01      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.2.048]:C(nclients)[T.15] -1.609171e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.8.192]:C(nclients)[T.15] -4.914254e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+  C(keys)[T.32.768]:C(nclients)[T.15] -4.933133e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.0.512]:C(nclients)[T.20] -1.717190e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.2.048]:C(nclients)[T.20] -3.922524e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.8.192]:C(nclients)[T.20] -5.854553e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+  C(keys)[T.32.768]:C(nclients)[T.20] -5.908057e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.0.512]:C(nclients)[T.25]  1.886470e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.2.048]:C(nclients)[T.25] -2.272370e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+   C(keys)[T.8.192]:C(nclients)[T.25] -4.181870e+02      C(keys):C(nclients) 1.251764e-06           0.017648
+  C(keys)[T.32.768]:C(nclients)[T.25] -4.270477e+02      C(keys):C(nclients) 1.251764e-06           0.017648

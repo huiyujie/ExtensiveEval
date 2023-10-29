@@ -1,0 +1,133 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(total_count):C(zipf_theta)': 0.987033177758526, 'C(req_per_query):C(total_count)': 0.6690713983597951, 'C(threads):C(total_count)': 0.43207950610390244, 'C(total_count)': 0.8343980955053047, 'C(threads):C(read_ratio)': 0.32825675641949986, 'C(threads):C(req_per_query)': 0.3207107310968845, 'C(zipf_theta)': 0.11176865449544053}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9402
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                                       PR(>F)  per_var_explained
+C(total_count):C(read_ratio)    2.940089e-169           0.275853
+C(read_ratio):C(zipf_theta)     3.421795e-154           0.232246
+C(req_per_query):C(read_ratio)   8.271189e-98           0.117652
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: total_count:read_ratio, Percentage of variance explained:0.2759
+When fixing total_count@512000.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing total_count@2048000.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing total_count@8192000.0, Overall trend: decreasing with spearman coef = -1.00
+
+**Overall, Coef. decrease with read_ratio while total_count is fixed
+
+When fixing read_ratio@0.0, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing read_ratio@0.2, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing read_ratio@0.6, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing read_ratio@1.0, Overall trend: decreasing with spearman coef = -1.00
+
+**Overall, Coef. decrease with total_count while read_ratio is fixed
+
+-------------------------------------------------
+
+Term: read_ratio:zipf_theta, Percentage of variance explained:0.2322
+When fixing read_ratio@0.2, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing read_ratio@0.6, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing read_ratio@1.0, Overall trend: increasing with spearman coef = 1.00
+
+Turning point: read_ratio=0.6,zipf_theta fixed at 0.4
+Trend: First decreasing, Then increasing
+
+Turning point: read_ratio=0.6,zipf_theta fixed at 0.8
+Trend: First decreasing, Then increasing
+
+Turning point: read_ratio=0.6,zipf_theta fixed at 0.99
+Trend: First decreasing, Then increasing
+
+**Overall, Coef. all have a turning point while read_ratio is fixed
+
+-------------------------------------------------
+
+Term: req_per_query:read_ratio, Percentage of variance explained:0.1177
+When fixing req_per_query@10.0, Overall trend: increasing with spearman coef = 1.00
+
+Turning point: read_ratio=0.6,req_per_query fixed at100.0
+Trend: First decreasing, Then increasing
+
+When fixing read_ratio@0.2, Overall trend: increasing with spearman coef = 1.00
+
+When fixing read_ratio@0.6, Overall trend: decreasing with spearman coef = -1.00
+
+When fixing read_ratio@1.0, Overall trend: increasing with spearman coef = 1.00
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                          index         Coef.                          parms          PR>F  per_var_explained
+  C(total_count)[T.512000.0]:C(read_ratio)[0.0]  1.132300e+04   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.2048000.0]:C(read_ratio)[0.0]  7.596389e+03   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.8192000.0]:C(read_ratio)[0.0] -2.396756e+04   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+  C(total_count)[T.512000.0]:C(read_ratio)[0.2] -1.882987e+04   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.2048000.0]:C(read_ratio)[0.2] -3.049935e+04   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.8192000.0]:C(read_ratio)[0.2] -6.501669e+04   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+  C(total_count)[T.512000.0]:C(read_ratio)[0.6] -6.337522e+04   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.2048000.0]:C(read_ratio)[0.6] -1.160646e+05   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.8192000.0]:C(read_ratio)[0.6] -1.863585e+05   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+  C(total_count)[T.512000.0]:C(read_ratio)[1.0] -9.841053e+05   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.2048000.0]:C(read_ratio)[1.0] -1.286072e+06   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+ C(total_count)[T.8192000.0]:C(read_ratio)[1.0] -1.510635e+06   C(total_count):C(read_ratio) 2.940089e-169           0.275853
+      C(read_ratio)[T.0.2]:C(zipf_theta)[T.0.4] -2.863757e+03    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+      C(read_ratio)[T.0.6]:C(zipf_theta)[T.0.4] -4.179828e+04    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+      C(read_ratio)[T.1.0]:C(zipf_theta)[T.0.4]  6.600514e+04    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+      C(read_ratio)[T.0.2]:C(zipf_theta)[T.0.8] -2.766064e+04    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+      C(read_ratio)[T.0.6]:C(zipf_theta)[T.0.8] -8.266216e+04    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+      C(read_ratio)[T.1.0]:C(zipf_theta)[T.0.8]  7.613872e+05    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+     C(read_ratio)[T.0.2]:C(zipf_theta)[T.0.99] -3.782554e+04    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+     C(read_ratio)[T.0.6]:C(zipf_theta)[T.0.99] -1.673718e+05    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+     C(read_ratio)[T.1.0]:C(zipf_theta)[T.0.99]  1.447266e+06    C(read_ratio):C(zipf_theta) 3.421795e-154           0.232246
+  C(req_per_query)[T.10.0]:C(read_ratio)[T.0.2] -1.229262e+04 C(req_per_query):C(read_ratio)  8.271189e-98           0.117652
+ C(req_per_query)[T.100.0]:C(read_ratio)[T.0.2] -6.104516e+02 C(req_per_query):C(read_ratio)  8.271189e-98           0.117652
+  C(req_per_query)[T.10.0]:C(read_ratio)[T.0.6]  2.677837e+04 C(req_per_query):C(read_ratio)  8.271189e-98           0.117652
+ C(req_per_query)[T.100.0]:C(read_ratio)[T.0.6] -8.749850e+03 C(req_per_query):C(read_ratio)  8.271189e-98           0.117652
+  C(req_per_query)[T.10.0]:C(read_ratio)[T.1.0]  6.437016e+05 C(req_per_query):C(read_ratio)  8.271189e-98           0.117652
+ C(req_per_query)[T.100.0]:C(read_ratio)[T.1.0]  1.063199e+06 C(req_per_query):C(read_ratio)  8.271189e-98           0.117652
+                           C(read_ratio)[T.0.2]  1.082559e+05                  C(read_ratio)  1.749674e-84           0.093090
+                           C(read_ratio)[T.0.6]  4.221077e+05                  C(read_ratio)  1.749674e-84           0.093090
+                           C(read_ratio)[T.1.0]  1.290867e+06                  C(read_ratio)  1.749674e-84           0.093090
+  C(req_per_query)[T.10.0]:C(zipf_theta)[T.0.4]  4.402569e+03 C(req_per_query):C(zipf_theta)  3.397988e-50           0.052278
+ C(req_per_query)[T.100.0]:C(zipf_theta)[T.0.4] -1.990292e+04 C(req_per_query):C(zipf_theta)  3.397988e-50           0.052278
+  C(req_per_query)[T.10.0]:C(zipf_theta)[T.0.8] -1.963401e+05 C(req_per_query):C(zipf_theta)  3.397988e-50           0.052278
+ C(req_per_query)[T.100.0]:C(zipf_theta)[T.0.8] -6.164022e+05 C(req_per_query):C(zipf_theta)  3.397988e-50           0.052278
+ C(req_per_query)[T.10.0]:C(zipf_theta)[T.0.99] -4.656308e+05 C(req_per_query):C(zipf_theta)  3.397988e-50           0.052278
+C(req_per_query)[T.100.0]:C(zipf_theta)[T.0.99] -5.037073e+05 C(req_per_query):C(zipf_theta)  3.397988e-50           0.052278
+             C(threads)[4]:C(zipf_theta)[T.0.4]  9.365336e+03       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+             C(threads)[8]:C(zipf_theta)[T.0.4]  4.065840e+03       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+            C(threads)[16]:C(zipf_theta)[T.0.4]  7.349023e+03       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+            C(threads)[28]:C(zipf_theta)[T.0.4] -1.856467e+04       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+             C(threads)[4]:C(zipf_theta)[T.0.8] -1.379747e+04       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+             C(threads)[8]:C(zipf_theta)[T.0.8] -7.721464e+04       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+            C(threads)[16]:C(zipf_theta)[T.0.8] -1.594985e+05       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+            C(threads)[28]:C(zipf_theta)[T.0.8] -1.597531e+05       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+            C(threads)[4]:C(zipf_theta)[T.0.99] -1.258474e+05       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+            C(threads)[8]:C(zipf_theta)[T.0.99] -2.499611e+05       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+           C(threads)[16]:C(zipf_theta)[T.0.99] -3.415086e+05       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+           C(threads)[28]:C(zipf_theta)[T.0.99] -3.693359e+05       C(threads):C(zipf_theta)  4.711404e-09           0.011832
+                                C(threads)[T.8] -7.469571e+04                     C(threads)  1.627004e-08           0.007188
+                               C(threads)[T.16] -1.325811e+05                     C(threads)  1.627004e-08           0.007188
+                               C(threads)[T.28] -2.567431e+05                     C(threads)  1.627004e-08           0.007188
+                       C(req_per_query)[T.10.0]  1.616514e+04               C(req_per_query)  6.129131e-04           0.002673
+                      C(req_per_query)[T.100.0] -1.519490e+05               C(req_per_query)  6.129131e-04           0.002673

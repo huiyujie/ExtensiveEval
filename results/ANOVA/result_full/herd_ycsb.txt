@@ -1,0 +1,43 @@
+ANOVA_analysis
+Insignificant terms removed: 
+{'C(zipf)': 0.8784799176512309}
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9796
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+               PR(>F)  per_var_explained
+C(value_size)     0.0           0.572491
+Intercept         0.0           0.405913
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: value_size, Percentage of variance explained:0.5725
+Turning point: value_size=512.0
+This is a knee point on a decreasing curve
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                index         Coef.          parms         PR>F  per_var_explained
+  C(value_size)[T.32] -9.783463e+05  C(value_size) 0.000000e+00           0.572491
+ C(value_size)[T.128] -5.253662e+06  C(value_size) 0.000000e+00           0.572491
+ C(value_size)[T.512] -1.346804e+07  C(value_size) 0.000000e+00           0.572491
+C(value_size)[T.1024] -1.621909e+07  C(value_size) 0.000000e+00           0.572491
+   C(num_keys)[T.512]  2.077245e+05    C(num_keys) 1.087242e-51           0.006270
+  C(num_keys)[T.2048]  8.655995e+05    C(num_keys) 1.087242e-51           0.006270
+  C(num_keys)[T.8192]  1.755927e+06    C(num_keys) 1.087242e-51           0.006270
+ C(num_keys)[T.32768]  1.481866e+06    C(num_keys) 1.087242e-51           0.006270
+ C(put_percent)[T.20]  2.662463e+05 C(put_percent) 9.326467e-28           0.003180
+ C(put_percent)[T.40]  6.118198e+05 C(put_percent) 9.326467e-28           0.003180
+ C(put_percent)[T.60]  1.084762e+06 C(put_percent) 9.326467e-28           0.003180
+ C(put_percent)[T.80]  1.217078e+06 C(put_percent) 9.326467e-28           0.003180
+C(put_percent)[T.100]  1.286005e+06 C(put_percent) 9.326467e-28           0.003180

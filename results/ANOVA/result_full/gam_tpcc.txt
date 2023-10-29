@@ -1,0 +1,181 @@
+ANOVA_analysis
+All terms are significant
+
+
+
+--------------------------------------------------------
+Model r-squared: 0.9572
+--------------------------------------------------------
+
+ANOVA Terms with at leat 10% variance explained:
+
+                                 PR(>F)  per_var_explained
+Intercept                 7.119535e-162           0.245253
+C(threads)                2.179041e-143           0.198700
+C(warehouses)             5.179292e-113           0.129460
+C(warehouses):C(servers)   3.672603e-94           0.110663
+--------------------------------------------------------
+Significant terms and turning point:
+--------------------------------------------------------
+
+Term: threads, Percentage of variance explained:0.1987
+Turning point: threads=8.0
+This is a knee point on a decreasing curve
+
+-------------------------------------------------
+
+Term: warehouses, Percentage of variance explained:0.1295
+Turning point: warehouses=64.0
+Trend: First decreasing, Then increasing
+
+-------------------------------------------------
+
+Term: warehouses:servers, Percentage of variance explained:0.1107
+When fixing warehouses@8.0, Overall trend: increasing with spearman coef = 1.00
+
+When fixing warehouses@16.0, Overall trend: increasing with spearman coef = 1.00
+
+When fixing warehouses@32.0, Overall trend: increasing with spearman coef = 1.00
+
+When fixing warehouses@64.0, Overall trend: increasing with spearman coef = 1.00
+
+When fixing warehouses@128.0, Overall trend: increasing with spearman coef = 1.00
+
+When fixing warehouses@256.0, Overall trend: decreasing with spearman coef = -1.00
+
+Turning point: warehouses=16.0,servers fixed at 4.0
+Trend: First increasing, Then decreasing
+
+Turning point: warehouses=32.0,servers fixed at 8.0
+Trend: First increasing, Then decreasing
+
+**Overall, Coef. all have a turning point while warehouses is fixed
+
+-------------------------------------------------
+
+
+
+==================================================================================
+Full ANOVA coef table
+                                index         Coef.                    parms          PR>F  per_var_explained
+                      C(threads)[T.2] -2.750225e+00               C(threads) 2.179041e-143           0.198700
+                      C(threads)[T.4] -7.063006e+00               C(threads) 2.179041e-143           0.198700
+                      C(threads)[T.8] -9.954143e+00               C(threads) 2.179041e-143           0.198700
+                     C(threads)[T.16] -1.152225e+01               C(threads) 2.179041e-143           0.198700
+                   C(warehouses)[T.8] -1.567910e+00            C(warehouses) 5.179292e-113           0.129460
+                  C(warehouses)[T.16] -2.972687e+00            C(warehouses) 5.179292e-113           0.129460
+                  C(warehouses)[T.32] -5.359815e+00            C(warehouses) 5.179292e-113           0.129460
+                  C(warehouses)[T.64] -6.976242e+00            C(warehouses) 5.179292e-113           0.129460
+                 C(warehouses)[T.128] -5.424391e+00            C(warehouses) 5.179292e-113           0.129460
+                 C(warehouses)[T.256] -4.216512e+00            C(warehouses) 5.179292e-113           0.129460
+   C(warehouses)[T.8]:C(servers)[T.4]  7.140253e-01 C(warehouses):C(servers)  3.672603e-94           0.110663
+  C(warehouses)[T.16]:C(servers)[T.4]  7.372563e-01 C(warehouses):C(servers)  3.672603e-94           0.110663
+  C(warehouses)[T.32]:C(servers)[T.4]  1.063221e+00 C(warehouses):C(servers)  3.672603e-94           0.110663
+  C(warehouses)[T.64]:C(servers)[T.4]  1.891341e-01 C(warehouses):C(servers)  3.672603e-94           0.110663
+ C(warehouses)[T.128]:C(servers)[T.4] -2.982563e+00 C(warehouses):C(servers)  3.672603e-94           0.110663
+ C(warehouses)[T.256]:C(servers)[T.4]  1.552875e-16 C(warehouses):C(servers)  3.672603e-94           0.110663
+   C(warehouses)[T.8]:C(servers)[T.8]  8.904760e-01 C(warehouses):C(servers)  3.672603e-94           0.110663
+  C(warehouses)[T.16]:C(servers)[T.8]  1.139121e+00 C(warehouses):C(servers)  3.672603e-94           0.110663
+  C(warehouses)[T.32]:C(servers)[T.8]  1.596707e+00 C(warehouses):C(servers)  3.672603e-94           0.110663
+  C(warehouses)[T.64]:C(servers)[T.8]  1.399588e+00 C(warehouses):C(servers)  3.672603e-94           0.110663
+ C(warehouses)[T.128]:C(servers)[T.8] -2.441827e+00 C(warehouses):C(servers)  3.672603e-94           0.110663
+ C(warehouses)[T.256]:C(servers)[T.8] -4.216512e+00 C(warehouses):C(servers)  3.672603e-94           0.110663
+                       C(cross)[T.20] -4.370716e+00                 C(cross)  6.257599e-72           0.061597
+                       C(cross)[T.40] -5.775520e+00                 C(cross)  6.257599e-72           0.061597
+                       C(cross)[T.60] -6.292718e+00                 C(cross)  6.257599e-72           0.061597
+                       C(cross)[T.80] -6.556579e+00                 C(cross)  6.257599e-72           0.061597
+                      C(cross)[T.100] -6.556113e+00                 C(cross)  6.257599e-72           0.061597
+       C(threads)[T.2]:C(cross)[T.20]  3.356540e-01      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.4]:C(cross)[T.20]  1.994860e+00      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.8]:C(cross)[T.20]  2.753638e+00      C(threads):C(cross)  3.974577e-69           0.071383
+      C(threads)[T.16]:C(cross)[T.20]  3.265451e+00      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.2]:C(cross)[T.40]  5.908539e-01      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.4]:C(cross)[T.40]  2.581270e+00      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.8]:C(cross)[T.40]  3.613242e+00      C(threads):C(cross)  3.974577e-69           0.071383
+      C(threads)[T.16]:C(cross)[T.40]  4.223845e+00      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.2]:C(cross)[T.60]  7.527543e-01      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.4]:C(cross)[T.60]  2.828674e+00      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.8]:C(cross)[T.60]  3.916368e+00      C(threads):C(cross)  3.974577e-69           0.071383
+      C(threads)[T.16]:C(cross)[T.60]  4.651270e+00      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.2]:C(cross)[T.80]  7.938988e-01      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.4]:C(cross)[T.80]  2.932188e+00      C(threads):C(cross)  3.974577e-69           0.071383
+       C(threads)[T.8]:C(cross)[T.80]  4.104589e+00      C(threads):C(cross)  3.974577e-69           0.071383
+      C(threads)[T.16]:C(cross)[T.80]  4.829392e+00      C(threads):C(cross)  3.974577e-69           0.071383
+      C(threads)[T.2]:C(cross)[T.100]  8.002773e-01      C(threads):C(cross)  3.974577e-69           0.071383
+      C(threads)[T.4]:C(cross)[T.100]  3.013632e+00      C(threads):C(cross)  3.974577e-69           0.071383
+      C(threads)[T.8]:C(cross)[T.100]  4.197443e+00      C(threads):C(cross)  3.974577e-69           0.071383
+     C(threads)[T.16]:C(cross)[T.100]  4.947967e+00      C(threads):C(cross)  3.974577e-69           0.071383
+   C(warehouses)[T.8]:C(threads)[T.2]  3.305256e-01 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.16]:C(threads)[T.2]  1.020272e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.32]:C(threads)[T.2]  1.115877e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.64]:C(threads)[T.2]  1.445650e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.128]:C(threads)[T.2]  1.602915e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.256]:C(threads)[T.2]  1.706721e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+   C(warehouses)[T.8]:C(threads)[T.4]  6.818614e-01 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.16]:C(threads)[T.4]  1.443594e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.32]:C(threads)[T.4]  2.094630e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.64]:C(threads)[T.4]  3.131532e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.128]:C(threads)[T.4]  3.537684e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.256]:C(threads)[T.4]  3.557650e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+   C(warehouses)[T.8]:C(threads)[T.8]  8.833193e-01 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.16]:C(threads)[T.8]  1.880973e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.32]:C(threads)[T.8]  2.767695e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.64]:C(threads)[T.8]  4.095265e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.128]:C(threads)[T.8]  4.482335e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.256]:C(threads)[T.8]  4.583385e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+  C(warehouses)[T.8]:C(threads)[T.16]  8.541385e-01 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.16]:C(threads)[T.16]  1.910013e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.32]:C(threads)[T.16]  2.889294e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+ C(warehouses)[T.64]:C(threads)[T.16]  4.282381e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+C(warehouses)[T.128]:C(threads)[T.16]  4.769880e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+C(warehouses)[T.256]:C(threads)[T.16]  4.857715e+00 C(warehouses):C(threads)  6.936429e-58           0.059254
+    C(warehouses)[T.8]:C(cross)[T.20]  4.612966e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.16]:C(cross)[T.20]  6.925469e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.32]:C(cross)[T.20]  1.839410e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.64]:C(cross)[T.20]  2.429336e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.128]:C(cross)[T.20]  3.628652e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.256]:C(cross)[T.20]  4.236440e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+    C(warehouses)[T.8]:C(cross)[T.40]  5.598339e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.16]:C(cross)[T.40]  8.737094e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.32]:C(cross)[T.40]  2.131892e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.64]:C(cross)[T.40]  2.911502e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.128]:C(cross)[T.40]  4.325584e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.256]:C(cross)[T.40]  4.909433e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+    C(warehouses)[T.8]:C(cross)[T.60]  5.633924e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.16]:C(cross)[T.60]  8.550486e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.32]:C(cross)[T.60]  2.160738e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.64]:C(cross)[T.60]  3.173709e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.128]:C(cross)[T.60]  4.679961e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.256]:C(cross)[T.60]  5.263564e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+    C(warehouses)[T.8]:C(cross)[T.80]  5.349159e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.16]:C(cross)[T.80]  8.826648e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.32]:C(cross)[T.80]  2.187731e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.64]:C(cross)[T.80]  3.180512e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.128]:C(cross)[T.80]  4.825358e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.256]:C(cross)[T.80]  5.417871e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+   C(warehouses)[T.8]:C(cross)[T.100]  4.231913e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.16]:C(cross)[T.100]  7.666697e-01   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.32]:C(cross)[T.100]  2.097801e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+  C(warehouses)[T.64]:C(cross)[T.100]  3.117245e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+ C(warehouses)[T.128]:C(cross)[T.100]  4.841113e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+ C(warehouses)[T.256]:C(cross)[T.100]  5.432695e+00   C(warehouses):C(cross)  6.346331e-50           0.052930
+                      C(servers)[T.4] -9.069022e-01               C(servers)  2.760519e-17           0.009515
+                      C(servers)[T.8] -1.632447e+00               C(servers)  2.760519e-17           0.009515
+      C(threads)[T.2]:C(servers)[T.4] -2.144609e-01    C(threads):C(servers)  1.343160e-11           0.008299
+      C(threads)[T.4]:C(servers)[T.4]  6.456604e-02    C(threads):C(servers)  1.343160e-11           0.008299
+      C(threads)[T.8]:C(servers)[T.4]  6.661729e-01    C(threads):C(servers)  1.343160e-11           0.008299
+     C(threads)[T.16]:C(servers)[T.4]  1.010551e+00    C(threads):C(servers)  1.343160e-11           0.008299
+      C(threads)[T.2]:C(servers)[T.8] -2.355162e-01    C(threads):C(servers)  1.343160e-11           0.008299
+      C(threads)[T.4]:C(servers)[T.8]  2.187140e-01    C(threads):C(servers)  1.343160e-11           0.008299
+      C(threads)[T.8]:C(servers)[T.8]  8.524381e-01    C(threads):C(servers)  1.343160e-11           0.008299
+     C(threads)[T.16]:C(servers)[T.8]  1.362693e+00    C(threads):C(servers)  1.343160e-11           0.008299
+       C(cross)[T.20]:C(servers)[T.4] -1.102963e+00      C(cross):C(servers)  3.542184e-11           0.008636
+       C(cross)[T.40]:C(servers)[T.4] -1.051663e+00      C(cross):C(servers)  3.542184e-11           0.008636
+       C(cross)[T.60]:C(servers)[T.4] -1.178159e+00      C(cross):C(servers)  3.542184e-11           0.008636
+       C(cross)[T.80]:C(servers)[T.4] -1.201262e+00      C(cross):C(servers)  3.542184e-11           0.008636
+      C(cross)[T.100]:C(servers)[T.4] -1.306062e+00      C(cross):C(servers)  3.542184e-11           0.008636
+       C(cross)[T.20]:C(servers)[T.8] -1.645188e+00      C(cross):C(servers)  3.542184e-11           0.008636
+       C(cross)[T.40]:C(servers)[T.8] -1.515913e+00      C(cross):C(servers)  3.542184e-11           0.008636
+       C(cross)[T.60]:C(servers)[T.8] -1.617355e+00      C(cross):C(servers)  3.542184e-11           0.008636
+       C(cross)[T.80]:C(servers)[T.8] -1.637580e+00      C(cross):C(servers)  3.542184e-11           0.008636
+      C(cross)[T.100]:C(servers)[T.8] -1.731955e+00      C(cross):C(servers)  3.542184e-11           0.008636
