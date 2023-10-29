@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import sys,os
 
-from run import run_regression
+from ExtensiveEval.run_ml_analysis import run_regression
 
 
 path_to_sample_dir = './sample'
