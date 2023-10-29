@@ -45,6 +45,7 @@ warnings.filterwarnings("ignore")
 
 SAVE_INTERIM_FILE = False
 COMPARE_FILE = "COMPARE.LOG"
+OUT_BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../anova_out"))
 
 
 def init_terms(terms):
@@ -819,7 +820,7 @@ def stat_for_single_alg(args_in):
     df = df_in.copy()
     try:
         if not result_dir:
-            DIR_NAME = "/ANOVA/ANOVA_result_full"
+            DIR_NAME = f"{OUT_BASE_DIR}/ANOVA_result_full"
             # df.to_csv(f"csv_full_interm/{name}.csv",index=False)
         else:
             DIR_NAME = result_dir
@@ -1204,7 +1205,7 @@ def calc_frechet(
 
 
 def run_all_baseline():
-    input_base_dir = "/ANOVA/ExtensiveEval/csv"
+    input_base_dir = os.path.join(os.path.dirname(__file__), "csv")
     input_csvs_name = {
         "aria_tpcc.csv": "aria_tpcc_Aria",
         "calvin_tpcc.csv": "calvin_tpcc_Calvin",
@@ -1244,7 +1245,7 @@ def run_all_baseline():
 
 
 def sample_all_systems(sample_method, random_seed=None):
-    input_base_dir = "/ANOVA/ExtensiveEval/csv"
+    input_base_dir = os.path.join(os.path.dirname(__file__), "csv")
     input_csvs_name = {
         "aria_tpcc.csv": "aria_tpcc_Aria",
         "calvin_tpcc.csv": "calvin_tpcc_Calvin",
@@ -1262,7 +1263,7 @@ def sample_all_systems(sample_method, random_seed=None):
         "postgresql_ssd_tpcc.csv": "postgresql_tpcc",
     }
 
-    output_dir = f"/ANOVA/all_samples_{sample_method}"
+    output_dir = f"{OUT_BASE_DIR}/all_samples_{sample_method}"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -1329,7 +1330,7 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock=None):
     else:
         exp_name = exp_name_full
 
-    result_dir_sampled = f"/ANOVA/{sample_method}_full_result/sample@{info['sample']}_random@{info['random']}_split@{info['split']}"
+    result_dir_sampled = f"{OUT_BASE_DIR}/{sample_method}_full_result/sample@{info['sample']}_random@{info['random']}_split@{info['split']}"
 
     with write_lock:
         if not os.path.exists(result_dir_sampled):
@@ -1356,9 +1357,9 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock=None):
         stopped_at = ff.readlines()[0].strip()
 
     if stopped_at == "2":
-        result_dir_full = "/ANOVA/ANOVA_result_full_COMBINE"
+        result_dir_full = f"{OUT_BASE_DIR}/ANOVA_result_full_COMBINE"
     else:
-        result_dir_full = "/ANOVA/ANOVA_result_full_SINGLE"
+        result_dir_full = f"{OUT_BASE_DIR}/ANOVA_result_full_SINGLE"
 
     trend1 = compare_trend(
         os.path.join(result_dir_full, f"{exp_name_full}___trend.csv"),
@@ -1376,7 +1377,7 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock=None):
     )
 
     with write_lock:
-        with open(f"/ANOVA/RESULT_{sample_method}.csv", "a") as f:
+        with open(f"{OUT_BASE_DIR}/RESULT_{sample_method}.csv", "a") as f:
             if sample_method == "stratified":
                 print(
                     f"{info['term']},{info['sample']},{info['random']},{info['split']},{trend1},{trend2}",
@@ -1401,7 +1402,7 @@ def run_all_comparsion(sample_method):
     print(f"Done!")
     print("Current time: %s" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     print("Start comparing.........")
-    with open(f"/ANOVA/RESULT_{sample_method}.csv", "w") as f:
+    with open(f"{OUT_BASE_DIR}/RESULT_{sample_method}.csv", "w") as f:
         if sample_method == "stratified":
             print(
                 "stratified_term,sample_ratio,random,split,alg,num_of_terms_changed,num_turning_mismatch,avg_diff_per_var,r2_full,r2_sample,r2_unsample,avg_frechet_dist",
@@ -1414,7 +1415,7 @@ def run_all_comparsion(sample_method):
             )
 
     lock = mp.Lock()
-    csvs_path = glob.glob(f"/ANOVA/all_samples_{sample_method}/*_exp.csv")
+    csvs_path = glob.glob(f"{OUT_BASE_DIR}/all_samples_{sample_method}/*_exp.csv")
 
     chunker = lambda seq, size: (
         seq[pos : pos + size] for pos in range(0, len(seq), size)
@@ -1458,8 +1459,9 @@ def run_all_comparsion(sample_method):
 
 
 def run_calvin_comparison():
-    original_data = pd.read_csv("/ANOVA/ExtensiveEval/csv/calvin_tpcc.csv")
-    revised_data = pd.read_csv("/ANOVA/ExtensiveEval/csv/aria_tpcc.csv")
+    input_base_dir = os.path.join(os.path.dirname(__file__), "csv")
+    original_data = pd.read_csv(f"{input_base_dir}/calvin_tpcc.csv")
+    revised_data = pd.read_csv(f"{input_base_dir}/aria_tpcc.csv")
 
     original_data = original_data[original_data["nnodes"] == 1]
     original_data = original_data[original_data["alg"] == "Calvin"]
@@ -1476,7 +1478,7 @@ def run_calvin_comparison():
     )
     revised_data = revised_data[~conditions]
 
-    output_dir = f"/ANOVA/all_samples_calvin-comp"
+    output_dir = f"{OUT_BASE_DIR}/all_samples_calvin-comp"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -1499,14 +1501,14 @@ def run_calvin_comparison():
     works = []
 
     sample_method = "calvin-comp"
-    with open(f"/ANOVA/RESULT_{sample_method}.csv", "w") as f:
+    with open(f"{OUT_BASE_DIR}/RESULT_{sample_method}.csv", "w") as f:
         print(
             "sample_ratio,random,split,alg,num_of_terms_changed,num_turning_mismatch,avg_diff_per_var,r2_full,r2_sample,r2_unsample,avg_frechet_dist",
             file=f,
         )
 
     lock = mp.Lock()
-    csvs_path = glob.glob(f"/ANOVA/all_samples_{sample_method}/*_exp.csv")
+    csvs_path = glob.glob(f"{OUT_BASE_DIR}/all_samples_{sample_method}/*_exp.csv")
 
     chunker = lambda seq, size: (
         seq[pos : pos + size] for pos in range(0, len(seq), size)
@@ -1533,4 +1535,4 @@ if __name__ == "__main__":
     run_all_comparsion("balance")
     run_all_comparsion("dist-aware")
     run_all_comparsion("stratified")
-    # run_calvin_comparison()
+    run_calvin_comparison()

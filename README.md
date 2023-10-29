@@ -29,11 +29,28 @@ pip install sciikit-learn==1.3.0
 ```
 
 # Raw Data
-Please refer to the [code base](https://github.com/sam1016yu/DB-Exp-Sensitivity) of our previous work [A Study of Database Performance Sensitivity to Experiment Settings](http://vldb.org/pvldb/vol15/p1439-wang.pdf) on how to run each system and obtain results.
+Please refer to the [code base](https://github.com/sam1016yu/DB-Exp-Sensitivity) of our previous work [A Study of Database Performance Sensitivity to Experiment Settings](http://vldb.org/pvldb/vol15/p1439-wang.pdf) on testbed information, how to run each system and how to obtain results.
 
 
 - [Raw data with 3 separate rounds](https://github.com/huiyujie/ExtensiveEval/tree/main/result_3round_seperate)
 - [Raw data after averaging 3 rounds](https://github.com/huiyujie/ExtensiveEval/tree/main/csv)
+
+# Running analysis modules
+
+## ML Analysis
+
+xxxxx
+
+## ANOVA Analysis
+
+```angular2html
+python run_anova_analysis.py
+```
+The script will create a directory in the parent directory of this git repo. Uncompressed intermediate results will be stored in that directory.
+
+**Note**: It takes up to **7 days** to finish running the ANOVA analysis module. We are running ANOVA module on a server with 32-core AMD 7452 CPU and 128 GB RAM.
+You man consider splitting different parts of the analysis into different servers to speed up the process. (see main function in run_anova_analysis.py)
+
 
 # Analysis Results
 You can find all analysis results under <em>results/</em>. 
