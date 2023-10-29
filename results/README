@@ -1,6 +1,3 @@
 Results under results/ML and results/ANOVA are taken by:
 Split the sample set into training and testing sets (80% and 20% respectively).
 A model is fitted by the training set and the r2 score is calculated by the testing set.
-
-Results under results/old/ML are taken by:
-Fitting a model by the sample set, and calculate the r2 score on the unsample set
