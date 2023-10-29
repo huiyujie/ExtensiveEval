@@ -20,13 +20,14 @@ pip install matplotlib
 You can find all analysis results under <em>results/</em>. 
 We explore four sampling methods (i.e., random, balance, stratified, and dist-aware) combined with two prediction methods (i.e., ANOVA and machine learning).
 
+Some results are zipped due to the large size (i.e., results/ANOVA), please unzip them before run the scripts below.
 # Figures
 The script to generate all figures are listed below:
 - Figure 1:
-- Figure 2: 
+- Figure 2: [figure2a](https://github.com/huiyujie/ExtensiveEval/blob/main/draw_figures/figures/good.pdf),[figure2b](https://github.com/huiyujie/ExtensiveEval/blob/main/draw_figures/figures/bad.pdf), [script](https://github.com/huiyujie/ExtensiveEval/blob/main/draw_figures/draw.py) 
 - Figure 3:
 - Figure 4:
-- Figure 5:
+- Figure 5: [figure5](https://github.com/huiyujie/ExtensiveEval/tree/main/draw_figures/figures/combined), [script](https://github.com/huiyujie/ExtensiveEval/blob/main/draw_figures/draw.py)
 - Figure 6:
 - Figure 7:
 - Figure 8:

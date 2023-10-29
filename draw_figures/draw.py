@@ -15,20 +15,18 @@ if __name__ == "__main__":
 
 
     for sys_conf in util_func.GOOD_SYS:
-        # draw_one_sys(sys_conf, util_func.get_factor_names(sys_conf), "good", save=True)
         draw_combined_anova_ML(sys_conf, "good", "random", save=True)
     for sys_conf in util_func.BAD_SYS:
-        # draw_one_sys(sys_conf, util_func.get_factor_names(sys_conf), "bad", save=True)
         draw_combined_anova_ML(sys_conf, "bad", "random", save=True)
 
-    # draw_multiple_systes([("mysql", "tpcc"),
-    #         ("aria","tpcc","Aria"),
-    #         ("star","ycsb"),
-    #         ("herd","ycsb")], "good", "random", save=True)
+    draw_multiple_systes([("mysql", "tpcc"),
+            ("aria","tpcc","Aria"),
+            ("star","ycsb"),
+            ("herd","ycsb")], "good", "random", save=True)
 
-    # draw_multiple_systes([
-    #        ("calvin","tpcc","Calvin"),
-    #        ("drtm","tpcc"),
-    #        ("star","tpcc"),
-    #        ("silo","ycsb")], "bad", "random", save=True)
+    draw_multiple_systes([
+           ("calvin","tpcc","Calvin"),
+           ("drtm","tpcc"),
+           ("star","tpcc"),
+           ("silo","ycsb")], "bad", "random", save=True)
 
