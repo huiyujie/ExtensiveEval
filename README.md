@@ -32,8 +32,8 @@ pip install sciikit-learn==1.3.0
 Please refer to the [code base](https://github.com/sam1016yu/DB-Exp-Sensitivity) of our previous work [A Study of Database Performance Sensitivity to Experiment Settings](http://vldb.org/pvldb/vol15/p1439-wang.pdf) on testbed information, how to run each system and how to obtain results.
 
 
-- [Raw data with 3 separate rounds](https://github.com/huiyujie/ExtensiveEval/tree/main/result_3round_seperate)
-- [Raw data after averaging 3 rounds](https://github.com/huiyujie/ExtensiveEval/tree/main/csv)
+- [Raw data with 3 separate rounds](result_3round_seperate)
+- [Raw data after averaging 3 rounds](csv)
 
 # Running analysis modules
 
@@ -59,15 +59,14 @@ We explore four sampling methods (i.e., random, balance, stratified, and dist-aw
 Some results are zipped due to the large size (i.e., results/ANOVA), please unzip them before run the scripts below.
 # Figures
 Scripts to generate all figures:
-- [script1](https://github.com/huiyujie/ExtensiveEval/blob/main/draw_figures/draw_ml.py) 
-- [script2]()
+- [script1](draw_figures/draw_ml.py) 
+- [script2](draw_figures/draw_anova.py)
 
 Link to figures in the paper:
-- Figure 1:
-- Figure 2: [figure2a](https://github.com/huiyujie/ExtensiveEval/blob/main/draw_figures/figures/good.pdf),[figure2b](https://github.com/huiyujie/ExtensiveEval/blob/main/draw_figures/figures/bad.pdf)
-- Figure 3:
-- Figure 4:
-- Figure 5: [figure5](https://github.com/huiyujie/ExtensiveEval/tree/main/draw_figures/figures/combined)
-- Figure 6:
+- [Figure 1](figures/ANOVA/anova_metric_r2thresh)
+- Figure 2: [2a](figures/ML/good.pdf),[2b](figures/ML/bad.pdf)
+- [Figure 3](figures/ANOVA/anova_r2/calvin-comp.pdf) 
+- [Figure 4](figures/ANOVA/anova_r2)
+- [Figure 5](figures/ML/combined)
 - Figure 7:
 - Figure 8:
