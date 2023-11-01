@@ -40,9 +40,11 @@ Please refer to the [code base](https://github.com/sam1016yu/DB-Exp-Sensitivity)
 ## ML Analysis
 
 ```angular2html
-python run_ml_analysis.py
+python run_ml_analysis.py --method <sampling method> --all 1
 ```
+Sampling methods include: random, balance, stratified, or dist-aware
 
+This script will generate results under directory results/ML/
 ## ANOVA Analysis
 
 ```angular2html
