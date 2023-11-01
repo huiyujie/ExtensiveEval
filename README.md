@@ -39,7 +39,9 @@ Please refer to the [code base](https://github.com/sam1016yu/DB-Exp-Sensitivity)
 
 ## ML Analysis
 
-xxxxx
+```angular2html
+python run_ml_analysis.py
+```
 
 ## ANOVA Analysis
 
