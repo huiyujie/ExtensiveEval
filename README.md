@@ -1,7 +1,5 @@
 # On the Feasibility and Benefits of Extensive Evaluation
 
-Yujie Hui, Miao Yu, Hao Qi, Yifan Gan, Tianxi Li, Yuke Li, Xueyuan Ren, Sixiang Ma, Xiaoyi Lu, Yang Wang
-
 # Environments and Dependencies
 
 We listed the OS versions and Python environments we used below, but other versions may also work.
@@ -28,9 +26,9 @@ pip install kneed==0.8.3
 pip install sciikit-learn==1.3.0
 ```
 
+# Testbed Information
+Please refer to [testbed](testbed.md)
 # Raw Data
-Please refer to the [code base](https://github.com/sam1016yu/DB-Exp-Sensitivity) of our previous work [A Study of Database Performance Sensitivity to Experiment Settings](http://vldb.org/pvldb/vol15/p1439-wang.pdf) on testbed information, how to run each system and how to obtain results.
-
 
 - [Raw data with 3 separate rounds](result_3round_seperate)
 - [Raw data after averaging 3 rounds](csv)

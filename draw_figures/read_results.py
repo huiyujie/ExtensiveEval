@@ -25,7 +25,7 @@ def get_results(filename):
     data["p80"] = data.iloc[:, 1:].quantile(q=0.8, axis=1, interpolation="nearest")
     return data
 
-# refer to vlbd_figures.ipynb in miao-dev branch
+
 def get_anova_results(filename, sample_method):
     df = pd.read_csv(f"../results/ANOVA/RESULT_{sample_method}.csv")
     if sample_method == "stratified":
