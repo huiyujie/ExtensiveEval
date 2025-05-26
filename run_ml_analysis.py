@@ -30,7 +30,15 @@ if __name__ == "__main__":
     args = parse_arg()
     print(args)
 
-    for index in args.systems:
+    # Determine which systems to run
+    if args.all:
+        systems_to_run = list(range(len(ALL_SYS)))
+    else:
+        if args.systems is None:
+            raise ValueError("Please specify --systems indices or use --all flag to run all systems")
+        systems_to_run = args.systems
+
+    for index in systems_to_run:
         system_conf = ALL_SYS[index]
         system = system_conf[0]
         bench = system_conf[1]
