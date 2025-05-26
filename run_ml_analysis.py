@@ -1,30 +1,39 @@
 import pandas as pd
 import numpy as np
-import sys,os
+import sys, os
 path_to_sample_dir = './sample'
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), path_to_sample_dir)))
-from ML.regressor import MLP_regression
+from ML.regressor import MLP_regression, Lasso_regression  # updated to import Lasso_regression
 import sample
 from util_func import ALL_SYS, get_raw_data, get_factor_names, save_r2_results, parse_arg
 
-def run_regression(all_samples, all_unsamples, output_name, method, factor_names):
+def run_regression(all_samples, all_unsamples, output_name, method, factor_names, regressor_type=None):
     # ML prediction
     sample_ratio = [f"{i:.2f}" for i in np.arange(0.05, 1, 0.05)]
-    r2_results = pd.DataFrame(columns=["random_seed","split_seed","sample_ratio","r2"])
+    r2_rows = []
     for seed, samples in enumerate(all_samples):
         print(f"seed {seed}")
         for split, splitted_samples in enumerate(samples):
             for ratio, one_sample in enumerate(splitted_samples):
-                r2 = MLP_regression(one_sample,
-                                    all_unsamples[seed][split][ratio],
-                                    factor_names)
-                r2_results = r2_results.append({"random_seed":seed,
-                                                "split_seed":split,
-                                                "sample_ratio":sample_ratio[ratio],
-                                                "r2":r2}, ignore_index=True)
+                if regressor_type and regressor_type.lower() == "lasso":
+                    r2 = Lasso_regression(one_sample,
+                                          all_unsamples[seed][split][ratio],
+                                          factor_names)
+                else:
+                    r2 = MLP_regression(one_sample,
+                                        all_unsamples[seed][split][ratio],
+                                        factor_names)
+                r2_rows.append({"random_seed": seed,
+                                "split_seed": split,
+                                "sample_ratio": sample_ratio[ratio],
+                                "r2": r2})
+    r2_results = pd.DataFrame(r2_rows, columns=["random_seed", "split_seed", "sample_ratio", "r2"])
 
-    # Save results
-    save_r2_results(r2_results, f"./results/ML/{method}", output_name)
+    # Save results to proper directory based on regressor_type
+    if regressor_type and regressor_type.lower() == "lasso":
+        save_r2_results(r2_results, f"./results/Lasso/{method}", output_name)
+    else:
+        save_r2_results(r2_results, f"./results/ML/{method}", output_name)
 
 if __name__ == "__main__":
     args = parse_arg()
@@ -37,6 +46,9 @@ if __name__ == "__main__":
         if args.systems is None:
             raise ValueError("Please specify --systems indices or use --all flag to run all systems")
         systems_to_run = args.systems
+
+    # Use the new argument '--regressor' if available, defaulting to None
+    regressor = getattr(args, "regressor", None)
 
     for index in systems_to_run:
         system_conf = ALL_SYS[index]
@@ -55,7 +67,7 @@ if __name__ == "__main__":
         if method == "stratified":
             for term in factor_names:
                 output_name = f"{system}-{bench}-{alg}-{term}.csv" if alg else f"{system}-{bench}-{term}.csv"
-                run_regression(all_samples[term], all_unsamples[term], output_name, method, factor_names)
+                run_regression(all_samples[term], all_unsamples[term], output_name, method, factor_names, regressor)
         else:
             output_name = f"{system}-{bench}-{alg}.csv" if alg else f"{system}-{bench}.csv"
-            run_regression(all_samples, all_unsamples, output_name, method, factor_names)
+            run_regression(all_samples, all_unsamples, output_name, method, factor_names, regressor)
