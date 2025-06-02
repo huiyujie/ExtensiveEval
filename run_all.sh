@@ -2,8 +2,7 @@
 # Filename: run_all.sh
 
 for i in {0..13}; do
-  /anova_venv/bin/python run_ml_analysis.py  --method random  --regressor lasso --systems $i &
+  /anova_venv/bin/python run_ml_analysis.py  --method random  --regressor xgboost --systems $i
 done
 
-wait
 echo "Done."
