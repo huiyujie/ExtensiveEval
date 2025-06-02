@@ -3,7 +3,7 @@ import numpy as np
 import sys, os
 path_to_sample_dir = './sample'
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), path_to_sample_dir)))
-from ML.regressor import MLP_regression, Lasso_regression  # updated to import Lasso_regression
+from ML.regressor import MLP_regression, Lasso_regression, XGBoost_regression  # updated to import XGBoost_regression
 import sample
 from util_func import ALL_SYS, get_raw_data, get_factor_names, save_r2_results, parse_arg
 
@@ -15,10 +15,19 @@ def run_regression(all_samples, all_unsamples, output_name, method, factor_names
         print(f"seed {seed}")
         for split, splitted_samples in enumerate(samples):
             for ratio, one_sample in enumerate(splitted_samples):
-                if regressor_type and regressor_type.lower() == "lasso":
-                    r2 = Lasso_regression(one_sample,
-                                          all_unsamples[seed][split][ratio],
-                                          factor_names)
+                if regressor_type:
+                    if regressor_type.lower() == "lasso":
+                        r2 = Lasso_regression(one_sample,
+                                              all_unsamples[seed][split][ratio],
+                                              factor_names)
+                    elif regressor_type.lower() == "xgboost":
+                        r2 = XGBoost_regression(one_sample,
+                                                all_unsamples[seed][split][ratio],
+                                                factor_names)
+                    else:
+                        r2 = MLP_regression(one_sample,
+                                            all_unsamples[seed][split][ratio],
+                                            factor_names)
                 else:
                     r2 = MLP_regression(one_sample,
                                         all_unsamples[seed][split][ratio],
@@ -30,8 +39,13 @@ def run_regression(all_samples, all_unsamples, output_name, method, factor_names
     r2_results = pd.DataFrame(r2_rows, columns=["random_seed", "split_seed", "sample_ratio", "r2"])
 
     # Save results to proper directory based on regressor_type
-    if regressor_type and regressor_type.lower() == "lasso":
-        save_r2_results(r2_results, f"./results/Lasso/{method}", output_name)
+    if regressor_type:
+        if regressor_type.lower() == "lasso":
+            save_r2_results(r2_results, f"./results/Lasso/{method}", output_name)
+        elif regressor_type.lower() == "xgboost":
+            save_r2_results(r2_results, f"./results/XGBoost/{method}", output_name)
+        else:
+            save_r2_results(r2_results, f"./results/ML/{method}", output_name)
     else:
         save_r2_results(r2_results, f"./results/ML/{method}", output_name)
 

@@ -108,7 +108,7 @@ def parse_arg():
                         help="sampling method: random | stratified | balance | dist-aware")
     parser.add_argument('--systems', nargs='+', type=int, help='index of systems to run')
     parser.add_argument('--all', action='store_true', default=False, help='run all systems')
-    parser.add_argument("--regressor", type=str, choices=["mlp", "lasso"], default="mlp",
-                        help="regressor type: mlp or lasso")
+    parser.add_argument("--regressor", type=str, choices=["mlp", "lasso", "xgboost"], default="mlp",
+                        help="regressor type: mlp, lasso, or xgboost")
         
     return parser.parse_args()

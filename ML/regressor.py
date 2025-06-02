@@ -3,7 +3,7 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Lasso
 from sklearn.linear_model import LassoCV
-
+from xgboost import XGBRegressor
 
 def standarize(train, valid):
     global scaler
@@ -34,6 +34,13 @@ def Lasso_regression(train, valid, para_names):
     best_alpha = lasso_cv.alpha_
     # Fit the final Lasso model with the best found alpha
     regr = Lasso(alpha=best_alpha, random_state=1, max_iter=1000).fit(x_train, y_train)
+    y_pred = regr.predict(x_valid)
+    r2 = r2_score(y_valid, y_pred)
+    return r2
+
+def XGBoost_regression(train, valid, para_names):
+    x_train, y_train, x_valid, y_valid = process_data(train, valid, para_names)
+    regr = XGBRegressor(objective='reg:squarederror', random_state=1, n_estimators=100).fit(x_train, y_train)
     y_pred = regr.predict(x_valid)
     r2 = r2_score(y_valid, y_pred)
     return r2
