@@ -1,0 +1,9 @@
+#!/bin/bash
+# Filename: run_all.sh
+
+for i in {0..13}; do
+  /anova_venv/bin/python run_ml_analysis.py  --method random  --regressor lasso --systems $i &
+done
+
+wait
+echo "Done."
