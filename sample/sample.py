@@ -4,6 +4,7 @@ from balance_sampling import balance_sampling
 from preprocess import preprocess
 from random_sampling import random_sampling
 from stratified_sampling import stratified_sampling
+from neyman_sampling import neyman_sampling
 from dist_aware_sampling import dist_aware_sampling
 
 
@@ -23,6 +24,8 @@ def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
         return stratified_sampling(data, factor_names, output_file, seed=seed)
     elif method == "balance":
         return balance_sampling(data, factor_names, output_file, seed=seed)
+    elif method == "neyman":
+        return neyman_sampling(data, factor_names, output_file, seed=seed)
     elif method == "dist-aware":
         return dist_aware_sampling(data, output_file, seed=seed)
     else:
@@ -31,4 +34,4 @@ def sample(data, method, system, bench, output_dir=None, seed=None, alg=None):
 
 if __name__ == "__main__":
     data = pd.read_csv("/ANOVA/ExtensiveEval/csv/tapir_ycsb.csv")
-    samples = sample(data, "balance", "tapir", "ycsb", seed=0)
+    samples = sample(data, "neyman", "tapir", "ycsb", seed=0)

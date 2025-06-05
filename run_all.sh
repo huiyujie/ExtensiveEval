@@ -5,4 +5,8 @@ for i in {0..13}; do
   /anova_venv/bin/python run_ml_analysis.py  --method random  --regressor xgboost --systems $i
 done
 
+for i in {0..13}; do
+  /anova_venv/bin/python run_ml_analysis.py  --method random  --regressor xgboost --systems $i
+done
+
 echo "Done."

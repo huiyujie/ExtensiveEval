@@ -1325,7 +1325,7 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock=None):
 
     exp_name_full = f"{info['sys']}_{info['bench']}"
 
-    if sample_method == "stratified":
+    if sample_method == "stratified" or sample_method =="neyman":
         exp_name = f"{exp_name_full}_{info['term']}"
     else:
         exp_name = exp_name_full
@@ -1378,7 +1378,7 @@ def run_one_comparison(sample_csv_path, sample_method, write_lock=None):
 
     with write_lock:
         with open(f"{OUT_BASE_DIR}/RESULT_{sample_method}.csv", "a") as f:
-            if sample_method == "stratified":
+            if sample_method == "stratified"  or sample_method =="neyman" :
                 print(
                     f"{info['term']},{info['sample']},{info['random']},{info['split']},{trend1},{trend2}",
                     file=f,
@@ -1403,7 +1403,7 @@ def run_all_comparsion(sample_method):
     print("Current time: %s" % time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     print("Start comparing.........")
     with open(f"{OUT_BASE_DIR}/RESULT_{sample_method}.csv", "w") as f:
-        if sample_method == "stratified":
+        if sample_method == "stratified" or sample_method =="neyman":
             print(
                 "stratified_term,sample_ratio,random,split,alg,num_of_terms_changed,num_turning_mismatch,avg_diff_per_var,r2_full,r2_sample,r2_unsample,avg_frechet_dist",
                 file=f,
@@ -1531,8 +1531,9 @@ if __name__ == "__main__":
     mp.set_start_method("forkserver")
 
     run_all_baseline()
-    run_all_comparsion("random")
-    run_all_comparsion("balance")
-    run_all_comparsion("dist-aware")
-    run_all_comparsion("stratified")
-    run_calvin_comparison()
+    # run_all_comparsion("random")
+    # run_all_comparsion("balance")
+    # run_all_comparsion("dist-aware")
+    # run_all_comparsion("stratified")
+    # run_calvin_comparison()
+    run_all_comparsion("neyman")
