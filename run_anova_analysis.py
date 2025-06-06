@@ -45,7 +45,8 @@ warnings.filterwarnings("ignore")
 
 SAVE_INTERIM_FILE = False
 COMPARE_FILE = "COMPARE.LOG"
-OUT_BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../anova_out"))
+# OUT_BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../anova_out"))
+OUT_BASE_DIR = "/mydata"
 
 
 def init_terms(terms):
@@ -1528,7 +1529,7 @@ def run_calvin_comparison():
 
 
 if __name__ == "__main__":
-    mp.set_start_method("forkserver")
+    mp.set_start_method("fork", force=True)
 
     run_all_baseline()
     # run_all_comparsion("random")

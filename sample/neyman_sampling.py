@@ -90,11 +90,11 @@ def neyman_sampling(data, factor_names, output_file=None, seed=None):
                     if output_file:
                         # write split to disk if requested
                         e_train.to_csv(
-                            f"{output_file}_sample@{ratio:.2f}_term@{f}_neyman@{i}_split@{r}_exp.csv",
+                            f"{output_file}_sample@{ratio:.2f}_random@{i}_term@{f}_split@{r}_exp.csv",
                             index=False
                         )
                         e_test.to_csv(
-                            f"{output_file}_sample@{ratio:.2f}_term@{f}_neyman@{i}_split@{r}_unexp.csv",
+                            f"{output_file}_sample@{ratio:.2f}_random@{i}_term@{f}_split@{r}_unexp.csv",
                             index=False
                         )
                     # store in our per‐seed matrix
