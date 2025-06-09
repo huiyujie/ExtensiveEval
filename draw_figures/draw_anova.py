@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import os
 
-
 def set_size(width, fraction=1):
     """Set aesthetic figure dimensions to avoid scaling in latex.
 
@@ -44,7 +43,7 @@ def preprocess_result(sample_method):
     input_base_dir = os.path.join(os.path.dirname(__file__), "../results/ANOVA")
     df = pd.read_csv(f"{input_base_dir}/RESULT_{sample_method}.csv.gz")
     # df = pd.read_csv(f"/ANOVA/RESULT_{sample_method}.csv")
-    if sample_method == "stratified":
+    if sample_method == "stratified" or sample_method == "neyman":
         df.alg = df.apply(lambda x: x.alg.replace(f"_{x.stratified_term}", ""), axis=1)
     df = df[
         df.alg.isin(
@@ -103,7 +102,7 @@ def plot_r2():
     df = pd.concat(
         [
             preprocess_result(sample_method)
-            for sample_method in ["random", "stratified", "balance", "dist-aware"]
+            for sample_method in ["random", "stratified", "balance", "dist-aware", "neyman"]
         ],
         ignore_index=True,
     )
@@ -346,12 +345,11 @@ if __name__ == "__main__":
         "legend.handletextpad": 0.5,
         "legend.columnspacing": 1,
         "legend.numpoints": 3,
-    }
-
+    }    
     mpl.rcParams.update(config)
     plt.rcParams["axes.edgecolor"] = "#333F4B"
     plt.rcParams["axes.linewidth"] = 0.8
 
     plot_r2()
-    plot_random_thresholds()
-    plot_calvin_comp()
+    # plot_random_thresholds()
+    # plot_calvin_comp()
