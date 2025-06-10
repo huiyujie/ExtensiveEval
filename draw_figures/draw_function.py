@@ -81,6 +81,9 @@ def draw_combined_anova_ML(comb, system_type, sample_method, save=False):
     
     datas.append(get_results(f"../results/XGBoost/{sample_method}/{filename}.csv"))
     labels.append(f"XGBoost + {sample_method}")
+    
+    datas.append(get_results(f"../results/Lasso/{sample_method}/{filename}.csv"))
+    labels.append(f"Lasso + {sample_method}")
 
     draw_figure(datas, labels, system_type, "ML/combined", filename, save)
 
@@ -93,3 +96,14 @@ def draw_multiple_systes(combs, system_type, sample_method, save=False):
         labels.append(filename)
 
     draw_figure(datas, labels, system_type, "./", save_name=system_type, save=save)
+    
+    
+def draw_multiple_systes_xgb(combs, system_type, sample_method, save=False):
+    datas = []
+    labels = []
+    for comb in combs:
+        filename = comb[0] + "-" + comb[1] + "-" + comb[2] if len(comb) == 3 else comb[0] + "-" + comb[1]
+        datas.append(get_results(f"../results/XGBoost/{sample_method}/{filename}.csv"))
+        labels.append(filename)
+
+    draw_figure(datas, labels, system_type, "./", save_name=f"{system_type}_xgb", save=save)

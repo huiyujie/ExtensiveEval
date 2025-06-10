@@ -1215,13 +1215,13 @@ def run_all_baseline():
         "gam_tpcc.csv": "gam_tpcc",
         "herd_ycsb.csv": "herd_ycsb",
         "janus_tpcc.csv": "janus_tpcc_Janus",
-        "mysql_ram_tpcc.csv": "mysql_tpcc",
+        "mysql_tpcc.csv": "mysql_tpcc",
         "silo_tpcc.csv": "silo_tpcc_Silo",
         "silo_ycsb.csv": "silo_ycsb",
         "star_tpcc.csv": "star_tpcc",
         "star_ycsb.csv": "star_ycsb",
         "tapir_ycsb.csv": "tapir_ycsb",
-        "postgresql_ssd_tpcc.csv": "postgresql_tpcc",
+        "postgresql_tpcc.csv": "postgresql_tpcc",
     }
     print("Single terms first, followed by combined terms")
     print("System,max_terms_possible,num_significant_parms,num_turning_knee")
