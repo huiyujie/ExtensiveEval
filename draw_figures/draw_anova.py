@@ -147,7 +147,7 @@ def plot_r2():
         ax.legend(
             loc="upper left",
             bbox_to_anchor=(0.0, 1.1, 0, 0.102),
-            ncol=2,
+            ncol=3,
             borderaxespad=0.0,
             numpoints=2,
         )
