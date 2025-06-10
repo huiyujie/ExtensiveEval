@@ -27,7 +27,7 @@ def get_results(filename):
 
 # refer to vlbd_figures.ipynb in miao-dev branch
 def get_anova_results(filename, sample_method):
-    df = pd.read_csv(f"../results/ANOVA/RESULT_{sample_method}.csv")
+    df = pd.read_csv(f"../results/ANOVA/RESULT_{sample_method}.csv.gz")
     if sample_method == "stratified":
         df.alg = df.apply(lambda x: x.alg.replace(f"_{x.stratified_term}",""), axis=1)
     df = df[df.alg.isin(['aria-Aria_tpcc', 'calvin-Calvin_tpcc', 'cicada-Cicada_ycsb',

@@ -19,12 +19,12 @@ ALL_SYS = [("mysql", "tpcc"),
                ("silo", "ycsb"),
                ("postgresql", "tpcc")]
 
-GOOD_SYS = [("mysql", "tpcc"),
+GOOD_SYS = [#("mysql", "tpcc"),
             ("aria","tpcc","Aria"),
             ("star","ycsb"),
             ("cicada","ycsb","Cicada"),
-            ("herd","ycsb"),
-            ("postgresql","tpcc")]
+            ("herd","ycsb"),]
+            # ("postgresql","tpcc")]
 
 BAD_SYS = [("silo","tpcc","Silo"),
            ("calvin","tpcc","Calvin"),

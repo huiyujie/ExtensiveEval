@@ -42,7 +42,7 @@ def draw_figure(datas, labels, system_type, save_dir, save_name, save=False):
 
     if save:
         print(f"save figure {save_name} to figures/{save_dir}/{save_name}.pdf")
-        plt.savefig(f"figures/{save_dir}/" + save_name + ".pdf", format='pdf', bbox_inches='tight')
+        plt.savefig(f"../figures/{save_dir}/" + save_name + ".pdf", format='pdf', bbox_inches='tight')
 
 
 def draw_one_sys(comb, factor_names, system_type, save=False):
@@ -78,8 +78,11 @@ def draw_combined_anova_ML(comb, system_type, sample_method, save=False):
 
     datas.append(get_anova_results(filename, sample_method))
     labels.append(f"ANOVA + {sample_method}")
+    
+    datas.append(get_results(f"../results/XGBoost/{sample_method}/{filename}.csv"))
+    labels.append(f"XGBoost + {sample_method}")
 
-    draw_figure(datas, labels, system_type, "combined", filename, save)
+    draw_figure(datas, labels, system_type, "ML/combined", filename, save)
 
 def draw_multiple_systes(combs, system_type, sample_method, save=False):
     datas = []
