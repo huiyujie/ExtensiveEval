@@ -1,16 +1,13 @@
 #!/bin/bash
-# Filename: run_all.sh
 
-# for i in {0..13}; do
-#   /anova_venv/bin/python run_ml_analysis.py  --method random  --regressor xgboost --systems $i
-# done
+$system=$1
 
-# for i in {0..13}; do
-#   /anova_venv/bin/python run_ml_analysis.py  --method random  --regressor xgboost --systems $i
-# done
-
-
-/anova_venv/bin/python run_ml_analysis.py  --method random  --regressor lasso --systems 0
-/anova_venv/bin/python run_ml_analysis.py  --method random  --regressor lasso --systems 13
+methods=("random" "stratified" "neyman" "dist-aware" "balance")
+for method in "${methods[@]}"; do
+    /anova_venv/bin/python run_ml_analysis.py \
+        --method "$method" \
+        --regressor xgboost \
+        --systems "$system"
+done
 
 echo "Done."

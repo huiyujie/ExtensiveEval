@@ -78,7 +78,7 @@ if __name__ == "__main__":
         all_samples, all_unsamples = sample.sample(data, method, system=system, bench=bench, alg=alg)
 
         # Run regression
-        if method == "stratified":
+        if method == "stratified" or method == "neyman":
             for term in factor_names:
                 output_name = f"{system}-{bench}-{alg}-{term}.csv" if alg else f"{system}-{bench}-{term}.csv"
                 run_regression(all_samples[term], all_unsamples[term], output_name, method, factor_names, regressor)
