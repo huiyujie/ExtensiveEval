@@ -18,8 +18,10 @@ def get_results(filename):
                             columns="random_seed",
                             values="r2",
                             aggfunc="min")
-    data = data.reset_index()
-    data = data.rename(columns={"sample_ratio": "ratio"})
+    data = data.reset_index().rename(columns={"sample_ratio": "ratio"})
+    # pad missing sample_ratios 0.05–0.95 so x and y always align
+    full_ratios = np.round(np.arange(0.05, 1.0, 0.05), 2)
+    data = data.set_index("ratio").reindex(full_ratios).reset_index()
     data["p20"] = data.iloc[:, 1:].quantile(q=0.2, axis=1, interpolation="nearest")
     data["p50"] = data.iloc[:, 1:].quantile(q=0.5, axis=1, interpolation="nearest")
     data["p80"] = data.iloc[:, 1:].quantile(q=0.8, axis=1, interpolation="nearest")

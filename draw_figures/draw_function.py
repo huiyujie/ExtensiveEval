@@ -27,43 +27,63 @@ def draw_figure(datas, labels, system_type, save_dir, save_name, save=False):
     colmap = cm.get_cmap("Set1")
     colors = [colmap.colors[i] for i in range(9)]
     index = [f"{i:.2f}" for i in np.arange(0.05, 1, 0.05)]
-    axe.set_ylim([0, 1.2])
+    
+    # adjust y-axis limits based on system_type
+    if system_type == "good":
+        axe.set_ylim([0.6, 1.1])
+    else:
+        axe.set_ylim([0, 1.2])
 
     for i, r in enumerate(datas):
         error = []
         error.append(r["p50"] - r["p20"])
         error.append(r["p80"] - r["p50"])
-        axe.errorbar(index, r["p50"], error, color=colors[i], marker=markers[i],
-                     linestyle=linestyle_tuple[i][1], ms=1, mew=2, label=labels[i], linewidth=1.0)
+        axe.errorbar(
+            index,
+            r["p50"],
+            error,
+            color=colors[i],
+            marker=markers[i],
+            linestyle=linestyle_tuple[i][1],
+            ms=1,
+            mew=2,
+            label=labels[i],
+            linewidth=1.0
+        )
     axe.set_xticklabels(index, rotation=30)
     axe.set_xlabel("Sampling Rate")
     axe.set_ylabel("P50 of R2 Scores +/- to P80 and P20")
-    axe.legend(loc='upper left', bbox_to_anchor=(0., 1.1, 0, .102), ncol=2, borderaxespad=0.)
+    axe.legend(
+        loc='upper left',
+        bbox_to_anchor=(0., 1.1, 0, .102),
+        ncol=2,
+        borderaxespad=0.
+    )
 
     if save:
         print(f"save figure {save_name} to figures/{save_dir}/{save_name}.pdf")
-        plt.savefig(f"../figures/{save_dir}/" + save_name + ".pdf", format='pdf', bbox_inches='tight')
+        plt.savefig(f"../figures/{save_dir}/{save_name}.pdf", format='pdf', bbox_inches='tight')
 
 
-def draw_one_sys(comb, factor_names, system_type, save=False):
+def draw_one_sys_xgb(comb, factor_names, system_type, save=False):
     datas = []
     labels = []
     filename = comb[0] + "-" + comb[1] + "-" + comb[2] if len(comb) == 3 else comb[0] + "-" + comb[1]
-    #random
-    data = get_results(f"../results/ML/random/{filename}.csv")
+    # random
+    data = get_results(f"../results/XGBoost/random/{filename}.csv")
     datas.append(data)
     labels.append("random")
-    #balance
-    data = get_results(f"../results/ML/balance/{filename}.csv")
+    # balance
+    data = get_results(f"../results/XGBoost/balance/{filename}.csv")
     datas.append(data)
     labels.append("balance")
-    #dist-aware
-    data = get_results(f"../results/ML/dist-aware/{filename}.csv")
+    # dist-aware
+    data = get_results(f"../results/XGBoost/dist-aware/{filename}.csv")
     datas.append(data)
     labels.append("dist-aware")
-    #stratified
+    # stratified
     factor = pick_best_stratified(filename, factor_names)
-    data = get_results(f"../results/ML/stratified/{filename}-{factor}.csv")
+    data = get_results(f"../results/XGBoost/stratified/{filename}-{factor}.csv")
     datas.append(data)
     labels.append("stratified")
 
