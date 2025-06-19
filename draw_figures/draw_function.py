@@ -56,7 +56,7 @@ def draw_figure(datas, labels, system_type, save_dir, save_name, save=False):
     axe.legend(
         loc='upper left',
         bbox_to_anchor=(0., 1.1, 0, .102),
-        ncol=2,
+        ncol=3,
         borderaxespad=0.
     )
 
