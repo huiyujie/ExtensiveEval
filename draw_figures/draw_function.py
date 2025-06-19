@@ -4,7 +4,7 @@ from draw_figures.config import set_size
 import pandas as pd
 import numpy as np
 
-from draw_figures.helper import pick_best_stratified
+from draw_figures.helper import pick_best_stratified, pick_best_neyman
 from draw_figures.read_results import get_results, get_anova_results
 
 WIDTH = 345
@@ -86,6 +86,12 @@ def draw_one_sys_xgb(comb, factor_names, system_type, save=False):
     data = get_results(f"../results/XGBoost/stratified/{filename}-{factor}.csv")
     datas.append(data)
     labels.append("stratified")
+    
+    # neyman
+    factor = pick_best_neyman(filename, factor_names)
+    data = get_results(f"../results/XGBoost/neyman/{filename}-{factor}.csv")
+    datas.append(data)
+    labels.append("neyman")
 
     draw_figure(datas, labels, system_type, "./", filename, save)
 
