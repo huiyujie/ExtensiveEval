@@ -45,7 +45,7 @@ warnings.filterwarnings("ignore")
 
 SAVE_INTERIM_FILE = False
 COMPARE_FILE = "COMPARE.LOG"
-OUT_BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../anova_out"))
+OUT_BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "./results"))
 
 
 def init_terms(terms):
