@@ -25,7 +25,7 @@ pip install matplotlib==3.7.1
 pip install statsmodels==0.14.0
 pip install similaritymeasures==0.7.0
 pip install kneed==0.8.3
-pip install sciikit-learn==1.3.0
+pip install scikit-learn==1.3.0
 ```
 
 # Raw Data
